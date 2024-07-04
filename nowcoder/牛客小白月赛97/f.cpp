@@ -33,8 +33,6 @@ using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 
 int main() {
-    cout << "this is nowcoder" << '\n';
+
     return 0;
 }
-
-// https://ac.nowcoder.com/acm/contest/
