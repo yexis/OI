@@ -1,4 +1,6 @@
 /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/c.dir
+/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/f.dir
 /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/e.dir
 /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/main.dir

@@ -131,6 +131,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named c
+
+# Build rule for target.
+c : cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 c
+.PHONY : c
+
+# fast build rule for target.
+c/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/build
+.PHONY : c/fast
+
+#=============================================================================
+# Target rules for targets named f
+
+# Build rule for target.
+f : cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 f
+.PHONY : f
+
+# fast build rule for target.
+f/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/build
+.PHONY : f/fast
+
+#=============================================================================
 # Target rules for targets named e
 
 # Build rule for target.
@@ -210,6 +236,60 @@ nowcoder/牛客小白月赛97/e.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客小白月赛97/e.cpp.s
 .PHONY : nowcoder/牛客小白月赛97/e.cpp.s
 
+nowcoder/牛客小白月赛97/f.o: nowcoder/牛客小白月赛97/f.cpp.o
+
+.PHONY : nowcoder/牛客小白月赛97/f.o
+
+# target to build an object file
+nowcoder/牛客小白月赛97/f.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客小白月赛97/f.cpp.o
+.PHONY : nowcoder/牛客小白月赛97/f.cpp.o
+
+nowcoder/牛客小白月赛97/f.i: nowcoder/牛客小白月赛97/f.cpp.i
+
+.PHONY : nowcoder/牛客小白月赛97/f.i
+
+# target to preprocess a source file
+nowcoder/牛客小白月赛97/f.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客小白月赛97/f.cpp.i
+.PHONY : nowcoder/牛客小白月赛97/f.cpp.i
+
+nowcoder/牛客小白月赛97/f.s: nowcoder/牛客小白月赛97/f.cpp.s
+
+.PHONY : nowcoder/牛客小白月赛97/f.s
+
+# target to generate assembly for a file
+nowcoder/牛客小白月赛97/f.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客小白月赛97/f.cpp.s
+.PHONY : nowcoder/牛客小白月赛97/f.cpp.s
+
+nowcoder/牛客练习赛127/c.o: nowcoder/牛客练习赛127/c.cpp.o
+
+.PHONY : nowcoder/牛客练习赛127/c.o
+
+# target to build an object file
+nowcoder/牛客练习赛127/c.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/nowcoder/牛客练习赛127/c.cpp.o
+.PHONY : nowcoder/牛客练习赛127/c.cpp.o
+
+nowcoder/牛客练习赛127/c.i: nowcoder/牛客练习赛127/c.cpp.i
+
+.PHONY : nowcoder/牛客练习赛127/c.i
+
+# target to preprocess a source file
+nowcoder/牛客练习赛127/c.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/nowcoder/牛客练习赛127/c.cpp.i
+.PHONY : nowcoder/牛客练习赛127/c.cpp.i
+
+nowcoder/牛客练习赛127/c.s: nowcoder/牛客练习赛127/c.cpp.s
+
+.PHONY : nowcoder/牛客练习赛127/c.s
+
+# target to generate assembly for a file
+nowcoder/牛客练习赛127/c.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/nowcoder/牛客练习赛127/c.cpp.s
+.PHONY : nowcoder/牛客练习赛127/c.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -218,7 +298,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... c"
 	@echo "... e"
+	@echo "... f"
 	@echo "... main"
 	@echo "... nowcoder/main.o"
 	@echo "... nowcoder/main.i"
@@ -226,6 +308,12 @@ help:
 	@echo "... nowcoder/牛客小白月赛97/e.o"
 	@echo "... nowcoder/牛客小白月赛97/e.i"
 	@echo "... nowcoder/牛客小白月赛97/e.s"
+	@echo "... nowcoder/牛客小白月赛97/f.o"
+	@echo "... nowcoder/牛客小白月赛97/f.i"
+	@echo "... nowcoder/牛客小白月赛97/f.s"
+	@echo "... nowcoder/牛客练习赛127/c.o"
+	@echo "... nowcoder/牛客练习赛127/c.i"
+	@echo "... nowcoder/牛客练习赛127/c.s"
 .PHONY : help
 
 
