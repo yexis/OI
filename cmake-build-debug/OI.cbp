@@ -37,6 +37,126 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="k">
+				<Option output="/Users/yex/CPP/OI/cmake-build-debug/k" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 k"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="k/fast">
+				<Option output="/Users/yex/CPP/OI/cmake-build-debug/k" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 k/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="h">
+				<Option output="/Users/yex/CPP/OI/cmake-build-debug/h" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 h"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="h/fast">
+				<Option output="/Users/yex/CPP/OI/cmake-build-debug/h" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 h/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="b">
+				<Option output="/Users/yex/CPP/OI/cmake-build-debug/b" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 b"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="b/fast">
+				<Option output="/Users/yex/CPP/OI/cmake-build-debug/b" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 b/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="c">
 				<Option output="/Users/yex/CPP/OI/cmake-build-debug/c" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
@@ -157,6 +277,46 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="d">
+				<Option output="/Users/yex/CPP/OI/cmake-build-debug/d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 d"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="d/fast">
+				<Option output="/Users/yex/CPP/OI/cmake-build-debug/d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 d/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="main">
 				<Option output="/Users/yex/CPP/OI/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
@@ -201,11 +361,23 @@
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/main.cpp">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客小白月赛97/e.cpp">
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/武汉理工程序设计大赛/e.cpp">
 			<Option target="e"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/武汉理工程序设计大赛/h.cpp">
+			<Option target="h"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/武汉理工程序设计大赛/k.cpp">
+			<Option target="k"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛50/d.cpp">
+			<Option target="d"/>
 		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客小白月赛97/f.cpp">
 			<Option target="f"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客练习赛127/b.cpp">
+			<Option target="b"/>
 		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客练习赛127/c.cpp">
 			<Option target="c"/>

@@ -33,7 +33,9 @@ using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 
 int main() {
-    cout << "this is nowcoder" << '\n';
+    for (int i = 0; i < 50000; i++) {
+        cout << 'a';
+    }
     return 0;
 }
 

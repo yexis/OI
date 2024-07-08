@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/yex/CPP/OI/nowcoder/牛客小白月赛97/e.cpp" "/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/e.dir/nowcoder/牛客小白月赛97/e.cpp.o"
+  "/Users/yex/CPP/OI/nowcoder/武汉理工程序设计大赛/e.cpp" "/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/e.dir/nowcoder/武汉理工程序设计大赛/e.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
