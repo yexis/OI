@@ -342,32 +342,32 @@ nowcoder/武汉理工程序设计大赛/k.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/k.dir/build.make CMakeFiles/k.dir/nowcoder/武汉理工程序设计大赛/k.cpp.s
 .PHONY : nowcoder/武汉理工程序设计大赛/k.cpp.s
 
-nowcoder/牛客周赛50/d.o: nowcoder/牛客周赛50/d.cpp.o
+nowcoder/牛客周赛49/d.o: nowcoder/牛客周赛49/d.cpp.o
 
-.PHONY : nowcoder/牛客周赛50/d.o
+.PHONY : nowcoder/牛客周赛49/d.o
 
 # target to build an object file
-nowcoder/牛客周赛50/d.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛50/d.cpp.o
-.PHONY : nowcoder/牛客周赛50/d.cpp.o
+nowcoder/牛客周赛49/d.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛49/d.cpp.o
+.PHONY : nowcoder/牛客周赛49/d.cpp.o
 
-nowcoder/牛客周赛50/d.i: nowcoder/牛客周赛50/d.cpp.i
+nowcoder/牛客周赛49/d.i: nowcoder/牛客周赛49/d.cpp.i
 
-.PHONY : nowcoder/牛客周赛50/d.i
+.PHONY : nowcoder/牛客周赛49/d.i
 
 # target to preprocess a source file
-nowcoder/牛客周赛50/d.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛50/d.cpp.i
-.PHONY : nowcoder/牛客周赛50/d.cpp.i
+nowcoder/牛客周赛49/d.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛49/d.cpp.i
+.PHONY : nowcoder/牛客周赛49/d.cpp.i
 
-nowcoder/牛客周赛50/d.s: nowcoder/牛客周赛50/d.cpp.s
+nowcoder/牛客周赛49/d.s: nowcoder/牛客周赛49/d.cpp.s
 
-.PHONY : nowcoder/牛客周赛50/d.s
+.PHONY : nowcoder/牛客周赛49/d.s
 
 # target to generate assembly for a file
-nowcoder/牛客周赛50/d.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛50/d.cpp.s
-.PHONY : nowcoder/牛客周赛50/d.cpp.s
+nowcoder/牛客周赛49/d.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛49/d.cpp.s
+.PHONY : nowcoder/牛客周赛49/d.cpp.s
 
 nowcoder/牛客小白月赛97/f.o: nowcoder/牛客小白月赛97/f.cpp.o
 
@@ -478,9 +478,9 @@ help:
 	@echo "... nowcoder/武汉理工程序设计大赛/k.o"
 	@echo "... nowcoder/武汉理工程序设计大赛/k.i"
 	@echo "... nowcoder/武汉理工程序设计大赛/k.s"
-	@echo "... nowcoder/牛客周赛50/d.o"
-	@echo "... nowcoder/牛客周赛50/d.i"
-	@echo "... nowcoder/牛客周赛50/d.s"
+	@echo "... nowcoder/牛客周赛49/d.o"
+	@echo "... nowcoder/牛客周赛49/d.i"
+	@echo "... nowcoder/牛客周赛49/d.s"
 	@echo "... nowcoder/牛客小白月赛97/f.o"
 	@echo "... nowcoder/牛客小白月赛97/f.i"
 	@echo "... nowcoder/牛客小白月赛97/f.s"
