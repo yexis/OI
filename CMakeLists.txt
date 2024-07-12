@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(main nowcoder/main.cpp)
 
 add_executable(e nowcoder/武汉理工程序设计大赛/e.cpp)
-add_executable(f nowcoder/牛客小白月赛97/f.cpp)
+add_executable(f nowcoder/牛客周赛49/f.cpp)
 add_executable(c nowcoder/牛客练习赛127/c.cpp)
 
 add_executable(b nowcoder/牛客练习赛127/b.cpp)
