@@ -261,33 +261,6 @@ nowcoder/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/nowcoder/main.cpp.s
 .PHONY : nowcoder/main.cpp.s
 
-nowcoder/武汉理工程序设计大赛/e.o: nowcoder/武汉理工程序设计大赛/e.cpp.o
-
-.PHONY : nowcoder/武汉理工程序设计大赛/e.o
-
-# target to build an object file
-nowcoder/武汉理工程序设计大赛/e.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/武汉理工程序设计大赛/e.cpp.o
-.PHONY : nowcoder/武汉理工程序设计大赛/e.cpp.o
-
-nowcoder/武汉理工程序设计大赛/e.i: nowcoder/武汉理工程序设计大赛/e.cpp.i
-
-.PHONY : nowcoder/武汉理工程序设计大赛/e.i
-
-# target to preprocess a source file
-nowcoder/武汉理工程序设计大赛/e.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/武汉理工程序设计大赛/e.cpp.i
-.PHONY : nowcoder/武汉理工程序设计大赛/e.cpp.i
-
-nowcoder/武汉理工程序设计大赛/e.s: nowcoder/武汉理工程序设计大赛/e.cpp.s
-
-.PHONY : nowcoder/武汉理工程序设计大赛/e.s
-
-# target to generate assembly for a file
-nowcoder/武汉理工程序设计大赛/e.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/武汉理工程序设计大赛/e.cpp.s
-.PHONY : nowcoder/武汉理工程序设计大赛/e.cpp.s
-
 nowcoder/武汉理工程序设计大赛/h.o: nowcoder/武汉理工程序设计大赛/h.cpp.o
 
 .PHONY : nowcoder/武汉理工程序设计大赛/h.o
@@ -396,6 +369,33 @@ nowcoder/牛客周赛49/f.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛49/f.cpp.s
 .PHONY : nowcoder/牛客周赛49/f.cpp.s
 
+nowcoder/牛客小白月赛98/e.o: nowcoder/牛客小白月赛98/e.cpp.o
+
+.PHONY : nowcoder/牛客小白月赛98/e.o
+
+# target to build an object file
+nowcoder/牛客小白月赛98/e.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.o
+.PHONY : nowcoder/牛客小白月赛98/e.cpp.o
+
+nowcoder/牛客小白月赛98/e.i: nowcoder/牛客小白月赛98/e.cpp.i
+
+.PHONY : nowcoder/牛客小白月赛98/e.i
+
+# target to preprocess a source file
+nowcoder/牛客小白月赛98/e.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.i
+.PHONY : nowcoder/牛客小白月赛98/e.cpp.i
+
+nowcoder/牛客小白月赛98/e.s: nowcoder/牛客小白月赛98/e.cpp.s
+
+.PHONY : nowcoder/牛客小白月赛98/e.s
+
+# target to generate assembly for a file
+nowcoder/牛客小白月赛98/e.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.s
+.PHONY : nowcoder/牛客小白月赛98/e.cpp.s
+
 nowcoder/牛客练习赛127/b.o: nowcoder/牛客练习赛127/b.cpp.o
 
 .PHONY : nowcoder/牛客练习赛127/b.o
@@ -469,9 +469,6 @@ help:
 	@echo "... nowcoder/main.o"
 	@echo "... nowcoder/main.i"
 	@echo "... nowcoder/main.s"
-	@echo "... nowcoder/武汉理工程序设计大赛/e.o"
-	@echo "... nowcoder/武汉理工程序设计大赛/e.i"
-	@echo "... nowcoder/武汉理工程序设计大赛/e.s"
 	@echo "... nowcoder/武汉理工程序设计大赛/h.o"
 	@echo "... nowcoder/武汉理工程序设计大赛/h.i"
 	@echo "... nowcoder/武汉理工程序设计大赛/h.s"
@@ -484,6 +481,9 @@ help:
 	@echo "... nowcoder/牛客周赛49/f.o"
 	@echo "... nowcoder/牛客周赛49/f.i"
 	@echo "... nowcoder/牛客周赛49/f.s"
+	@echo "... nowcoder/牛客小白月赛98/e.o"
+	@echo "... nowcoder/牛客小白月赛98/e.i"
+	@echo "... nowcoder/牛客小白月赛98/e.s"
 	@echo "... nowcoder/牛客练习赛127/b.o"
 	@echo "... nowcoder/牛客练习赛127/b.i"
 	@echo "... nowcoder/牛客练习赛127/b.s"

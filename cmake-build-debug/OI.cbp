@@ -361,9 +361,6 @@
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/main.cpp">
 			<Option target="main"/>
 		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/武汉理工程序设计大赛/e.cpp">
-			<Option target="e"/>
-		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/武汉理工程序设计大赛/h.cpp">
 			<Option target="h"/>
 		</Unit>
@@ -375,6 +372,9 @@
 		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛49/f.cpp">
 			<Option target="f"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客小白月赛98/e.cpp">
+			<Option target="e"/>
 		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客练习赛127/b.cpp">
 			<Option target="b"/>

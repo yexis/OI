@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.17)
 project(OI)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 add_executable(main nowcoder/main.cpp)
 
-add_executable(e nowcoder/武汉理工程序设计大赛/e.cpp)
+add_executable(e nowcoder/牛客小白月赛98/e.cpp)
 add_executable(f nowcoder/牛客周赛49/f.cpp)
 add_executable(c nowcoder/牛客练习赛127/c.cpp)
 
