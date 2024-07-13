@@ -77,27 +77,27 @@ include CMakeFiles/e.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/e.dir/flags.make
 
-CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.o: CMakeFiles/e.dir/flags.make
-CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.o: ../nowcoder/牛客小白月赛98/e.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.o -c /Users/yex/CPP/OI/nowcoder/牛客小白月赛98/e.cpp
+CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.o: CMakeFiles/e.dir/flags.make
+CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.o: ../nowcoder/牛客周赛48/e.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.o -c /Users/yex/CPP/OI/nowcoder/牛客周赛48/e.cpp
 
-CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/牛客小白月赛98/e.cpp > CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.i
+CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/牛客周赛48/e.cpp > CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.i
 
-CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/牛客小白月赛98/e.cpp -o CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.s
+CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/牛客周赛48/e.cpp -o CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.s
 
 # Object files for target e
 e_OBJECTS = \
-"CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.o"
+"CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.o"
 
 # External object files for target e
 e_EXTERNAL_OBJECTS =
 
-e : CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.o
+e : CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.o
 e : CMakeFiles/e.dir/build.make
 e : CMakeFiles/e.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable e"

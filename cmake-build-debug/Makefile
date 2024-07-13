@@ -342,6 +342,33 @@ nowcoder/牛客周赛48/d.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛48/d.cpp.s
 .PHONY : nowcoder/牛客周赛48/d.cpp.s
 
+nowcoder/牛客周赛48/e.o: nowcoder/牛客周赛48/e.cpp.o
+
+.PHONY : nowcoder/牛客周赛48/e.o
+
+# target to build an object file
+nowcoder/牛客周赛48/e.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.o
+.PHONY : nowcoder/牛客周赛48/e.cpp.o
+
+nowcoder/牛客周赛48/e.i: nowcoder/牛客周赛48/e.cpp.i
+
+.PHONY : nowcoder/牛客周赛48/e.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛48/e.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.i
+.PHONY : nowcoder/牛客周赛48/e.cpp.i
+
+nowcoder/牛客周赛48/e.s: nowcoder/牛客周赛48/e.cpp.s
+
+.PHONY : nowcoder/牛客周赛48/e.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛48/e.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛48/e.cpp.s
+.PHONY : nowcoder/牛客周赛48/e.cpp.s
+
 nowcoder/牛客周赛49/f.o: nowcoder/牛客周赛49/f.cpp.o
 
 .PHONY : nowcoder/牛客周赛49/f.o
@@ -368,33 +395,6 @@ nowcoder/牛客周赛49/f.s: nowcoder/牛客周赛49/f.cpp.s
 nowcoder/牛客周赛49/f.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛49/f.cpp.s
 .PHONY : nowcoder/牛客周赛49/f.cpp.s
-
-nowcoder/牛客小白月赛98/e.o: nowcoder/牛客小白月赛98/e.cpp.o
-
-.PHONY : nowcoder/牛客小白月赛98/e.o
-
-# target to build an object file
-nowcoder/牛客小白月赛98/e.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.o
-.PHONY : nowcoder/牛客小白月赛98/e.cpp.o
-
-nowcoder/牛客小白月赛98/e.i: nowcoder/牛客小白月赛98/e.cpp.i
-
-.PHONY : nowcoder/牛客小白月赛98/e.i
-
-# target to preprocess a source file
-nowcoder/牛客小白月赛98/e.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.i
-.PHONY : nowcoder/牛客小白月赛98/e.cpp.i
-
-nowcoder/牛客小白月赛98/e.s: nowcoder/牛客小白月赛98/e.cpp.s
-
-.PHONY : nowcoder/牛客小白月赛98/e.s
-
-# target to generate assembly for a file
-nowcoder/牛客小白月赛98/e.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客小白月赛98/e.cpp.s
-.PHONY : nowcoder/牛客小白月赛98/e.cpp.s
 
 nowcoder/牛客练习赛127/b.o: nowcoder/牛客练习赛127/b.cpp.o
 
@@ -478,12 +478,12 @@ help:
 	@echo "... nowcoder/牛客周赛48/d.o"
 	@echo "... nowcoder/牛客周赛48/d.i"
 	@echo "... nowcoder/牛客周赛48/d.s"
+	@echo "... nowcoder/牛客周赛48/e.o"
+	@echo "... nowcoder/牛客周赛48/e.i"
+	@echo "... nowcoder/牛客周赛48/e.s"
 	@echo "... nowcoder/牛客周赛49/f.o"
 	@echo "... nowcoder/牛客周赛49/f.i"
 	@echo "... nowcoder/牛客周赛49/f.s"
-	@echo "... nowcoder/牛客小白月赛98/e.o"
-	@echo "... nowcoder/牛客小白月赛98/e.i"
-	@echo "... nowcoder/牛客小白月赛98/e.s"
 	@echo "... nowcoder/牛客练习赛127/b.o"
 	@echo "... nowcoder/牛客练习赛127/b.i"
 	@echo "... nowcoder/牛客练习赛127/b.s"
