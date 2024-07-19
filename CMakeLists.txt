@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(main nowcoder/main.cpp)
 
-add_executable(e nowcoder/牛客周赛48/e.cpp)
-add_executable(f nowcoder/牛客周赛49/f.cpp)
+add_executable(e nowcoder/牛客周赛51/e.cpp)
+add_executable(f nowcoder/牛客周赛51/f.cpp)
 add_executable(c nowcoder/牛客练习赛127/c.cpp)
 
 add_executable(b nowcoder/牛客练习赛127/b.cpp)
