@@ -51,8 +51,6 @@ int main() {
             mx = max(mx, g[i][j]);
         }
     }
-    cout << "ok" << "\n";
-
     auto valid = [&](int r, int c) {
         return r >= 0 && r < n && c >= 0 && c < n;
     };

@@ -39,34 +39,42 @@ using ull = unsigned long long;
 using pii = pair<int, int>;
 
 int main() {
+    int T;
+    cin >> T;
+    while (T--) {
+        ll a, b, n;
+        cin >> a >> b >> n;
+        ll s = 1ll * a * 2 + 1ll * b * 3;
+        if (s < 2ll * n) {
+            cout << "NO" << "\n";
+            continue;
+        }
+        if (1ll * a * 2 >= 2ll * n) {
+            cout << "YES" << "\n";
+            continue;
+        }
+
+        // b even
+        if (b & 1) b--;
+        ll sb = b * 3ll;
+
+        ll com = 2 * n;
+        while (com) {
+            if (com % 3 == 0 && (com / 3) % 2 == 0) {
+                break;
+            }
+            com--;
+        }
+        sb = min(sb, com);
+        ll sa = 2ll * n - sb;
+
+        if (2ll * a >= sa) {
+            cout << "YES" << "\n";
+        } else {
+            cout << "NO" << "\n";
+        }
+    }
+
 
     return 0;
 }
-//
-//import math
-//
-//# 辗转相除法求最大公约数
-//def gcd(a, b):
-//while b:
-//a, b = b, a % b
-//return a
-//
-//# 模拟长除法计算大数对小数的余数
-//        def mod_large_number(large_num_str, small_num):
-//remainder = 0
-//for digit in large_num_str:
-//remainder = (remainder * 10 + int(digit)) % small_num
-//return remainder
-//
-//# 读取输入
-//        a_str = input().strip()  # 读取大数 a 作为字符串
-//        b = int(input().strip())  # 读取整数 b
-//
-//# 计算大数 a 对 b 的余数
-//remainder_a = mod_large_number(a_str, b)
-//
-//# 计算最大公约数
-//result_gcd = gcd(remainder_a, b)
-//
-//# 输出结果
-//print(result_gcd)

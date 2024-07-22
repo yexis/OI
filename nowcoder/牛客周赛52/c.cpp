@@ -39,30 +39,45 @@ using ull = unsigned long long;
 using pii = pair<int, int>;
 
 int main() {
-    // C++打印doubl类型小数时，设置精度
-    cout << fixed << setprecision(10);
-    // 或者在打印的时候使用
-    // 默认保留小数点后6位有效数字
-    // printf("%lf\n", ans);
-    // 还可以自定义
-    // printf("%20lf\n", ans);
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    sort(a.begin(), a.end());
 
-    double x, y, t;
-    double a, b, c;
-    cin >> x >> y >> t;
-    cin >> a >> b >> c;
-    if (x == 100) {
-        printf("%lf\n", 0);
+    vector<int> b, c;
+    for (int i = 0; i < n; i++) {
+        if (a[i] >= 0) {
+            c.push_back(a[i]);
+        } else {
+            b.push_back(a[i]);
+        }
+    }
+
+    unordered_map<int, int> cnt;
+    for (auto& e : c) cnt[e]++;
+    for (auto& [k, v] : cnt) v &= 1;
+    c.resize(0);
+    for (auto& [k, v] : cnt) {
+        if (v) {
+            c.push_back(k);
+        }
+    }
+    sort(c.begin(), c.end());
+    int nn = b.size(), mm = c.size();
+    if (nn <= mm) {
+        cout << mm - nn << "\n";
         return 0;
     }
-
-    if (x <= t) {
-        // 超级充电
-        printf("%lf\n", (100 - x) / c);
+    // nn >= mm
+    nn -= mm;
+    if (nn & 1) {
+        cout << 1 << "\n";
     } else {
-        // x > t
-        double ans = min((100 - x) / b, (x - t) / y + (100 - t) / c);
-        printf("%lf\n", ans);
+        cout << 0 << "\n";
     }
+
     return 0;
 }
