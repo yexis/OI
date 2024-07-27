@@ -174,4 +174,70 @@ using pii = pair<int, int>;
 //    return 0;
 //}
 
-// 方法三：加点
+
+// 方法三：加点、虚拟点
+// 主要原理：对于每一列增加一个点，这个点c[j]到c[j]到j列的每个点距离都是0
+int main() {
+    int n, m;
+    cin >> n >> m;
+    vector<vector<char>> g(n, vector<char>(m));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> g[i][j];
+        }
+    }
+    vector<int> cost(m);
+    for (int i = 0; i < m; i++) {
+        cin >> cost[i];
+    }
+
+    auto valid = [&](int r, int c) {
+        return r >= 0 && r < n && c >= 0 && c < m;
+    };
+
+
+    vector<tuple<int, int, int>> path[n + 1][m];
+    int dir[4][2] ={{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (g[i][j] == '.') {
+                path[i][j].emplace_back(n, j, cost[j]);
+            } else {
+                path[i][j].emplace_back(n, j, 0);
+            }
+            path[n][j].emplace_back(i, j, 0);
+
+            for (int d = 0; d < 4; d++) {
+                int ni = i + dir[d][0];
+                int nj = j + dir[d][1];
+                if (!valid(ni, nj)) continue;
+                if (g[ni][nj] == '.') {
+                    path[i][j].emplace_back(ni, nj, 0);
+                } else {
+                    path[i][j].emplace_back(n, nj, cost[nj]);
+                }
+            }
+        }
+    }
+
+    priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<>> pq;
+    int dis[n + 1][m];
+    memset(dis, 0x3f, sizeof(dis));
+    pq.emplace(0, 0, 0);
+    dis[0][0] = 0;
+    while (pq.size()) {
+        auto [d, i, j] = pq.top();
+        pq.pop();
+        if (dis[i][j] < d) {
+            continue;
+        }
+        for (auto& [ni, nj, w] : path[i][j]) {
+            if (d + w < dis[ni][nj]) {
+                dis[ni][nj] = d + w;
+                pq.emplace(dis[ni][nj], ni, nj);
+            }
+        }
+    }
+    cout << dis[n - 1][m - 1] << "\n";
+    return 0;
+}
