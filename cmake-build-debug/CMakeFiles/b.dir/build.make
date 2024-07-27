@@ -77,27 +77,27 @@ include CMakeFiles/b.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/b.dir/flags.make
 
-CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.o: CMakeFiles/b.dir/flags.make
-CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.o: ../nowcoder/牛客周赛52/b.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.o -c /Users/yex/CPP/OI/nowcoder/牛客周赛52/b.cpp
+CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.o: CMakeFiles/b.dir/flags.make
+CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.o: ../luogu/梦熊周赛\ 提高组2/b.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.o -c "/Users/yex/CPP/OI/luogu/梦熊周赛 提高组2/b.cpp"
 
-CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/牛客周赛52/b.cpp > CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.i
+CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/yex/CPP/OI/luogu/梦熊周赛 提高组2/b.cpp" > CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.i
 
-CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/牛客周赛52/b.cpp -o CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.s
+CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/yex/CPP/OI/luogu/梦熊周赛 提高组2/b.cpp" -o CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.s
 
 # Object files for target b
 b_OBJECTS = \
-"CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.o"
+"CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.o"
 
 # External object files for target b
 b_EXTERNAL_OBJECTS =
 
-b : CMakeFiles/b.dir/nowcoder/牛客周赛52/b.cpp.o
+b : CMakeFiles/b.dir/luogu/梦熊周赛_提高组2/b.cpp.o
 b : CMakeFiles/b.dir/build.make
 b : CMakeFiles/b.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable b"

@@ -37,6 +37,46 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="a">
+				<Option output="/Users/yex/CPP/OI/cmake-build-debug/a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 a"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="a/fast">
+				<Option output="/Users/yex/CPP/OI/cmake-build-debug/a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 a/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/yex/CPP/OI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="k">
 				<Option output="/Users/yex/CPP/OI/cmake-build-debug/k" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/yex/CPP/OI/cmake-build-debug"/>
@@ -358,6 +398,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/yex/CPP/OI/luogu/梦熊周赛 提高组2/a.cpp">
+			<Option target="a"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/luogu/梦熊周赛 提高组2/b.cpp">
+			<Option target="b"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/luogu/梦熊周赛 提高组2/c.cpp">
+			<Option target="c"/>
+		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/main.cpp">
 			<Option target="main"/>
 		</Unit>
@@ -367,20 +416,14 @@
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/武汉理工程序设计大赛/k.cpp">
 			<Option target="k"/>
 		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛51/f.cpp">
-			<Option target="f"/>
-		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛52/b.cpp">
-			<Option target="b"/>
-		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛52/c.cpp">
-			<Option target="c"/>
-		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛52/d.cpp">
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛47-vp/d.cpp">
 			<Option target="d"/>
 		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛52/e.cpp">
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛47-vp/e.cpp">
 			<Option target="e"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛47-vp/f.cpp">
+			<Option target="f"/>
 		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
