@@ -58,6 +58,7 @@ int main() {
     vector<multiset<int>> md(n);
     // mp[u]:记录所有子节点的最大深度
     vector<multiset<int>> mp(n);
+    // 统计以上4个信息
     auto dfs1 = [&](auto&& dfs1, int u, int o) -> int {
         int ans = 0, max_p = 0;
         for (auto& v : g[u]) {
@@ -89,6 +90,7 @@ int main() {
             int du = d[u], pu = p[u];
             int dv = d[v], pv = p[v];
 
+            // 进入子节点前的准备
             md[u].erase(md[u].find(dv));
             mp[u].erase(mp[u].find(pv));
             p[u] = (mp[u].size() ? 1 + *mp[u].rbegin() : 0);
@@ -100,8 +102,10 @@ int main() {
             d[v] = max(d[v], p[v] + p[u] + 1);
             p[v] = max(p[v], p[u] + 1);
 
+            // dfs，进入子节点
             dfs2(dfs2, v, u);
 
+            // 恢复现场
             d[v] = dv, p[v] = pv;
             md[v].erase(md[v].find(d[u]));
             mp[v].erase(mp[v].find(p[u]));
