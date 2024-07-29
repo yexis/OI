@@ -70,7 +70,7 @@ int main() {
                 if (!valid(ni, nj)) continue;
                 if (g[ni][nj] == 'X') {
                     if (v == 0 && lim != -1) {
-                        if (dis[ni][nj][1] < dis[i][j][v] + 1) {
+                        if (dis[ni][nj][1] < inf) {
                             continue;
                         }
                         dis[ni][nj][1] = dis[i][j][v] + 1;
@@ -79,7 +79,7 @@ int main() {
 
                     }
                 } else {
-                    if (dis[ni][nj][v] < dis[i][j][v] + 1) {
+                    if (dis[ni][nj][v] < inf) {
                         continue;
                     }
                     dis[ni][nj][v] = dis[i][j][v] + 1;
