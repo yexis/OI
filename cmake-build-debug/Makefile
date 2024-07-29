@@ -76,17 +76,6 @@ CMAKE_BINARY_DIR = /Users/yex/CPP/OI/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -97,6 +86,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -131,6 +131,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named h
+
+# Build rule for target.
+h : cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 h
+.PHONY : h
+
+# fast build rule for target.
+h/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/h.dir/build.make CMakeFiles/h.dir/build
+.PHONY : h/fast
+
+#=============================================================================
+# Target rules for targets named g
+
+# Build rule for target.
+g : cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 g
+.PHONY : g
+
+# fast build rule for target.
+g/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/build
+.PHONY : g/fast
+
+#=============================================================================
 # Target rules for targets named a
 
 # Build rule for target.
@@ -155,19 +181,6 @@ k : cmake_check_build_system
 k/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/k.dir/build.make CMakeFiles/k.dir/build
 .PHONY : k/fast
-
-#=============================================================================
-# Target rules for targets named h
-
-# Build rule for target.
-h : cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 h
-.PHONY : h
-
-# fast build rule for target.
-h/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/h.dir/build.make CMakeFiles/h.dir/build
-.PHONY : h/fast
 
 #=============================================================================
 # Target rules for targets named b
@@ -463,32 +476,59 @@ nowcoder/牛客周赛47-vp/e.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛47-vp/e.cpp.s
 .PHONY : nowcoder/牛客周赛47-vp/e.cpp.s
 
-nowcoder/牛客周赛47-vp/f.o: nowcoder/牛客周赛47-vp/f.cpp.o
+nowcoder/牛客周赛53/f.o: nowcoder/牛客周赛53/f.cpp.o
 
-.PHONY : nowcoder/牛客周赛47-vp/f.o
+.PHONY : nowcoder/牛客周赛53/f.o
 
 # target to build an object file
-nowcoder/牛客周赛47-vp/f.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛47-vp/f.cpp.o
-.PHONY : nowcoder/牛客周赛47-vp/f.cpp.o
+nowcoder/牛客周赛53/f.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛53/f.cpp.o
+.PHONY : nowcoder/牛客周赛53/f.cpp.o
 
-nowcoder/牛客周赛47-vp/f.i: nowcoder/牛客周赛47-vp/f.cpp.i
+nowcoder/牛客周赛53/f.i: nowcoder/牛客周赛53/f.cpp.i
 
-.PHONY : nowcoder/牛客周赛47-vp/f.i
+.PHONY : nowcoder/牛客周赛53/f.i
 
 # target to preprocess a source file
-nowcoder/牛客周赛47-vp/f.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛47-vp/f.cpp.i
-.PHONY : nowcoder/牛客周赛47-vp/f.cpp.i
+nowcoder/牛客周赛53/f.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛53/f.cpp.i
+.PHONY : nowcoder/牛客周赛53/f.cpp.i
 
-nowcoder/牛客周赛47-vp/f.s: nowcoder/牛客周赛47-vp/f.cpp.s
+nowcoder/牛客周赛53/f.s: nowcoder/牛客周赛53/f.cpp.s
 
-.PHONY : nowcoder/牛客周赛47-vp/f.s
+.PHONY : nowcoder/牛客周赛53/f.s
 
 # target to generate assembly for a file
-nowcoder/牛客周赛47-vp/f.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛47-vp/f.cpp.s
-.PHONY : nowcoder/牛客周赛47-vp/f.cpp.s
+nowcoder/牛客周赛53/f.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛53/f.cpp.s
+.PHONY : nowcoder/牛客周赛53/f.cpp.s
+
+nowcoder/牛客周赛53/g.o: nowcoder/牛客周赛53/g.cpp.o
+
+.PHONY : nowcoder/牛客周赛53/g.o
+
+# target to build an object file
+nowcoder/牛客周赛53/g.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/nowcoder/牛客周赛53/g.cpp.o
+.PHONY : nowcoder/牛客周赛53/g.cpp.o
+
+nowcoder/牛客周赛53/g.i: nowcoder/牛客周赛53/g.cpp.i
+
+.PHONY : nowcoder/牛客周赛53/g.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛53/g.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/nowcoder/牛客周赛53/g.cpp.i
+.PHONY : nowcoder/牛客周赛53/g.cpp.i
+
+nowcoder/牛客周赛53/g.s: nowcoder/牛客周赛53/g.cpp.s
+
+.PHONY : nowcoder/牛客周赛53/g.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛53/g.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/nowcoder/牛客周赛53/g.cpp.s
+.PHONY : nowcoder/牛客周赛53/g.cpp.s
 
 # Help Target
 help:
@@ -504,6 +544,7 @@ help:
 	@echo "... d"
 	@echo "... e"
 	@echo "... f"
+	@echo "... g"
 	@echo "... h"
 	@echo "... k"
 	@echo "... main"
@@ -531,9 +572,12 @@ help:
 	@echo "... nowcoder/牛客周赛47-vp/e.o"
 	@echo "... nowcoder/牛客周赛47-vp/e.i"
 	@echo "... nowcoder/牛客周赛47-vp/e.s"
-	@echo "... nowcoder/牛客周赛47-vp/f.o"
-	@echo "... nowcoder/牛客周赛47-vp/f.i"
-	@echo "... nowcoder/牛客周赛47-vp/f.s"
+	@echo "... nowcoder/牛客周赛53/f.o"
+	@echo "... nowcoder/牛客周赛53/f.i"
+	@echo "... nowcoder/牛客周赛53/f.s"
+	@echo "... nowcoder/牛客周赛53/g.o"
+	@echo "... nowcoder/牛客周赛53/g.i"
+	@echo "... nowcoder/牛客周赛53/g.s"
 .PHONY : help
 
 
