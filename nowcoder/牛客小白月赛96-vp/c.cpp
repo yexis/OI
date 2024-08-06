@@ -56,33 +56,23 @@ int main() {
     for (int i = 0; i < n; i++) {
         sum[i + 1] = sum[i] + a[i];
     }
-    auto bs = [&](ll l, ll r, int i) {
-        ll pos = -1;
-        while (l <= r) {
-            int mid = (l + r) >> 1;
-            if (sum[mid + 1] - sum[i] > sum[n] - sum[mid + 1]) {
-                pos = mid;
-                r = mid - 1;
-            } else {
-                l = mid + 1;
-            }
-        }
-        return pos;
-    };
 
     ll ans = 0;
     for (int i = 0; i + 2 < n; i++) {
-        int i2 = upper_bound(sum.begin(), sum.end(), 2ll * sum[i + 1]) - sum.begin();
+        int i2 = lower_bound(sum.begin() + 1, sum.end(), -1, [&](const auto& aa, const auto& bb) {
+            // lower_bound:返回第一个不满足的条件
+            // 例如：a < b，则返回第一个 >=a 的位置
+            return aa - sum[i + 1] <= sum[i + 1];
+        }) - sum.begin();
         if (i2 == sum.size()) {
             continue;
         }
-        i2--;
 
-        int i3 = bs(i2, sum.size() - 1, i + 1);
-        if (i3 == -1 || i3 >= n - 1) {
-            continue;
-        }
-        ans += n - 1 - i3;
+        int i3 = lower_bound(sum.begin() + i2, sum.end(), -1, [&](const auto& aa, const auto& bb) {
+            // 第一个不满足的条件
+            return aa - sum[i + 1] <= sum[n] - aa;
+        }) - sum.begin();
+        ans += max(0, n - i3);
     }
     cout << ans << "\n";
     return 0;
