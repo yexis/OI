@@ -58,21 +58,25 @@ int main() {
     }
 
     ll ans = 0;
-    for (int i = 0; i + 2 < n; i++) {
+    for (int i = 0; i < n; i++) {
         int i2 = lower_bound(sum.begin() + 1, sum.end(), -1, [&](const auto& aa, const auto& bb) {
             // lower_bound:返回第一个不满足的条件
             // 例如：a < b，则返回第一个 >=a 的位置
             return aa - sum[i + 1] <= sum[i + 1];
         }) - sum.begin();
-        if (i2 == sum.size()) {
-            continue;
+        // 第3部分没有位置了
+        if (i2 >= n) {
+            break;
         }
 
-        int i3 = lower_bound(sum.begin() + i2, sum.end(), -1, [&](const auto& aa, const auto& bb) {
-            // 第一个不满足的条件
+        int i22 = lower_bound(sum.begin() + i2, sum.end(), -1, [&](const auto& aa, const auto& bb) {
             return aa - sum[i + 1] <= sum[n] - aa;
         }) - sum.begin();
-        ans += max(0, n - i3);
+        // 第n个位置必须留给第3部分，所以i22必须小于n
+        if (i22 >= n) {
+            break;
+        }
+        ans += n - i22;
     }
     cout << ans << "\n";
     return 0;
