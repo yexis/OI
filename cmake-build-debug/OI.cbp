@@ -413,16 +413,16 @@
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/武汉理工程序设计大赛/k.cpp">
 			<Option target="k"/>
 		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛47-vp/d.cpp">
-			<Option target="d"/>
-		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛53/f.cpp">
 			<Option target="f"/>
 		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛53/g.cpp">
 			<Option target="g"/>
 		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客小白月赛96-vp/e.cpp">
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛55/d.cpp">
+			<Option target="d"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛55/e.cpp">
 			<Option target="e"/>
 		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/CMakeLists.txt">

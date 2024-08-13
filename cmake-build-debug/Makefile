@@ -382,33 +382,6 @@ nowcoder/武汉理工程序设计大赛/k.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/k.dir/build.make CMakeFiles/k.dir/nowcoder/武汉理工程序设计大赛/k.cpp.s
 .PHONY : nowcoder/武汉理工程序设计大赛/k.cpp.s
 
-nowcoder/牛客周赛47-vp/d.o: nowcoder/牛客周赛47-vp/d.cpp.o
-
-.PHONY : nowcoder/牛客周赛47-vp/d.o
-
-# target to build an object file
-nowcoder/牛客周赛47-vp/d.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛47-vp/d.cpp.o
-.PHONY : nowcoder/牛客周赛47-vp/d.cpp.o
-
-nowcoder/牛客周赛47-vp/d.i: nowcoder/牛客周赛47-vp/d.cpp.i
-
-.PHONY : nowcoder/牛客周赛47-vp/d.i
-
-# target to preprocess a source file
-nowcoder/牛客周赛47-vp/d.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛47-vp/d.cpp.i
-.PHONY : nowcoder/牛客周赛47-vp/d.cpp.i
-
-nowcoder/牛客周赛47-vp/d.s: nowcoder/牛客周赛47-vp/d.cpp.s
-
-.PHONY : nowcoder/牛客周赛47-vp/d.s
-
-# target to generate assembly for a file
-nowcoder/牛客周赛47-vp/d.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛47-vp/d.cpp.s
-.PHONY : nowcoder/牛客周赛47-vp/d.cpp.s
-
 nowcoder/牛客周赛53/f.o: nowcoder/牛客周赛53/f.cpp.o
 
 .PHONY : nowcoder/牛客周赛53/f.o
@@ -463,32 +436,59 @@ nowcoder/牛客周赛53/g.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/nowcoder/牛客周赛53/g.cpp.s
 .PHONY : nowcoder/牛客周赛53/g.cpp.s
 
-nowcoder/牛客小白月赛96-vp/e.o: nowcoder/牛客小白月赛96-vp/e.cpp.o
+nowcoder/牛客周赛55/d.o: nowcoder/牛客周赛55/d.cpp.o
 
-.PHONY : nowcoder/牛客小白月赛96-vp/e.o
+.PHONY : nowcoder/牛客周赛55/d.o
 
 # target to build an object file
-nowcoder/牛客小白月赛96-vp/e.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客小白月赛96-vp/e.cpp.o
-.PHONY : nowcoder/牛客小白月赛96-vp/e.cpp.o
+nowcoder/牛客周赛55/d.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛55/d.cpp.o
+.PHONY : nowcoder/牛客周赛55/d.cpp.o
 
-nowcoder/牛客小白月赛96-vp/e.i: nowcoder/牛客小白月赛96-vp/e.cpp.i
+nowcoder/牛客周赛55/d.i: nowcoder/牛客周赛55/d.cpp.i
 
-.PHONY : nowcoder/牛客小白月赛96-vp/e.i
+.PHONY : nowcoder/牛客周赛55/d.i
 
 # target to preprocess a source file
-nowcoder/牛客小白月赛96-vp/e.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客小白月赛96-vp/e.cpp.i
-.PHONY : nowcoder/牛客小白月赛96-vp/e.cpp.i
+nowcoder/牛客周赛55/d.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛55/d.cpp.i
+.PHONY : nowcoder/牛客周赛55/d.cpp.i
 
-nowcoder/牛客小白月赛96-vp/e.s: nowcoder/牛客小白月赛96-vp/e.cpp.s
+nowcoder/牛客周赛55/d.s: nowcoder/牛客周赛55/d.cpp.s
 
-.PHONY : nowcoder/牛客小白月赛96-vp/e.s
+.PHONY : nowcoder/牛客周赛55/d.s
 
 # target to generate assembly for a file
-nowcoder/牛客小白月赛96-vp/e.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客小白月赛96-vp/e.cpp.s
-.PHONY : nowcoder/牛客小白月赛96-vp/e.cpp.s
+nowcoder/牛客周赛55/d.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛55/d.cpp.s
+.PHONY : nowcoder/牛客周赛55/d.cpp.s
+
+nowcoder/牛客周赛55/e.o: nowcoder/牛客周赛55/e.cpp.o
+
+.PHONY : nowcoder/牛客周赛55/e.o
+
+# target to build an object file
+nowcoder/牛客周赛55/e.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛55/e.cpp.o
+.PHONY : nowcoder/牛客周赛55/e.cpp.o
+
+nowcoder/牛客周赛55/e.i: nowcoder/牛客周赛55/e.cpp.i
+
+.PHONY : nowcoder/牛客周赛55/e.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛55/e.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛55/e.cpp.i
+.PHONY : nowcoder/牛客周赛55/e.cpp.i
+
+nowcoder/牛客周赛55/e.s: nowcoder/牛客周赛55/e.cpp.s
+
+.PHONY : nowcoder/牛客周赛55/e.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛55/e.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛55/e.cpp.s
+.PHONY : nowcoder/牛客周赛55/e.cpp.s
 
 # Help Target
 help:
@@ -522,18 +522,18 @@ help:
 	@echo "... nowcoder/武汉理工程序设计大赛/k.o"
 	@echo "... nowcoder/武汉理工程序设计大赛/k.i"
 	@echo "... nowcoder/武汉理工程序设计大赛/k.s"
-	@echo "... nowcoder/牛客周赛47-vp/d.o"
-	@echo "... nowcoder/牛客周赛47-vp/d.i"
-	@echo "... nowcoder/牛客周赛47-vp/d.s"
 	@echo "... nowcoder/牛客周赛53/f.o"
 	@echo "... nowcoder/牛客周赛53/f.i"
 	@echo "... nowcoder/牛客周赛53/f.s"
 	@echo "... nowcoder/牛客周赛53/g.o"
 	@echo "... nowcoder/牛客周赛53/g.i"
 	@echo "... nowcoder/牛客周赛53/g.s"
-	@echo "... nowcoder/牛客小白月赛96-vp/e.o"
-	@echo "... nowcoder/牛客小白月赛96-vp/e.i"
-	@echo "... nowcoder/牛客小白月赛96-vp/e.s"
+	@echo "... nowcoder/牛客周赛55/d.o"
+	@echo "... nowcoder/牛客周赛55/d.i"
+	@echo "... nowcoder/牛客周赛55/d.s"
+	@echo "... nowcoder/牛客周赛55/e.o"
+	@echo "... nowcoder/牛客周赛55/e.i"
+	@echo "... nowcoder/牛客周赛55/e.s"
 .PHONY : help
 
 
