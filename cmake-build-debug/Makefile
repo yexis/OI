@@ -247,33 +247,6 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-luogu/梦熊周赛_提高组2/a.o: luogu/梦熊周赛_提高组2/a.cpp.o
-
-.PHONY : luogu/梦熊周赛_提高组2/a.o
-
-# target to build an object file
-luogu/梦熊周赛_提高组2/a.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.o
-.PHONY : luogu/梦熊周赛_提高组2/a.cpp.o
-
-luogu/梦熊周赛_提高组2/a.i: luogu/梦熊周赛_提高组2/a.cpp.i
-
-.PHONY : luogu/梦熊周赛_提高组2/a.i
-
-# target to preprocess a source file
-luogu/梦熊周赛_提高组2/a.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.i
-.PHONY : luogu/梦熊周赛_提高组2/a.cpp.i
-
-luogu/梦熊周赛_提高组2/a.s: luogu/梦熊周赛_提高组2/a.cpp.s
-
-.PHONY : luogu/梦熊周赛_提高组2/a.s
-
-# target to generate assembly for a file
-luogu/梦熊周赛_提高组2/a.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.s
-.PHONY : luogu/梦熊周赛_提高组2/a.cpp.s
-
 luogu/梦熊周赛_提高组2/b.o: luogu/梦熊周赛_提高组2/b.cpp.o
 
 .PHONY : luogu/梦熊周赛_提高组2/b.o
@@ -327,6 +300,33 @@ luogu/梦熊周赛_提高组2/c.s: luogu/梦熊周赛_提高组2/c.cpp.s
 luogu/梦熊周赛_提高组2/c.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/luogu/梦熊周赛_提高组2/c.cpp.s
 .PHONY : luogu/梦熊周赛_提高组2/c.cpp.s
+
+luogu/熊梦周赛_S3/a.o: luogu/熊梦周赛_S3/a.cpp.o
+
+.PHONY : luogu/熊梦周赛_S3/a.o
+
+# target to build an object file
+luogu/熊梦周赛_S3/a.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.o
+.PHONY : luogu/熊梦周赛_S3/a.cpp.o
+
+luogu/熊梦周赛_S3/a.i: luogu/熊梦周赛_S3/a.cpp.i
+
+.PHONY : luogu/熊梦周赛_S3/a.i
+
+# target to preprocess a source file
+luogu/熊梦周赛_S3/a.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.i
+.PHONY : luogu/熊梦周赛_S3/a.cpp.i
+
+luogu/熊梦周赛_S3/a.s: luogu/熊梦周赛_S3/a.cpp.s
+
+.PHONY : luogu/熊梦周赛_S3/a.s
+
+# target to generate assembly for a file
+luogu/熊梦周赛_S3/a.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.s
+.PHONY : luogu/熊梦周赛_S3/a.cpp.s
 
 nowcoder/main.o: nowcoder/main.cpp.o
 
@@ -507,15 +507,15 @@ help:
 	@echo "... g"
 	@echo "... k"
 	@echo "... main"
-	@echo "... luogu/梦熊周赛_提高组2/a.o"
-	@echo "... luogu/梦熊周赛_提高组2/a.i"
-	@echo "... luogu/梦熊周赛_提高组2/a.s"
 	@echo "... luogu/梦熊周赛_提高组2/b.o"
 	@echo "... luogu/梦熊周赛_提高组2/b.i"
 	@echo "... luogu/梦熊周赛_提高组2/b.s"
 	@echo "... luogu/梦熊周赛_提高组2/c.o"
 	@echo "... luogu/梦熊周赛_提高组2/c.i"
 	@echo "... luogu/梦熊周赛_提高组2/c.s"
+	@echo "... luogu/熊梦周赛_S3/a.o"
+	@echo "... luogu/熊梦周赛_S3/a.i"
+	@echo "... luogu/熊梦周赛_S3/a.s"
 	@echo "... nowcoder/main.o"
 	@echo "... nowcoder/main.i"
 	@echo "... nowcoder/main.s"

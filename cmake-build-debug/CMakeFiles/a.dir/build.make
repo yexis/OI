@@ -77,27 +77,27 @@ include CMakeFiles/a.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/a.dir/flags.make
 
-CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.o: CMakeFiles/a.dir/flags.make
-CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.o: ../luogu/梦熊周赛\ 提高组2/a.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.o -c "/Users/yex/CPP/OI/luogu/梦熊周赛 提高组2/a.cpp"
+CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.o: CMakeFiles/a.dir/flags.make
+CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.o: ../luogu/熊梦周赛\ S3/a.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.o -c "/Users/yex/CPP/OI/luogu/熊梦周赛 S3/a.cpp"
 
-CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/yex/CPP/OI/luogu/梦熊周赛 提高组2/a.cpp" > CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.i
+CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/yex/CPP/OI/luogu/熊梦周赛 S3/a.cpp" > CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.i
 
-CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/yex/CPP/OI/luogu/梦熊周赛 提高组2/a.cpp" -o CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.s
+CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/yex/CPP/OI/luogu/熊梦周赛 S3/a.cpp" -o CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.s
 
 # Object files for target a
 a_OBJECTS = \
-"CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.o"
+"CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.o"
 
 # External object files for target a
 a_EXTERNAL_OBJECTS =
 
-a : CMakeFiles/a.dir/luogu/梦熊周赛_提高组2/a.cpp.o
+a : CMakeFiles/a.dir/luogu/熊梦周赛_S3/a.cpp.o
 a : CMakeFiles/a.dir/build.make
 a : CMakeFiles/a.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable a"
