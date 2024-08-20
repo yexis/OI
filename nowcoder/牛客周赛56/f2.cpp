@@ -44,7 +44,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
 
-// 1. 字符串 双hash解法
+// 2. 字符串 双hash解法
 // 双hash pass
 using ull = unsigned long long;
 constexpr static int N = 1e6 + 5;
