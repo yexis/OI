@@ -73,15 +73,17 @@ CMAKE_BINARY_DIR = /Users/yex/CPP/OI/cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/main.dir/all
+all: CMakeFiles/f3.dir/all
 all: CMakeFiles/g.dir/all
 all: CMakeFiles/a.dir/all
+all: CMakeFiles/f2.dir/all
 all: CMakeFiles/k.dir/all
 all: CMakeFiles/b.dir/all
 all: CMakeFiles/c.dir/all
 all: CMakeFiles/f.dir/all
 all: CMakeFiles/e.dir/all
 all: CMakeFiles/d.dir/all
-all: CMakeFiles/main.dir/all
 
 .PHONY : all
 
@@ -91,17 +93,73 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/f3.dir/clean
 clean: CMakeFiles/g.dir/clean
 clean: CMakeFiles/a.dir/clean
+clean: CMakeFiles/f2.dir/clean
 clean: CMakeFiles/k.dir/clean
 clean: CMakeFiles/b.dir/clean
 clean: CMakeFiles/c.dir/clean
 clean: CMakeFiles/f.dir/clean
 clean: CMakeFiles/e.dir/clean
 clean: CMakeFiles/d.dir/clean
-clean: CMakeFiles/main.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/main.dir
+
+# All Build rule for target.
+CMakeFiles/main.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=21,22 "Built target main"
+.PHONY : CMakeFiles/main.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# clean rule for target.
+CMakeFiles/main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/f3.dir
+
+# All Build rule for target.
+CMakeFiles/f3.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3.dir/build.make CMakeFiles/f3.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3.dir/build.make CMakeFiles/f3.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target f3"
+.PHONY : CMakeFiles/f3.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/f3.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/f3.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/f3.dir/rule
+
+# Convenience name for target.
+f3: CMakeFiles/f3.dir/rule
+
+.PHONY : f3
+
+# clean rule for target.
+CMakeFiles/f3.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3.dir/build.make CMakeFiles/f3.dir/clean
+.PHONY : CMakeFiles/f3.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/g.dir
@@ -110,7 +168,7 @@ clean: CMakeFiles/main.dir/clean
 CMakeFiles/g.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target g"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=17,18 "Built target g"
 .PHONY : CMakeFiles/g.dir/all
 
 # Build rule for subdir invocation for target.
@@ -158,13 +216,40 @@ CMakeFiles/a.dir/clean:
 .PHONY : CMakeFiles/a.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/f2.dir
+
+# All Build rule for target.
+CMakeFiles/f2.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f2.dir/build.make CMakeFiles/f2.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f2.dir/build.make CMakeFiles/f2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target f2"
+.PHONY : CMakeFiles/f2.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/f2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/f2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/f2.dir/rule
+
+# Convenience name for target.
+f2: CMakeFiles/f2.dir/rule
+
+.PHONY : f2
+
+# clean rule for target.
+CMakeFiles/f2.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f2.dir/build.make CMakeFiles/f2.dir/clean
+.PHONY : CMakeFiles/f2.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/k.dir
 
 # All Build rule for target.
 CMakeFiles/k.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/k.dir/build.make CMakeFiles/k.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/k.dir/build.make CMakeFiles/k.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target k"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=19,20 "Built target k"
 .PHONY : CMakeFiles/k.dir/all
 
 # Build rule for subdir invocation for target.
@@ -318,33 +403,6 @@ d : CMakeFiles/d.dir/rule
 CMakeFiles/d.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/clean
 .PHONY : CMakeFiles/d.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/main.dir
-
-# All Build rule for target.
-CMakeFiles/main.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=17,18 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
-
-# Convenience name for target.
-main: CMakeFiles/main.dir/rule
-
-.PHONY : main
-
-# clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

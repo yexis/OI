@@ -76,17 +76,6 @@ CMAKE_BINARY_DIR = /Users/yex/CPP/OI/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -97,6 +86,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -131,6 +131,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named f3
+
+# Build rule for target.
+f3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 f3
+.PHONY : f3
+
+# fast build rule for target.
+f3/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3.dir/build.make CMakeFiles/f3.dir/build
+.PHONY : f3/fast
+
+#=============================================================================
 # Target rules for targets named g
 
 # Build rule for target.
@@ -155,6 +181,19 @@ a : cmake_check_build_system
 a/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/build
 .PHONY : a/fast
+
+#=============================================================================
+# Target rules for targets named f2
+
+# Build rule for target.
+f2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 f2
+.PHONY : f2
+
+# fast build rule for target.
+f2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f2.dir/build.make CMakeFiles/f2.dir/build
+.PHONY : f2/fast
 
 #=============================================================================
 # Target rules for targets named k
@@ -233,19 +272,6 @@ d : cmake_check_build_system
 d/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/build
 .PHONY : d/fast
-
-#=============================================================================
-# Target rules for targets named main
-
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
 
 luogu/梦熊周赛_提高组2/b.o: luogu/梦熊周赛_提高组2/b.cpp.o
 
@@ -382,33 +408,6 @@ nowcoder/武汉理工程序设计大赛/k.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/k.dir/build.make CMakeFiles/k.dir/nowcoder/武汉理工程序设计大赛/k.cpp.s
 .PHONY : nowcoder/武汉理工程序设计大赛/k.cpp.s
 
-nowcoder/牛客周赛53/f.o: nowcoder/牛客周赛53/f.cpp.o
-
-.PHONY : nowcoder/牛客周赛53/f.o
-
-# target to build an object file
-nowcoder/牛客周赛53/f.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛53/f.cpp.o
-.PHONY : nowcoder/牛客周赛53/f.cpp.o
-
-nowcoder/牛客周赛53/f.i: nowcoder/牛客周赛53/f.cpp.i
-
-.PHONY : nowcoder/牛客周赛53/f.i
-
-# target to preprocess a source file
-nowcoder/牛客周赛53/f.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛53/f.cpp.i
-.PHONY : nowcoder/牛客周赛53/f.cpp.i
-
-nowcoder/牛客周赛53/f.s: nowcoder/牛客周赛53/f.cpp.s
-
-.PHONY : nowcoder/牛客周赛53/f.s
-
-# target to generate assembly for a file
-nowcoder/牛客周赛53/f.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛53/f.cpp.s
-.PHONY : nowcoder/牛客周赛53/f.cpp.s
-
 nowcoder/牛客周赛53/g.o: nowcoder/牛客周赛53/g.cpp.o
 
 .PHONY : nowcoder/牛客周赛53/g.o
@@ -463,32 +462,113 @@ nowcoder/牛客周赛55/d.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客周赛55/d.cpp.s
 .PHONY : nowcoder/牛客周赛55/d.cpp.s
 
-nowcoder/牛客周赛55/e.o: nowcoder/牛客周赛55/e.cpp.o
+nowcoder/牛客周赛56/e.o: nowcoder/牛客周赛56/e.cpp.o
 
-.PHONY : nowcoder/牛客周赛55/e.o
+.PHONY : nowcoder/牛客周赛56/e.o
 
 # target to build an object file
-nowcoder/牛客周赛55/e.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛55/e.cpp.o
-.PHONY : nowcoder/牛客周赛55/e.cpp.o
+nowcoder/牛客周赛56/e.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛56/e.cpp.o
+.PHONY : nowcoder/牛客周赛56/e.cpp.o
 
-nowcoder/牛客周赛55/e.i: nowcoder/牛客周赛55/e.cpp.i
+nowcoder/牛客周赛56/e.i: nowcoder/牛客周赛56/e.cpp.i
 
-.PHONY : nowcoder/牛客周赛55/e.i
+.PHONY : nowcoder/牛客周赛56/e.i
 
 # target to preprocess a source file
-nowcoder/牛客周赛55/e.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛55/e.cpp.i
-.PHONY : nowcoder/牛客周赛55/e.cpp.i
+nowcoder/牛客周赛56/e.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛56/e.cpp.i
+.PHONY : nowcoder/牛客周赛56/e.cpp.i
 
-nowcoder/牛客周赛55/e.s: nowcoder/牛客周赛55/e.cpp.s
+nowcoder/牛客周赛56/e.s: nowcoder/牛客周赛56/e.cpp.s
 
-.PHONY : nowcoder/牛客周赛55/e.s
+.PHONY : nowcoder/牛客周赛56/e.s
 
 # target to generate assembly for a file
-nowcoder/牛客周赛55/e.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛55/e.cpp.s
-.PHONY : nowcoder/牛客周赛55/e.cpp.s
+nowcoder/牛客周赛56/e.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛56/e.cpp.s
+.PHONY : nowcoder/牛客周赛56/e.cpp.s
+
+nowcoder/牛客周赛56/f.o: nowcoder/牛客周赛56/f.cpp.o
+
+.PHONY : nowcoder/牛客周赛56/f.o
+
+# target to build an object file
+nowcoder/牛客周赛56/f.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛56/f.cpp.o
+.PHONY : nowcoder/牛客周赛56/f.cpp.o
+
+nowcoder/牛客周赛56/f.i: nowcoder/牛客周赛56/f.cpp.i
+
+.PHONY : nowcoder/牛客周赛56/f.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛56/f.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛56/f.cpp.i
+.PHONY : nowcoder/牛客周赛56/f.cpp.i
+
+nowcoder/牛客周赛56/f.s: nowcoder/牛客周赛56/f.cpp.s
+
+.PHONY : nowcoder/牛客周赛56/f.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛56/f.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛56/f.cpp.s
+.PHONY : nowcoder/牛客周赛56/f.cpp.s
+
+nowcoder/牛客周赛56/f2.o: nowcoder/牛客周赛56/f2.cpp.o
+
+.PHONY : nowcoder/牛客周赛56/f2.o
+
+# target to build an object file
+nowcoder/牛客周赛56/f2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f2.dir/build.make CMakeFiles/f2.dir/nowcoder/牛客周赛56/f2.cpp.o
+.PHONY : nowcoder/牛客周赛56/f2.cpp.o
+
+nowcoder/牛客周赛56/f2.i: nowcoder/牛客周赛56/f2.cpp.i
+
+.PHONY : nowcoder/牛客周赛56/f2.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛56/f2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f2.dir/build.make CMakeFiles/f2.dir/nowcoder/牛客周赛56/f2.cpp.i
+.PHONY : nowcoder/牛客周赛56/f2.cpp.i
+
+nowcoder/牛客周赛56/f2.s: nowcoder/牛客周赛56/f2.cpp.s
+
+.PHONY : nowcoder/牛客周赛56/f2.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛56/f2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f2.dir/build.make CMakeFiles/f2.dir/nowcoder/牛客周赛56/f2.cpp.s
+.PHONY : nowcoder/牛客周赛56/f2.cpp.s
+
+nowcoder/牛客周赛56/f3.o: nowcoder/牛客周赛56/f3.cpp.o
+
+.PHONY : nowcoder/牛客周赛56/f3.o
+
+# target to build an object file
+nowcoder/牛客周赛56/f3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3.dir/build.make CMakeFiles/f3.dir/nowcoder/牛客周赛56/f3.cpp.o
+.PHONY : nowcoder/牛客周赛56/f3.cpp.o
+
+nowcoder/牛客周赛56/f3.i: nowcoder/牛客周赛56/f3.cpp.i
+
+.PHONY : nowcoder/牛客周赛56/f3.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛56/f3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3.dir/build.make CMakeFiles/f3.dir/nowcoder/牛客周赛56/f3.cpp.i
+.PHONY : nowcoder/牛客周赛56/f3.cpp.i
+
+nowcoder/牛客周赛56/f3.s: nowcoder/牛客周赛56/f3.cpp.s
+
+.PHONY : nowcoder/牛客周赛56/f3.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛56/f3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3.dir/build.make CMakeFiles/f3.dir/nowcoder/牛客周赛56/f3.cpp.s
+.PHONY : nowcoder/牛客周赛56/f3.cpp.s
 
 # Help Target
 help:
@@ -504,6 +584,8 @@ help:
 	@echo "... d"
 	@echo "... e"
 	@echo "... f"
+	@echo "... f2"
+	@echo "... f3"
 	@echo "... g"
 	@echo "... k"
 	@echo "... main"
@@ -522,18 +604,24 @@ help:
 	@echo "... nowcoder/武汉理工程序设计大赛/k.o"
 	@echo "... nowcoder/武汉理工程序设计大赛/k.i"
 	@echo "... nowcoder/武汉理工程序设计大赛/k.s"
-	@echo "... nowcoder/牛客周赛53/f.o"
-	@echo "... nowcoder/牛客周赛53/f.i"
-	@echo "... nowcoder/牛客周赛53/f.s"
 	@echo "... nowcoder/牛客周赛53/g.o"
 	@echo "... nowcoder/牛客周赛53/g.i"
 	@echo "... nowcoder/牛客周赛53/g.s"
 	@echo "... nowcoder/牛客周赛55/d.o"
 	@echo "... nowcoder/牛客周赛55/d.i"
 	@echo "... nowcoder/牛客周赛55/d.s"
-	@echo "... nowcoder/牛客周赛55/e.o"
-	@echo "... nowcoder/牛客周赛55/e.i"
-	@echo "... nowcoder/牛客周赛55/e.s"
+	@echo "... nowcoder/牛客周赛56/e.o"
+	@echo "... nowcoder/牛客周赛56/e.i"
+	@echo "... nowcoder/牛客周赛56/e.s"
+	@echo "... nowcoder/牛客周赛56/f.o"
+	@echo "... nowcoder/牛客周赛56/f.i"
+	@echo "... nowcoder/牛客周赛56/f.s"
+	@echo "... nowcoder/牛客周赛56/f2.o"
+	@echo "... nowcoder/牛客周赛56/f2.i"
+	@echo "... nowcoder/牛客周赛56/f2.s"
+	@echo "... nowcoder/牛客周赛56/f3.o"
+	@echo "... nowcoder/牛客周赛56/f3.i"
+	@echo "... nowcoder/牛客周赛56/f3.s"
 .PHONY : help
 
 
