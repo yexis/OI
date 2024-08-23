@@ -496,9 +496,6 @@
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛53/g.cpp">
 			<Option target="g"/>
 		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛55/d.cpp">
-			<Option target="d"/>
-		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛56/e.cpp">
 			<Option target="e"/>
 		</Unit>
@@ -510,6 +507,9 @@
 		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛56/f3.cpp">
 			<Option target="f3"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客小白月赛99/d.cpp">
+			<Option target="d"/>
 		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
