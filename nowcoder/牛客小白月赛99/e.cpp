@@ -37,20 +37,6 @@ using ll = long long;
 using ull = unsigned long long;
 using pii = pair<int, int>;
 
-// 2^0 = 1
-// 2^10 = 10000000000
-/*
- * | : 记录所有出现的1的位
- * & : 记录每一位都是1的位
- *
- * 第i位是1在[l,r]中出现过，但不能每个数的第i位都是1
- *
- * [k1, k2 - 1] 任意以为是1都可以
- * 1 :0
- * 1 2: 3
- * 1 2 5: 7
- */
-
 void solve() {
     int n, m;
     cin >> n >> m;
