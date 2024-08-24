@@ -29,15 +29,16 @@
 #include <random>
 #include <ctime>
 #include <limits>
-
 using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
+/*
+ * 质数筛、埃式筛、欧拉筛
+*/
 
 using ll = long long;
 using ull = unsigned long long;
 using pii = pair<int, int>;
-
-const int N = 1e6;
+const int N = 3e6;
 bool fg = false;
 vector<int> prime;
 bool not_prime[N + 1];

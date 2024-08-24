@@ -29,10 +29,12 @@
 #include <random>
 #include <ctime>
 #include <limits>
-
 using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 
+/*
+ * 区间合并、二分
+*/
 using ll = long long;
 using ull = unsigned long long;
 using pii = pair<int, int>;
