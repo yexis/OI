@@ -37,22 +37,27 @@ using ll = long long;
 using ull = unsigned long long;
 using pii = pair<int, int>;
 
-const int N = 4e6;
-vector<int> prime;
-bool is_prime[N];
+const int N = 1e6;
 bool fg = false;
+vector<int> prime;
+bool not_prime[N + 1];
 
-void init(int n) {
-    is_prime[0] = is_prime[1] = false;
-    for (int i = 2; i <= n; ++i) is_prime[i] = true;
-    for (int i = 2; i <= n; ++i) {
-        if (is_prime[i]) {
+// 欧拉筛
+void init() {
+    for (int i = 2; i <= N; ++i) {
+        if (!not_prime[i]) {
             prime.push_back(i);
-            if ((long long)i * i > n) continue;
-            for (int j = i * i; j <= n; j += i)
-                // 因为从 2 到 i - 1 的倍数我们之前筛过了，这里直接从 i
-                // 的倍数开始，提高了运行速度
-                is_prime[j] = false;  // 是 i 的倍数的均不是素数
+        }
+        for (int p : prime) {
+            if (i * p > N) break;
+            not_prime[i * p] = true;
+            if (i % p == 0) {
+                // i % p == 0
+                // 换言之，i 之前被 p 筛过了
+                // 由于 prime 里面质数是从小到大的，所以 i 乘上其他的质数的结果一定会被 p 的倍数筛掉
+                // 就不需要在这里先筛一次，所以这里直接 break 掉就好了
+                break;
+            }
         }
     }
 }
@@ -84,8 +89,9 @@ void solve() {
 
 int main() {
     if (!fg) {
-        init(N);
+        init();
     }
+    cout << prime.size() << "\n";
 
     int T;
     cin >> T;

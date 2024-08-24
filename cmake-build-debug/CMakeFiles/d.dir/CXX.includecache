@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/yex/CPP/OI/nowcoder/牛客周赛55/d.cpp
+/Users/yex/CPP/OI/nowcoder/牛客小白月赛99/d.cpp
 iostream
 -
 vector
@@ -68,7 +68,5 @@ random
 ctime
 -
 limits
--
-climits
 -
 
