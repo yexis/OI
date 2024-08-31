@@ -29,48 +29,44 @@
 #include <random>
 #include <ctime>
 #include <limits>
-#include <climits>
 
 using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 
-/*
- * 
-*/
-
 using ll = long long;
 using ull = unsigned long long;
 using pii = pair<int, int>;
-using pli = pair<ll, int>;
-using pil = pair<int, ll>;
-using pll = pair<ll, ll>;
-using puu = pair<ull, ull>;
-const int dir[4][2] = {{-1, 0},
-                       {1,  0},
-                       {0,  -1},
-                       {0,  1}};
-const int INF = 0x3f3f3f3f;
-const int mod = 1e9 + 7;
-
-ll power(ll x, ll b) {
-    ll ans = 1;
-    while (b) {
-        if (b & 1) {
-            ans *= x;
-            ans %= mod;
-        }
-        x *= x;
-        x %= mod;
-        b >>= 1;
-    }
-    return ans;
-}
-
-void solve() {
-
-}
 
 int main() {
+    int n;
+    string s;
+    cin >> n;
+    cin >> s;
+    vector<ll> f(n);
+    vector<int> see(26);
+    vector<int> cnt(26);
+    for (int i = 0; i < n; i++) {
+        int d = s[i] - 'a';
+        cnt[d]++;
+        if(i - 1 >= 0) f[i] = f[i - 1];
+        if (not see[d]) {
+            f[i] += 1;
+        }
+        see[d] = true;
+    }
 
+    ll ans = 0;
+    vector<int> se(26);
+    for (int i = n - 1; i >= 0; i--) {
+        int d = s[i] - 'a';
+        if (not se[d]) {
+            ans += f[i];
+        }
+        se[d] = true;
+    }
+    for (int d = 0; d < 26; d++) {
+        if (cnt[d] > 1) ans++;
+    }
+    cout << ans << "\n";
     return 0;
 }

@@ -481,9 +481,6 @@
 		<Unit filename="/Users/yex/CPP/OI/luogu/梦熊周赛 提高组2/b.cpp">
 			<Option target="b"/>
 		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/luogu/梦熊周赛 提高组2/c.cpp">
-			<Option target="c"/>
-		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/luogu/熊梦周赛 S3/a.cpp">
 			<Option target="a"/>
 		</Unit>
@@ -493,14 +490,8 @@
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/武汉理工程序设计大赛/k.cpp">
 			<Option target="k"/>
 		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛53/g.cpp">
-			<Option target="g"/>
-		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛56/e.cpp">
 			<Option target="e"/>
-		</Unit>
-		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛56/f.cpp">
-			<Option target="f"/>
 		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛56/f2.cpp">
 			<Option target="f2"/>
@@ -508,8 +499,17 @@
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛56/f3.cpp">
 			<Option target="f3"/>
 		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛57/f.cpp">
+			<Option target="f"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客周赛57/g.cpp">
+			<Option target="g"/>
+		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客小白月赛99/d.cpp">
 			<Option target="d"/>
+		</Unit>
+		<Unit filename="/Users/yex/CPP/OI/nowcoder/牛客挑战赛76/c.cpp">
+			<Option target="c"/>
 		</Unit>
 		<Unit filename="/Users/yex/CPP/OI/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

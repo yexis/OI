@@ -52,25 +52,24 @@ const int dir[4][2] = {{-1, 0},
 const int INF = 0x3f3f3f3f;
 const int mod = 1e9 + 7;
 
-ll power(ll x, ll b) {
-    ll ans = 1;
-    while (b) {
-        if (b & 1) {
-            ans *= x;
-            ans %= mod;
-        }
-        x *= x;
-        x %= mod;
-        b >>= 1;
-    }
-    return ans;
-}
-
 void solve() {
 
 }
 
 int main() {
-
+    int n;
+    cin >> n;
+    string co;
+    cin >> co;
+    int ans = 0;
+    for (int i = 0; i < n - 1; i++) {
+        int x, y;
+        cin >> x >> y;
+        x--, y--;
+        if (co[x] == co[y]) {
+            ans++;
+        }
+    }
+    cout << ans << "\n";
     return 0;
 }
