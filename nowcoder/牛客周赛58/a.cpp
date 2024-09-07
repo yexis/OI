@@ -51,8 +51,6 @@ const int dir[4][2] = {{-1, 0},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
 const int mod = 1e9 + 7;
-const string YES = "YES";
-const string NO = "NO";
 
 ll power(ll x, ll b) {
     ll ans = 1;
@@ -73,6 +71,13 @@ void solve() {
 }
 
 int main() {
-
+    double w;
+    double h;
+    cin >> w >> h;
+    if (h > w) {
+        cout << "YES" << "\n";
+    } else {
+        cout << "NO" << "\n";
+    }
     return 0;
 }
