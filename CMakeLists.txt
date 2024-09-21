@@ -20,3 +20,4 @@ add_executable(g nowcoder/牛客周赛57/g.cpp)
 
 add_executable(f2 nowcoder/牛客周赛56/f2.cpp)
 add_executable(f3 nowcoder/牛客周赛56/f3.cpp)
+add_executable(P1989 luogu/daily/P1989.cpp)

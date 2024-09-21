@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named P1989
+
+# Build rule for target.
+P1989: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 P1989
+.PHONY : P1989
+
+# fast build rule for target.
+P1989/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P1989.dir/build.make CMakeFiles/P1989.dir/build
+.PHONY : P1989/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -272,6 +285,33 @@ d : cmake_check_build_system
 d/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/build
 .PHONY : d/fast
+
+luogu/daily/P1989.o: luogu/daily/P1989.cpp.o
+
+.PHONY : luogu/daily/P1989.o
+
+# target to build an object file
+luogu/daily/P1989.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P1989.dir/build.make CMakeFiles/P1989.dir/luogu/daily/P1989.cpp.o
+.PHONY : luogu/daily/P1989.cpp.o
+
+luogu/daily/P1989.i: luogu/daily/P1989.cpp.i
+
+.PHONY : luogu/daily/P1989.i
+
+# target to preprocess a source file
+luogu/daily/P1989.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P1989.dir/build.make CMakeFiles/P1989.dir/luogu/daily/P1989.cpp.i
+.PHONY : luogu/daily/P1989.cpp.i
+
+luogu/daily/P1989.s: luogu/daily/P1989.cpp.s
+
+.PHONY : luogu/daily/P1989.s
+
+# target to generate assembly for a file
+luogu/daily/P1989.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/P1989.dir/build.make CMakeFiles/P1989.dir/luogu/daily/P1989.cpp.s
+.PHONY : luogu/daily/P1989.cpp.s
 
 luogu/梦熊周赛_提高组2/b.o: luogu/梦熊周赛_提高组2/b.cpp.o
 
@@ -578,6 +618,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... P1989"
 	@echo "... a"
 	@echo "... b"
 	@echo "... c"
@@ -589,6 +630,9 @@ help:
 	@echo "... g"
 	@echo "... k"
 	@echo "... main"
+	@echo "... luogu/daily/P1989.o"
+	@echo "... luogu/daily/P1989.i"
+	@echo "... luogu/daily/P1989.s"
 	@echo "... luogu/梦熊周赛_提高组2/b.o"
 	@echo "... luogu/梦熊周赛_提高组2/b.i"
 	@echo "... luogu/梦熊周赛_提高组2/b.s"

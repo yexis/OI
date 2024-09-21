@@ -1,4 +1,5 @@
 /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/P1989.dir
 /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/main.dir
 /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/f3.dir
 /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/g.dir
