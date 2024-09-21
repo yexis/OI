@@ -68,6 +68,7 @@ ll power(ll x, ll b) {
     return ans;
 }
 
+
 void solve() {
     int n;
     cin >> n;
@@ -98,6 +99,31 @@ void solve() {
         t++;
     }
 
+    cout << "Cool!" << "\n";
+}
+
+// 方法一:
+// 维护区间[1,x]，表示可以被表示的区间
+// 分情况讨论：
+// 如果 a_i > x + 1: 说明 x + 1 无法被表示
+// 如果 a_i <= x + 1: 说明[1, x + a_i]可被表示，则更新x
+void solve_() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    sort(a.begin(), a.end());
+    ll sum = 0;
+    for (int i : a) {
+        if (i > sum + 1 && sum < n) {
+            cout << sum + 1 << "\n";
+            return;
+        }
+        sum += i;
+    }
+    if (sum < n) {
+        cout << sum + 1 << "\n";
+        return;
+    }
     cout << "Cool!" << "\n";
 }
 
