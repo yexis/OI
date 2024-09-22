@@ -82,13 +82,12 @@ void solve() {
         cout << a << " " << b << " ";
         ll ans = 0;
         // mid
-        int st = (b + a) / 2 - a;
-        ans = 2 * (st + 1) * st / 2;
-        if (l % 2 == 0) ans -= st;
+        int st = (b + a) / 2;
+        ans += cal(a, st) + cal(st + 1, b);
         // left
-        ans += (a - 1) * a / 2;
+        ans += cal(1, a);
         // right
-        ans += (n - b + 1) * (n - b) / 2;
+        ans += cal(b, n);
         cout << ans << "\n";
         return;
     }

@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/d.dir/nowcoder/牛客周赛58/d.cpp.o"
+  "CMakeFiles/d.dir/nowcoder/牛客周赛61/d.cpp.o"
   "d"
   "d.pdb"
 )

@@ -12,7 +12,7 @@ add_executable(c nowcoder/牛客挑战赛76/c.cpp)
 add_executable(b "luogu/梦熊周赛 提高组2/b.cpp")
 add_executable(k nowcoder/武汉理工程序设计大赛/k.cpp)
 
-add_executable(d nowcoder/牛客周赛58/d.cpp)
+add_executable(d nowcoder/牛客周赛61/d.cpp)
 
 add_executable(a "luogu/熊梦周赛 S3/a.cpp")
 
