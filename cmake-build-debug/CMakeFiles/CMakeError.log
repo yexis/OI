@@ -10,13 +10,127 @@ clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
+Compiler: /usr/local/bin/g++-14 
 Build flags: 
 Id flags:  
 
 The output was:
 1
-ld: library not found for -lc++
-clang: error: linker command failed with exit code 1 (use -v to see invocation)
+clang (LLVM option parsing): Unknown command line argument '-x86-pad-for-align=false'.  Try: 'clang (LLVM option parsing) --help'
+clang (LLVM option parsing): Did you mean '--x86-slh-loads=false'?
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/local/bin/g++-14 
+Build flags: 
+Id flags: -c 
+
+The output was:
+1
+clang (LLVM option parsing): Unknown command line argument '-x86-pad-for-align=false'.  Try: 'clang (LLVM option parsing) --help'
+clang (LLVM option parsing): Did you mean '--x86-slh-loads=false'?
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/local/bin/g++-14 
+Build flags: 
+Id flags: --c++ 
+
+The output was:
+1
+g++-14: error: unrecognized command-line option '--c++'
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/local/bin/g++-14 
+Build flags: 
+Id flags: --ec++ 
+
+The output was:
+1
+g++-14: error: unrecognized command-line option '--ec++'; did you mean '-Weffc++'?
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/local/bin/g++-14 
+Build flags: 
+Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+
+The output was:
+1
+g++-14: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+g++-14: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/local/bin/g++-14 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+clang (LLVM option parsing): Unknown command line argument '-x86-pad-for-align=false'.  Try: 'clang (LLVM option parsing) --help'
+clang (LLVM option parsing): Did you mean '--x86-slh-loads=false'?
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/local/bin/g++-14 
+Build flags: 
+Id flags: -c 
+
+The output was:
+1
+clang (LLVM option parsing): Unknown command line argument '-x86-pad-for-align=false'.  Try: 'clang (LLVM option parsing) --help'
+clang (LLVM option parsing): Did you mean '--x86-slh-loads=false'?
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/local/bin/g++-14 
+Build flags: 
+Id flags: --c++ 
+
+The output was:
+1
+g++-14: error: unrecognized command-line option '--c++'
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/local/bin/g++-14 
+Build flags: 
+Id flags: --ec++ 
+
+The output was:
+1
+g++-14: error: unrecognized command-line option '--ec++'; did you mean '-Weffc++'?
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/local/bin/g++-14 
+Build flags: 
+Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+
+The output was:
+1
+g++-14: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+g++-14: error: unrecognized command-line option '--target=arm-arm-none-eabi'
+
+
+Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+g++-14: fatal error: no input files
+compilation terminated.
+Checking whether the CXX compiler is IAR using "" did not match "IAR .+ Compiler":
+g++-14: fatal error: no input files
+compilation terminated.
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4d1c4/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4d1c4.dir/build.make CMakeFiles/cmTC_4d1c4.dir/build
+Building CXX object CMakeFiles/cmTC_4d1c4.dir/testCXXCompiler.cxx.o
+/usr/local/bin/g++-14     -o CMakeFiles/cmTC_4d1c4.dir/testCXXCompiler.cxx.o -c /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+clang (LLVM option parsing): Unknown command line argument '-x86-pad-for-align=false'.  Try: 'clang (LLVM option parsing) --help'
+clang (LLVM option parsing): Did you mean '--x86-slh-loads=false'?
+make[1]: *** [CMakeFiles/cmTC_4d1c4.dir/testCXXCompiler.cxx.o] Error 1
+make: *** [cmTC_4d1c4/fast] Error 2
+
 
 
