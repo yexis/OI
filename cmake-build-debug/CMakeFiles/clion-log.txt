@@ -1,42 +1,4 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -D CMAKE_CXX_COMPILER=/usr/local/bin/g++-14 -G "CodeBlocks - Unix Makefiles" /Users/yex/CPP/OI
--- The C compiler identification is AppleClang 12.0.0.12000032
--- The CXX compiler identification is unknown
--- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
--- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: /usr/local/bin/g++-14
--- Check for working CXX compiler: /usr/local/bin/g++-14 - broken
-CMake Error at /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.17/Modules/CMakeTestCXXCompiler.cmake:53 (message):
-  The C++ compiler
-
-    "/usr/local/bin/g++-14"
-
-  is not able to compile a simple test program.
-
-  It fails with the following output:
-
-    Change Dir: /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/CMakeTmp
-    
-    Run Build Command(s):/usr/bin/make cmTC_4d1c4/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4d1c4.dir/build.make CMakeFiles/cmTC_4d1c4.dir/build
-    Building CXX object CMakeFiles/cmTC_4d1c4.dir/testCXXCompiler.cxx.o
-    /usr/local/bin/g++-14     -o CMakeFiles/cmTC_4d1c4.dir/testCXXCompiler.cxx.o -c /Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-    clang (LLVM option parsing): Unknown command line argument '-x86-pad-for-align=false'.  Try: 'clang (LLVM option parsing) --help'
-    clang (LLVM option parsing): Did you mean '--x86-slh-loads=false'?
-    make[1]: *** [CMakeFiles/cmTC_4d1c4.dir/testCXXCompiler.cxx.o] Error 1
-    make: *** [cmTC_4d1c4/fast] Error 2
-    
-    
-
-  
-
-  CMake will not be able to correctly generate this project.
-Call Stack (most recent call first):
-  CMakeLists.txt:3 (project)
-
-
--- Configuring incomplete, errors occurred!
-See also "/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/CMakeOutput.log".
-See also "/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles/CMakeError.log".
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/yex/CPP/OI/cmake-build-debug

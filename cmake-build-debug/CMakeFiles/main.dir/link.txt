@@ -1,0 +1,1 @@
+/usr/local/bin/g++-14  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/main.dir/nowcoder/main.cpp.o  -o main 

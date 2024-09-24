@@ -28,13 +28,27 @@
 #include <functional>
 #include <random>
 #include <ctime>
+#include <bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/hash_policy.hpp>
+using namespace __gnu_pbds;
 
 using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 
+template<class KT, class VT = null_type>
+using RBTree = tree<KT, VT, std::less<KT>, rb_tree_tag, tree_order_statistics_node_update>;
+
+void solve() {
+    RBTree<int> t;
+    t.insert(1);
+    cout << t.order_of_key(1) << "\n";
+}
+
 int main() {
-    for (int i = 0; i < 50000; i++) {
-        cout << 'a';
+    int T = 1;
+    while (T--) {
+        solve();
     }
     return 0;
 }
