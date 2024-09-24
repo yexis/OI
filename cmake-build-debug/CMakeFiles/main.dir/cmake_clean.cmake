@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/main.dir/nowcoder/main.cpp.o"
+  "CMakeFiles/main.dir/nowcoder/main.cpp.o.d"
   "main"
   "main.pdb"
 )

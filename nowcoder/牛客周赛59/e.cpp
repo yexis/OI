@@ -69,10 +69,49 @@ ll power(ll x, ll b) {
 }
 
 void solve() {
+    int n;
+    cin >> n;
+    vector<vector<int>> g(n, vector<int>(n));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cin >> g[i][j];
+        }
+    }
 
+    auto cal1 = [&](int i, int j) {
+        return (i - j + n) % n;
+    };
+    auto cal2 = [&](int i, int j) {
+        return (i + j) % n;
+    };
+
+    int sum = 0;
+    vector<int> b(n), c(n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (g[i][j]) {
+                sum++;
+                b[cal1(i, j)]++;
+                c[cal2(i, j)]++;
+            }
+        }
+    }
+
+    int ans = n * n;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            int bb = cal1(i, j);
+            int cc = cal2(i, j + n - 1);
+            // n为奇数的时候，两条对角线会存在交点
+            // 当左上角为(i,j)时，交点坐标为(i + n / 2, j + n / 2)
+            int cur = b[bb] + c[cc] - n % 2 * (g[(i + n / 2) % n][(j + n / 2) % n] == 1);
+            ans = min(ans, sum - cur + 2 * n - n % 2 - cur);
+        }
+    }
+    cout << ans << "\n";
 }
 
 int main() {
-
+    solve();
     return 0;
 }

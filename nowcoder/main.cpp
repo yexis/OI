@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <string.h>
+#include <string>
 #include <algorithm>
 #include <numeric>
 #include <set>
