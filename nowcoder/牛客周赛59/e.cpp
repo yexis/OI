@@ -34,10 +34,6 @@
 using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 
-/*
- * 
-*/
-
 using ll = long long;
 using ull = unsigned long long;
 using pii = pair<int, int>;
@@ -67,6 +63,30 @@ ll power(ll x, ll b) {
     }
     return ans;
 }
+
+/*
+ * 小红的X型矩阵
+ * 循环右移和循环下移是什么意思？
+ * 将矩阵g分表向右和向下复制一份，得到 g * 4
+ *
+ * 例如g =
+ * 1 0 1
+ * 0 1 0
+ * 1 0 0
+ * 变成g4 =
+ * 1 0 1 1 0 1
+ * 0 1 0 0 1 0
+ * 1 0 0 1 0 0
+ * 1 0 1 1 0 1
+ * 0 1 0 0 1 0
+ * 1 0 1 1 0 1
+ *
+ * 1. 循环右移和循环下移 可以转化成 矩阵的左上角(x0, y0)可以矩阵g4中任意移动
+ * 2. 现在考虑当以任意一点(x,y)为左上角时，两条对角线上的点有什么规律吗？
+ *   2.1 左上->右下 这条对角线上的点(x,y)满足 (x - y + n) % n = c，其中c为定值
+ *   2.2 右上->左下 这条对角线上的点(x,y)满足 (x + y) % n = d，其中d为定值
+ * 3. 当n为奇数时，两条对角线会产生一条交点，交点坐标为( (x + n / 2) % n, y + (n / 2) % n)
+*/
 
 void solve() {
     int n;
