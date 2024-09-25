@@ -71,15 +71,47 @@ ll power(ll x, ll b) {
 void solve() {
     ll s, n, k;
     cin >> s >> n >> k;
-//     if (n == 0) {
-//         cout << NO << "\n";
-//         return;
-//     }
 
-//     if (n < k) {
-//         cout << NO << "\n";
-//         return;
-//     }
+    if (n < k) {
+        cout << NO << "\n";
+        return;
+    }
+
+    if (k == 0) {
+        if (s < n) {
+            cout << NO << "\n";
+            return;
+        }
+
+        // s >= n
+        cout << YES << "\n";
+        while (n > 1) {
+            cout << 1 << " ";
+            n--;
+            s--;
+        }
+        cout << s << "\n";
+        return;
+    }
+
+    if (k == 1) {
+        if (s == 1) {
+            cout << NO << "\n";
+            return;
+        }
+
+        if (n == 1 && s != 0) {
+            cout << NO << "\n";
+            return;
+        }
+        cout << YES << "\n";
+        while (n > 1) {
+            cout << 0 << " ";
+            n--;
+        }
+        cout << s << "\n";
+        return;
+    }
 
     // k >= 2
     // n > k
@@ -94,61 +126,19 @@ void solve() {
         return;
     }
 
-//     if (k == 0) {
-//         if (s < n) {
-//             cout << NO << "\n";
-//             return;
-//         }
-
-//         cout << YES << "\n";
-//         while (n > 1) {
-//             cout << 1 << " ";
-//             n--;
-//             s--;
-//         }
-//         cout << s << "\n";
-//         return;
-//     }
-
-//     if (k == 1) {
-//         if (s == 1) {
-//             cout << NO << "\n";
-//             return;
-//         }
-
-//         cout << YES << "\n";
-//         while (n > 1) {
-//             cout << 0 << " ";
-//             n--;
-//         }
-//         cout << s << "\n";
-//         return;
-//     }
-
     if (n > 0) {
         if (s > k || s < k) {
-            if (k != 0) {
-                a.push_back(s);
+            a.push_back(s);
+            n--;
+            while (n) {
+                a.push_back(0);
                 n--;
-                while (n) {
-                    a.push_back(0);
-                    n--;
-                }
-            } else {
-                // k == 0
-                while (n > 1) {
-                    a.push_back(1);
-                    s--;
-                    n--;
-                }
-                a.push_back(s);
             }
         } else if (s == k) {
             if (n < 2) {
                 cout << NO << "\n";
                 return;
             }
-
             a.push_back(1);
             a.push_back(k - 1);
             n -= 2;
@@ -158,7 +148,7 @@ void solve() {
             }
         }
     } else {
-        if (s > 0) {
+        if (s != 0) {
             cout << NO << "\n";
             return;
         }
