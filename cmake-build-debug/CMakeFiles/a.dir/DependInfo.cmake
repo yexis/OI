@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/yex/CPP/OI/nowcoder/牛客周赛61/a.cpp" "CMakeFiles/a.dir/nowcoder/牛客周赛61/a.cpp.o" "gcc" "CMakeFiles/a.dir/nowcoder/牛客周赛61/a.cpp.o.d"
+  "/Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.cpp" "CMakeFiles/a.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.cpp.o" "gcc" "CMakeFiles/a.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

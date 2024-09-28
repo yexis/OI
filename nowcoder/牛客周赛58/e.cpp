@@ -1,76 +1,41 @@
-#include <iostream>
-#include <vector>
-#include <string.h>
-#include <algorithm>
-#include <numeric>
-#include <set>
-#include <array>
-#include <cassert>
-#include <cstdio>
-#include <cstring>
-#include <iostream>
-#include <iomanip>
-#include <string>
-#include <sstream>
-#include <vector>
-#include <queue>
-#include <stack>
-#include <list>
-#include <set>
-#include <map>
-#include <unordered_set>
-#include <unordered_map>
-#include <algorithm>
-#include <complex>
-#include <cmath>
-#include <numeric>
-#include <bitset>
-#include <functional>
-#include <random>
-#include <ctime>
-#include <limits>
-#include <climits>
+#include <bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/hash_policy.hpp>
+using namespace __gnu_pbds;
 
 using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 
+template<class KT, class VT = null_type>
+using RBTree = tree<KT, VT, std::less<KT>, rb_tree_tag, tree_order_statistics_node_update>;
+
 /*
- * 
-*/
-
-using ll = long long;
-using ull = unsigned long long;
-using pii = pair<int, int>;
-using pli = pair<ll, int>;
-using pil = pair<int, ll>;
-using pll = pair<ll, ll>;
-using puu = pair<ull, ull>;
-const int dir[4][2] = {{-1, 0},
-                       {1,  0},
-                       {0,  -1},
-                       {0,  1}};
-const int INF = 0x3f3f3f3f;
-const int mod = 1e9 + 7;
-
-ll power(ll x, ll b) {
-    ll ans = 1;
-    while (b) {
-        if (b & 1) {
-            ans *= x;
-            ans %= mod;
-        }
-        x *= x;
-        x %= mod;
-        b >>= 1;
-    }
-    return ans;
-}
-
+ * index: 1   2   3   4   5
+          0   0   0   0   0
+          0   0   0   0   4
+          0   0   0   3   3
+          0   0   2   2   2
+          0   1   1   1   1 or 5 (这里还能取5的原因是，a_5已经是最后一个元素，所以a_i不用满足a_i<i这个条件)
+ */
 void solve() {
-
+    int n, m;
+    cin >> n >> m;
+    if (m == 1) {
+        cout << n + 1 << "\n";
+    } else if (m == 2) {
+        cout << n << "\n";
+    } else if (m == 3) {
+        cout << 1 << "\n";
+    } else {
+        cout << 0 << "\n";
+    }
 }
 
 int main() {
-
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
     return 0;
 }

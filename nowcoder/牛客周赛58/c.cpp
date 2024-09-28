@@ -122,11 +122,27 @@ void solve() {
     return;
 }
 
+void solve2() {
+    int x, y;
+    cin >> x >> y;
+    if (x < 0 || y < 0) {
+        cout << "PING" << "\n";
+        return;
+    }
+    if (abs(x - y) > 1) {
+        cout << "PING" << "\n";
+    } else if (x == y) {
+        cout << "NO" << "\n";
+    } else {
+        cout << "YES" << "\n";
+    }
+}
+
 int main() {
     int T;
     cin >> T;
     while (T--) {
-        solve();
+        solve2();
     }
     return 0;
 }

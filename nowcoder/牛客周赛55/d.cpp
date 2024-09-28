@@ -84,13 +84,6 @@ int main() {
             }
         }
     }
-//    for (int i = 0; i < n * n; i++) {
-//        cout << "i:" << i << "\n";
-//        for (auto& v : nei[i]) {
-//            cout << v << " ";
-//        }
-//        cout << "\n";
-//    }
 
     auto check = [&](int r, int c) {
         return r >= 0 && r < n && c >= 0 && c < n;
