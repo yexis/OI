@@ -69,28 +69,28 @@ include CMakeFiles/c.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/c.dir/flags.make
 
-CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o: CMakeFiles/c.dir/flags.make
-CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o: /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp
-CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o: CMakeFiles/c.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o -MF CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o.d -o CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o -c /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp
+CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o: CMakeFiles/c.dir/flags.make
+CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o: /Users/yex/CPP/OI/nowcoder/牛客周赛63/c.cpp
+CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o: CMakeFiles/c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o"
+	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o -MF CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o.d -o CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o -c /Users/yex/CPP/OI/nowcoder/牛客周赛63/c.cpp
 
-CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.i"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp > CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.i
+CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.i"
+	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/牛客周赛63/c.cpp > CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.i
 
-CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.s"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp -o CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.s
+CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.s"
+	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/牛客周赛63/c.cpp -o CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.s
 
 # Object files for target c
 c_OBJECTS = \
-"CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o"
+"CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o"
 
 # External object files for target c
 c_EXTERNAL_OBJECTS =
 
-c : CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o
+c : CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o
 c : CMakeFiles/c.dir/build.make
 c : CMakeFiles/c.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable c"

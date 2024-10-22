@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/e.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.o"
-  "CMakeFiles/e.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.o.d"
+  "CMakeFiles/e.dir/nowcoder/牛客周赛63/e.cpp.o"
+  "CMakeFiles/e.dir/nowcoder/牛客周赛63/e.cpp.o.d"
   "e"
   "e.pdb"
 )

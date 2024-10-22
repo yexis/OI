@@ -220,6 +220,45 @@ d/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/build
 .PHONY : d/fast
 
+#=============================================================================
+# Target rules for targets named f
+
+# Build rule for target.
+f : cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 f
+.PHONY : f
+
+# fast build rule for target.
+f/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/build
+.PHONY : f/fast
+
+#=============================================================================
+# Target rules for targets named f3_dynamic
+
+# Build rule for target.
+f3_dynamic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 f3_dynamic
+.PHONY : f3_dynamic
+
+# fast build rule for target.
+f3_dynamic/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3_dynamic.dir/build.make CMakeFiles/f3_dynamic.dir/build
+.PHONY : f3_dynamic/fast
+
+#=============================================================================
+# Target rules for targets named f3_dynamic_luogu
+
+# Build rule for target.
+f3_dynamic_luogu: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 f3_dynamic_luogu
+.PHONY : f3_dynamic_luogu
+
+# fast build rule for target.
+f3_dynamic_luogu/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3_dynamic_luogu.dir/build.make CMakeFiles/f3_dynamic_luogu.dir/build
+.PHONY : f3_dynamic_luogu/fast
+
 nowcoder/main.o: nowcoder/main.cpp.o
 .PHONY : nowcoder/main.o
 
@@ -268,30 +307,6 @@ nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.cpp.s
 .PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.cpp.s
 
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.o: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.o
-
-# target to build an object file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.o
-
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.i: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.i
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.i
-
-# target to preprocess a source file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.i
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.i
-
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.s: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.s
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.s
-
-# target to generate assembly for a file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.s
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.cpp.s
-
 nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.o: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o
 .PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.o
 
@@ -315,54 +330,6 @@ nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.s: nowcoder/
 nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.s
 .PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.s
-
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.o: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.o
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.o
-
-# target to build an object file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.o
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.o
-
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.i: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.i
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.i
-
-# target to preprocess a source file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.i
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.i
-
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.s: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.s
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.s
-
-# target to generate assembly for a file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.s
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.cpp.s
-
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.o: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.o
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.o
-
-# target to build an object file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.o
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.o
-
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.i: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.i
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.i
-
-# target to preprocess a source file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.i
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.i
-
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.s: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.s
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.s
-
-# target to generate assembly for a file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.s
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.cpp.s
 
 nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.o: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.o
 .PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.o
@@ -412,6 +379,150 @@ nowcoder/牛客周赛61/b.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/b.dir/build.make CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.s
 .PHONY : nowcoder/牛客周赛61/b.cpp.s
 
+nowcoder/牛客周赛62/f1_static.o: nowcoder/牛客周赛62/f1_static.cpp.o
+.PHONY : nowcoder/牛客周赛62/f1_static.o
+
+# target to build an object file
+nowcoder/牛客周赛62/f1_static.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.o
+.PHONY : nowcoder/牛客周赛62/f1_static.cpp.o
+
+nowcoder/牛客周赛62/f1_static.i: nowcoder/牛客周赛62/f1_static.cpp.i
+.PHONY : nowcoder/牛客周赛62/f1_static.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛62/f1_static.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.i
+.PHONY : nowcoder/牛客周赛62/f1_static.cpp.i
+
+nowcoder/牛客周赛62/f1_static.s: nowcoder/牛客周赛62/f1_static.cpp.s
+.PHONY : nowcoder/牛客周赛62/f1_static.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛62/f1_static.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.s
+.PHONY : nowcoder/牛客周赛62/f1_static.cpp.s
+
+nowcoder/牛客周赛62/f3_dynamic.o: nowcoder/牛客周赛62/f3_dynamic.cpp.o
+.PHONY : nowcoder/牛客周赛62/f3_dynamic.o
+
+# target to build an object file
+nowcoder/牛客周赛62/f3_dynamic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3_dynamic.dir/build.make CMakeFiles/f3_dynamic.dir/nowcoder/牛客周赛62/f3_dynamic.cpp.o
+.PHONY : nowcoder/牛客周赛62/f3_dynamic.cpp.o
+
+nowcoder/牛客周赛62/f3_dynamic.i: nowcoder/牛客周赛62/f3_dynamic.cpp.i
+.PHONY : nowcoder/牛客周赛62/f3_dynamic.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛62/f3_dynamic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3_dynamic.dir/build.make CMakeFiles/f3_dynamic.dir/nowcoder/牛客周赛62/f3_dynamic.cpp.i
+.PHONY : nowcoder/牛客周赛62/f3_dynamic.cpp.i
+
+nowcoder/牛客周赛62/f3_dynamic.s: nowcoder/牛客周赛62/f3_dynamic.cpp.s
+.PHONY : nowcoder/牛客周赛62/f3_dynamic.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛62/f3_dynamic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3_dynamic.dir/build.make CMakeFiles/f3_dynamic.dir/nowcoder/牛客周赛62/f3_dynamic.cpp.s
+.PHONY : nowcoder/牛客周赛62/f3_dynamic.cpp.s
+
+nowcoder/牛客周赛62/f3_dynamic_luogu.o: nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.o
+.PHONY : nowcoder/牛客周赛62/f3_dynamic_luogu.o
+
+# target to build an object file
+nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3_dynamic_luogu.dir/build.make CMakeFiles/f3_dynamic_luogu.dir/nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.o
+.PHONY : nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.o
+
+nowcoder/牛客周赛62/f3_dynamic_luogu.i: nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.i
+.PHONY : nowcoder/牛客周赛62/f3_dynamic_luogu.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3_dynamic_luogu.dir/build.make CMakeFiles/f3_dynamic_luogu.dir/nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.i
+.PHONY : nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.i
+
+nowcoder/牛客周赛62/f3_dynamic_luogu.s: nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.s
+.PHONY : nowcoder/牛客周赛62/f3_dynamic_luogu.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/f3_dynamic_luogu.dir/build.make CMakeFiles/f3_dynamic_luogu.dir/nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.s
+.PHONY : nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.s
+
+nowcoder/牛客周赛62/g.o: nowcoder/牛客周赛62/g.cpp.o
+.PHONY : nowcoder/牛客周赛62/g.o
+
+# target to build an object file
+nowcoder/牛客周赛62/g.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/nowcoder/牛客周赛62/g.cpp.o
+.PHONY : nowcoder/牛客周赛62/g.cpp.o
+
+nowcoder/牛客周赛62/g.i: nowcoder/牛客周赛62/g.cpp.i
+.PHONY : nowcoder/牛客周赛62/g.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛62/g.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/nowcoder/牛客周赛62/g.cpp.i
+.PHONY : nowcoder/牛客周赛62/g.cpp.i
+
+nowcoder/牛客周赛62/g.s: nowcoder/牛客周赛62/g.cpp.s
+.PHONY : nowcoder/牛客周赛62/g.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛62/g.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/nowcoder/牛客周赛62/g.cpp.s
+.PHONY : nowcoder/牛客周赛62/g.cpp.s
+
+nowcoder/牛客周赛63/c.o: nowcoder/牛客周赛63/c.cpp.o
+.PHONY : nowcoder/牛客周赛63/c.o
+
+# target to build an object file
+nowcoder/牛客周赛63/c.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o
+.PHONY : nowcoder/牛客周赛63/c.cpp.o
+
+nowcoder/牛客周赛63/c.i: nowcoder/牛客周赛63/c.cpp.i
+.PHONY : nowcoder/牛客周赛63/c.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛63/c.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.i
+.PHONY : nowcoder/牛客周赛63/c.cpp.i
+
+nowcoder/牛客周赛63/c.s: nowcoder/牛客周赛63/c.cpp.s
+.PHONY : nowcoder/牛客周赛63/c.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛63/c.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.s
+.PHONY : nowcoder/牛客周赛63/c.cpp.s
+
+nowcoder/牛客周赛63/e.o: nowcoder/牛客周赛63/e.cpp.o
+.PHONY : nowcoder/牛客周赛63/e.o
+
+# target to build an object file
+nowcoder/牛客周赛63/e.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛63/e.cpp.o
+.PHONY : nowcoder/牛客周赛63/e.cpp.o
+
+nowcoder/牛客周赛63/e.i: nowcoder/牛客周赛63/e.cpp.i
+.PHONY : nowcoder/牛客周赛63/e.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛63/e.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛63/e.cpp.i
+.PHONY : nowcoder/牛客周赛63/e.cpp.i
+
+nowcoder/牛客周赛63/e.s: nowcoder/牛客周赛63/e.cpp.s
+.PHONY : nowcoder/牛客周赛63/e.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛63/e.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛63/e.cpp.s
+.PHONY : nowcoder/牛客周赛63/e.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -425,6 +536,9 @@ help:
 	@echo "... c"
 	@echo "... d"
 	@echo "... e"
+	@echo "... f"
+	@echo "... f3_dynamic"
+	@echo "... f3_dynamic_luogu"
 	@echo "... g"
 	@echo "... h"
 	@echo "... main"
@@ -434,24 +548,33 @@ help:
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.o"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.i"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.s"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.o"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.i"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/c.s"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.o"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.i"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.s"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.o"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.i"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/e.s"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.o"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.i"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/g.s"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.o"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.i"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.s"
 	@echo "... nowcoder/牛客周赛61/b.o"
 	@echo "... nowcoder/牛客周赛61/b.i"
 	@echo "... nowcoder/牛客周赛61/b.s"
+	@echo "... nowcoder/牛客周赛62/f1_static.o"
+	@echo "... nowcoder/牛客周赛62/f1_static.i"
+	@echo "... nowcoder/牛客周赛62/f1_static.s"
+	@echo "... nowcoder/牛客周赛62/f3_dynamic.o"
+	@echo "... nowcoder/牛客周赛62/f3_dynamic.i"
+	@echo "... nowcoder/牛客周赛62/f3_dynamic.s"
+	@echo "... nowcoder/牛客周赛62/f3_dynamic_luogu.o"
+	@echo "... nowcoder/牛客周赛62/f3_dynamic_luogu.i"
+	@echo "... nowcoder/牛客周赛62/f3_dynamic_luogu.s"
+	@echo "... nowcoder/牛客周赛62/g.o"
+	@echo "... nowcoder/牛客周赛62/g.i"
+	@echo "... nowcoder/牛客周赛62/g.s"
+	@echo "... nowcoder/牛客周赛63/c.o"
+	@echo "... nowcoder/牛客周赛63/c.i"
+	@echo "... nowcoder/牛客周赛63/c.s"
+	@echo "... nowcoder/牛客周赛63/e.o"
+	@echo "... nowcoder/牛客周赛63/e.i"
+	@echo "... nowcoder/牛客周赛63/e.s"
 .PHONY : help
 
 

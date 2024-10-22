@@ -40,7 +40,13 @@ ll power(ll x, ll b) {
 }
 
 /*
+ * 倍增
+ * 1. 从第i个物品开始，1个收纳箱能装的物品数是固定的
+ * 2. 以此类推，从第i个物品开始，m个收纳箱能装的物品数也是固定的
  *
+ * 那么，如何快速计算从第i个物品开始，m个收纳箱能装的物品数？
+ *  - 很明显，如果线性遍历m的话会超时；
+ *  - 考虑倍增。
 */
 
 void solve() {
@@ -57,13 +63,49 @@ void solve() {
     vector<int> index(n);
     iota(index.begin(), index.end(), 0);
 
-    ll ans = 0;
-    ll buf = m * k;
+    vector<int> next(n);
     for (int i = 0; i < n; i++) {
-        int idx = lower_bound(index.begin(), index.end(), , [&](const auto& aa, const auto& bb) {
-
+        int ni = lower_bound(index.begin() + i, index.end(), i, [&](const auto& aa, const auto& bb) {
+            return sum[aa + 1] - sum[bb] <= k;
         }) - index.begin();
+        next[i] = ni;
+    }
+    int Log = 32 - __builtin_clz(m);
+    int st[n][Log];
+    memset(st, -1, sizeof(st));
+    for (int i = 0; i < n; i++) {
+        st[i][0] = next[i];
+    }
 
+    for (int d = 1; d < Log; d++) {
+        for (int i = 0; i < n; i++) {
+            if (st[i][d - 1] == n) {
+                st[i][d] = n;
+            } else {
+                st[i][d] = st[st[i][d - 1]][d - 1];
+            }
+        }
+    }
+
+    auto get = [&](int idx, int mask) {
+        for (int d = Log - 1; d >= 0; d--) {
+            if (mask >> d & 1) {
+                idx = st[idx][d];
+            }
+            if (idx == n) {
+                break;
+            }
+        }
+        return idx;
+    };
+
+    int ans = 0;
+    for (int i = 0; i < n; i++) {
+        int ei = get(i, m);
+        ans = max(ans, ei - i);
+        if (ei == n) {
+            break;
+        }
     }
     cout << ans << "\n";
 }

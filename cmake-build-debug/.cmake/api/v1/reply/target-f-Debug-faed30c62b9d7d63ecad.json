@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "e"
+			"path" : "f"
 		}
 	],
 	"backtrace" : 1,
@@ -24,7 +24,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 13,
+				"line" : 16,
 				"parent" : 0
 			}
 		]
@@ -53,7 +53,7 @@
 			]
 		}
 	],
-	"id" : "e::@6890427a1f51a3e7e1df",
+	"id" : "f::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -69,8 +69,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "e",
-	"nameOnDisk" : "e",
+	"name" : "f",
+	"nameOnDisk" : "f",
 	"paths" : 
 	{
 		"build" : ".",
@@ -91,7 +91,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "nowcoder/norank/\u9999\u6e2f\u57ce\u5e02\u5927\u5b66\uff08\u4e1c\u839e\uff092024\u65b0\u751f\u6392\u4f4d\u8d5b/e.cpp",
+			"path" : "nowcoder/\u725b\u5ba2\u5468\u8d5b62/f1_static.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

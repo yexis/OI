@@ -39,10 +39,20 @@ using namespace std;
 template<class KT, class VT = null_type>
 using RBTree = tree<KT, VT, std::less<KT>, rb_tree_tag, tree_order_statistics_node_update>;
 
+const int MAX = 1000;
+struct Tree {
+    struct Node {
+        int left, right;
+        int val;
+    } seg[MAX * 400];
+    int A[100000]{};
+};
+
 void solve() {
-    RBTree<int> t;
-    t.insert(1);
-    cout << t.order_of_key(1) << "\n";
+    Tree tr;
+    for (int i = 0; i < 100000; i++) {
+        cout << tr.seg[i].left << " " << tr.seg[i].right << " " << tr.seg[i].val << "\n";
+    }
 }
 
 int main() {
