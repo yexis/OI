@@ -1,1 +1,1 @@
-/usr/local/bin/g++-14 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.o -o f
+/usr/local/Cellar/gcc/14.2.0/bin/g++-14 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.o -o f

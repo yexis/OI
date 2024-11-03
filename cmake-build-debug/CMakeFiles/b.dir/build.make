@@ -73,15 +73,15 @@ CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.o: CMakeFiles/b.dir/flags.make
 CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.o: /Users/yex/CPP/OI/nowcoder/牛客周赛61/b.cpp
 CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.o: CMakeFiles/b.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.o"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.o -MF CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.o.d -o CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.o -c /Users/yex/CPP/OI/nowcoder/牛客周赛61/b.cpp
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.o -MF CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.o.d -o CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.o -c /Users/yex/CPP/OI/nowcoder/牛客周赛61/b.cpp
 
 CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.i"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/牛客周赛61/b.cpp > CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.i
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/牛客周赛61/b.cpp > CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.i
 
 CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.s"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/牛客周赛61/b.cpp -o CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.s
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/牛客周赛61/b.cpp -o CMakeFiles/b.dir/nowcoder/牛客周赛61/b.cpp.s
 
 # Object files for target b
 b_OBJECTS = \

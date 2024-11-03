@@ -69,28 +69,28 @@ include CMakeFiles/f.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/f.dir/flags.make
 
-CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.o: CMakeFiles/f.dir/flags.make
-CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.o: /Users/yex/CPP/OI/nowcoder/牛客周赛62/f1_static.cpp
-CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.o: CMakeFiles/f.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.o"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.o -MF CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.o.d -o CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.o -c /Users/yex/CPP/OI/nowcoder/牛客周赛62/f1_static.cpp
+CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.o: CMakeFiles/f.dir/flags.make
+CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.o: /Users/yex/CPP/OI/nowcoder/牛客周赛65/f.cpp
+CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.o: CMakeFiles/f.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.o"
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.o -MF CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.o.d -o CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.o -c /Users/yex/CPP/OI/nowcoder/牛客周赛65/f.cpp
 
-CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.i"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/牛客周赛62/f1_static.cpp > CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.i
+CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.i"
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/牛客周赛65/f.cpp > CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.i
 
-CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.s"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/牛客周赛62/f1_static.cpp -o CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.s
+CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.s"
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/牛客周赛65/f.cpp -o CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.s
 
 # Object files for target f
 f_OBJECTS = \
-"CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.o"
+"CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.o"
 
 # External object files for target f
 f_EXTERNAL_OBJECTS =
 
-f : CMakeFiles/f.dir/nowcoder/牛客周赛62/f1_static.cpp.o
+f : CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.o
 f : CMakeFiles/f.dir/build.make
 f : CMakeFiles/f.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable f"

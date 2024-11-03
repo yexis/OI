@@ -1,4 +1,4 @@
-set(CMAKE_CXX_COMPILER "/usr/local/bin/g++-14")
+set(CMAKE_CXX_COMPILER "/usr/local/Cellar/gcc/14.2.0/bin/g++-14")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_COMPILER_VERSION "14.2.0")
@@ -24,9 +24,9 @@ set(CMAKE_COMPILER_SYSROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX14.sd
 
 
 set(CMAKE_AR "/usr/bin/ar")
-set(CMAKE_CXX_COMPILER_AR "/usr/local/bin/gcc-ar-14")
+set(CMAKE_CXX_COMPILER_AR "/usr/local/Cellar/gcc/14.2.0/bin/gcc-ar-14")
 set(CMAKE_RANLIB "/usr/bin/ranlib")
-set(CMAKE_CXX_COMPILER_RANLIB "/usr/local/bin/gcc-ranlib-14")
+set(CMAKE_CXX_COMPILER_RANLIB "/usr/local/Cellar/gcc/14.2.0/bin/gcc-ranlib-14")
 set(CMAKE_LINKER "/usr/bin/ld")
 set(CMAKE_LINKER_LINK "")
 set(CMAKE_LINKER_LLD "")

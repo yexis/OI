@@ -73,15 +73,15 @@ CMakeFiles/main.dir/nowcoder/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/nowcoder/main.cpp.o: /Users/yex/CPP/OI/nowcoder/main.cpp
 CMakeFiles/main.dir/nowcoder/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/nowcoder/main.cpp.o"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/nowcoder/main.cpp.o -MF CMakeFiles/main.dir/nowcoder/main.cpp.o.d -o CMakeFiles/main.dir/nowcoder/main.cpp.o -c /Users/yex/CPP/OI/nowcoder/main.cpp
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/nowcoder/main.cpp.o -MF CMakeFiles/main.dir/nowcoder/main.cpp.o.d -o CMakeFiles/main.dir/nowcoder/main.cpp.o -c /Users/yex/CPP/OI/nowcoder/main.cpp
 
 CMakeFiles/main.dir/nowcoder/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/nowcoder/main.cpp.i"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/main.cpp > CMakeFiles/main.dir/nowcoder/main.cpp.i
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/main.cpp > CMakeFiles/main.dir/nowcoder/main.cpp.i
 
 CMakeFiles/main.dir/nowcoder/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/nowcoder/main.cpp.s"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/main.cpp -o CMakeFiles/main.dir/nowcoder/main.cpp.s
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/main.cpp -o CMakeFiles/main.dir/nowcoder/main.cpp.s
 
 # Object files for target main
 main_OBJECTS = \

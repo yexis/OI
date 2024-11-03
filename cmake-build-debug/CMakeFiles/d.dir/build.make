@@ -73,15 +73,15 @@ CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位�
 CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o: /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp
 CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o: CMakeFiles/d.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o -MF CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o.d -o CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o -c /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o -MF CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o.d -o CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o -c /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp
 
 CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.i"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp > CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.i
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp > CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.i
 
 CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.s"
-	/usr/local/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp -o CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.s
+	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp -o CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.s
 
 # Object files for target d
 d_OBJECTS = \

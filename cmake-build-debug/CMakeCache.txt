@@ -27,16 +27,16 @@ CMAKE_BUILD_TYPE:STRING=Debug
 //Enable colored diagnostics throughout.
 CMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 
-//No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:UNINITIALIZED=/usr/local/bin/g++-14
+//CXX compiler
+CMAKE_CXX_COMPILER:FILEPATH=/usr/local/Cellar/gcc/14.2.0/bin/g++-14
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/local/bin/gcc-ar-14
+CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/local/Cellar/gcc/14.2.0/bin/gcc-ar-14
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/local/bin/gcc-ranlib-14
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/local/Cellar/gcc/14.2.0/bin/gcc-ranlib-14
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
