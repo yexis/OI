@@ -488,30 +488,6 @@ nowcoder/牛客周赛63/c.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/c.dir/build.make CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.s
 .PHONY : nowcoder/牛客周赛63/c.cpp.s
 
-nowcoder/牛客周赛65/e.o: nowcoder/牛客周赛65/e.cpp.o
-.PHONY : nowcoder/牛客周赛65/e.o
-
-# target to build an object file
-nowcoder/牛客周赛65/e.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛65/e.cpp.o
-.PHONY : nowcoder/牛客周赛65/e.cpp.o
-
-nowcoder/牛客周赛65/e.i: nowcoder/牛客周赛65/e.cpp.i
-.PHONY : nowcoder/牛客周赛65/e.i
-
-# target to preprocess a source file
-nowcoder/牛客周赛65/e.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛65/e.cpp.i
-.PHONY : nowcoder/牛客周赛65/e.cpp.i
-
-nowcoder/牛客周赛65/e.s: nowcoder/牛客周赛65/e.cpp.s
-.PHONY : nowcoder/牛客周赛65/e.s
-
-# target to generate assembly for a file
-nowcoder/牛客周赛65/e.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛65/e.cpp.s
-.PHONY : nowcoder/牛客周赛65/e.cpp.s
-
 nowcoder/牛客周赛65/f.o: nowcoder/牛客周赛65/f.cpp.o
 .PHONY : nowcoder/牛客周赛65/f.o
 
@@ -535,6 +511,30 @@ nowcoder/牛客周赛65/f.s: nowcoder/牛客周赛65/f.cpp.s
 nowcoder/牛客周赛65/f.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/f.dir/build.make CMakeFiles/f.dir/nowcoder/牛客周赛65/f.cpp.s
 .PHONY : nowcoder/牛客周赛65/f.cpp.s
+
+nowcoder/牛客周赛66/e.o: nowcoder/牛客周赛66/e.cpp.o
+.PHONY : nowcoder/牛客周赛66/e.o
+
+# target to build an object file
+nowcoder/牛客周赛66/e.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛66/e.cpp.o
+.PHONY : nowcoder/牛客周赛66/e.cpp.o
+
+nowcoder/牛客周赛66/e.i: nowcoder/牛客周赛66/e.cpp.i
+.PHONY : nowcoder/牛客周赛66/e.i
+
+# target to preprocess a source file
+nowcoder/牛客周赛66/e.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛66/e.cpp.i
+.PHONY : nowcoder/牛客周赛66/e.cpp.i
+
+nowcoder/牛客周赛66/e.s: nowcoder/牛客周赛66/e.cpp.s
+.PHONY : nowcoder/牛客周赛66/e.s
+
+# target to generate assembly for a file
+nowcoder/牛客周赛66/e.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/e.dir/build.make CMakeFiles/e.dir/nowcoder/牛客周赛66/e.cpp.s
+.PHONY : nowcoder/牛客周赛66/e.cpp.s
 
 nowcoder/牛客周赛66/g.o: nowcoder/牛客周赛66/g.cpp.o
 .PHONY : nowcoder/牛客周赛66/g.o
@@ -607,12 +607,12 @@ help:
 	@echo "... nowcoder/牛客周赛63/c.o"
 	@echo "... nowcoder/牛客周赛63/c.i"
 	@echo "... nowcoder/牛客周赛63/c.s"
-	@echo "... nowcoder/牛客周赛65/e.o"
-	@echo "... nowcoder/牛客周赛65/e.i"
-	@echo "... nowcoder/牛客周赛65/e.s"
 	@echo "... nowcoder/牛客周赛65/f.o"
 	@echo "... nowcoder/牛客周赛65/f.i"
 	@echo "... nowcoder/牛客周赛65/f.s"
+	@echo "... nowcoder/牛客周赛66/e.o"
+	@echo "... nowcoder/牛客周赛66/e.i"
+	@echo "... nowcoder/牛客周赛66/e.s"
 	@echo "... nowcoder/牛客周赛66/g.o"
 	@echo "... nowcoder/牛客周赛66/g.i"
 	@echo "... nowcoder/牛客周赛66/g.s"

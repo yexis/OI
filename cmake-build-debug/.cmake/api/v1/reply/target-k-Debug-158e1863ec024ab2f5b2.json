@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "h"
+			"path" : "k"
 		}
 	],
 	"backtrace" : 1,
@@ -24,7 +24,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 13,
+				"line" : 22,
 				"parent" : 0
 			}
 		]
@@ -35,7 +35,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -fdiagnostics-color=always"
+					"fragment" : "-g -std=gnu++20 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk -fdiagnostics-color=always"
 				}
 			],
 			"language" : "CXX",
@@ -53,7 +53,7 @@
 			]
 		}
 	],
-	"id" : "h::@6890427a1f51a3e7e1df",
+	"id" : "k::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -69,8 +69,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "h",
-	"nameOnDisk" : "h",
+	"name" : "k",
+	"nameOnDisk" : "k",
 	"paths" : 
 	{
 		"build" : ".",
@@ -91,7 +91,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "nowcoder/norank/\u9999\u6e2f\u57ce\u5e02\u5927\u5b66\uff08\u4e1c\u839e\uff092024\u65b0\u751f\u6392\u4f4d\u8d5b/h.cpp",
+			"path" : "nowcoder/norank/\u4e2d\u56fd\u5730\u8d28\u5927\u5b66/k.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

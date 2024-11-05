@@ -80,13 +80,14 @@ void solve() {
         cnt[d]++;
     }
 
+    char chc;
     int chd = 0;
     string res;
     for (int i = 0; i < 26; i++) {
         if (k > cnt[i]) {
             k -= cnt[i];
         } else {
-            res += (i + 'a');
+            chc = i + 'a';
             chd = i;
             break;
         }
@@ -106,37 +107,26 @@ void solve() {
         R[d] = i;
     }
 
-    bool find = false;
-    int rest = cnt[chd];
-    for (int i = 0; i < n; i++) {
-        if (s[i] != 'a' + chd || find) {
-            res += s[i];
-        } else {
-            // s[i] == chd
+    int pos = -1;
+    deque<int> q;
+    for (int i = n - 1; i >= 0; i--) {
+        if (s[i] == chd + 'a') {
             int nxt = next[i];
-            if (nxt == n) {
-                find = true;
-                continue;
-            }
-
-            int cc = nxt - i;
-            int dd = rest - cc;
-            if (s[nxt] < s[i]) {
-                if (k <= cc) {
-                    find = true;
-                } else if (k > cc) {
-                    res += s[i];
-                }
+            if (nxt == n || s[nxt] > chd + 'a') {
+                q.push_back(i);
             } else {
-                // s[nxt] > s[i]
-                if (k > dd) {
-                    find = true;
-                } else {
-                    res += s[i];
-                }
+                q.push_front(i);
             }
-            rest--;
+        } else {
+
         }
+    }
+
+    res += chc;
+    pos = q[k - 1];
+    for (int i = 0; i < n; i++) {
+        if (i == pos) continue;
+        res += s[i];
     }
     cout << res << "\n";
 };
