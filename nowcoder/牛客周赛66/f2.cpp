@@ -66,7 +66,7 @@ ll power(ll x, ll b) {
 }
 
 /*
- * 
+ * 双端队列
 */
 
 void solve() {

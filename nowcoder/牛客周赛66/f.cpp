@@ -66,7 +66,7 @@ ll power(ll x, ll b) {
 }
 
 /*
- * 
+ * not pass
 */
 
 void solve() {
@@ -86,8 +86,8 @@ void solve() {
         if (k > cnt[i]) {
             k -= cnt[i];
         } else {
-            res += (i + 'a');
             chd = i;
+            res += (i + 'a');
             break;
         }
     }
@@ -140,7 +140,13 @@ void solve() {
     }
     cout << res << "\n";
 };
-
+// abaabababacdfa
+/*
+ * aabab
+ * aabaab
+ *
+ * abcde
+ */
 int main() {
     int T;
     cin >> T;

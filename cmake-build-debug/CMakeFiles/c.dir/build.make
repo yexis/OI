@@ -73,15 +73,15 @@ CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o: CMakeFiles/c.dir/flags.make
 CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o: /Users/yex/CPP/OI/nowcoder/牛客周赛63/c.cpp
 CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o: CMakeFiles/c.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o"
-	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o -MF CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o.d -o CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o -c /Users/yex/CPP/OI/nowcoder/牛客周赛63/c.cpp
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o -MF CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o.d -o CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.o -c /Users/yex/CPP/OI/nowcoder/牛客周赛63/c.cpp
 
 CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.i"
-	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/牛客周赛63/c.cpp > CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/牛客周赛63/c.cpp > CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.i
 
 CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.s"
-	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/牛客周赛63/c.cpp -o CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/牛客周赛63/c.cpp -o CMakeFiles/c.dir/nowcoder/牛客周赛63/c.cpp.s
 
 # Object files for target c
 c_OBJECTS = \

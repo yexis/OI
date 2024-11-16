@@ -344,30 +344,6 @@ nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/a.dir/build.make CMakeFiles/a.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.cpp.s
 .PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.cpp.s
 
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.o: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.o
-
-# target to build an object file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o
-
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.i: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.i
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.i
-
-# target to preprocess a source file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.i
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.i
-
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.s: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.s
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.s
-
-# target to generate assembly for a file
-nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.s
-.PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.s
-
 nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.o: nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.o
 .PHONY : nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.o
 
@@ -560,6 +536,30 @@ nowcoder/牛客周赛66/g.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/g.dir/build.make CMakeFiles/g.dir/nowcoder/牛客周赛66/g.cpp.s
 .PHONY : nowcoder/牛客周赛66/g.cpp.s
 
+nowcoder/牛客小白月赛104/d.o: nowcoder/牛客小白月赛104/d.cpp.o
+.PHONY : nowcoder/牛客小白月赛104/d.o
+
+# target to build an object file
+nowcoder/牛客小白月赛104/d.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客小白月赛104/d.cpp.o
+.PHONY : nowcoder/牛客小白月赛104/d.cpp.o
+
+nowcoder/牛客小白月赛104/d.i: nowcoder/牛客小白月赛104/d.cpp.i
+.PHONY : nowcoder/牛客小白月赛104/d.i
+
+# target to preprocess a source file
+nowcoder/牛客小白月赛104/d.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客小白月赛104/d.cpp.i
+.PHONY : nowcoder/牛客小白月赛104/d.cpp.i
+
+nowcoder/牛客小白月赛104/d.s: nowcoder/牛客小白月赛104/d.cpp.s
+.PHONY : nowcoder/牛客小白月赛104/d.s
+
+# target to generate assembly for a file
+nowcoder/牛客小白月赛104/d.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/d.dir/build.make CMakeFiles/d.dir/nowcoder/牛客小白月赛104/d.cpp.s
+.PHONY : nowcoder/牛客小白月赛104/d.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -589,9 +589,6 @@ help:
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.o"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.i"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/a.s"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.o"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.i"
-	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.s"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.o"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.i"
 	@echo "... nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.s"
@@ -616,6 +613,9 @@ help:
 	@echo "... nowcoder/牛客周赛66/g.o"
 	@echo "... nowcoder/牛客周赛66/g.i"
 	@echo "... nowcoder/牛客周赛66/g.s"
+	@echo "... nowcoder/牛客小白月赛104/d.o"
+	@echo "... nowcoder/牛客小白月赛104/d.i"
+	@echo "... nowcoder/牛客小白月赛104/d.s"
 .PHONY : help
 
 

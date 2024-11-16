@@ -1,1 +1,1 @@
-/usr/local/Cellar/gcc/14.2.0/bin/g++-14 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/d.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/d.cpp.o -o d
+/Library/Developer/CommandLineTools/usr/bin/c++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/d.dir/nowcoder/牛客小白月赛104/d.cpp.o -o d

@@ -73,15 +73,15 @@ CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位�
 CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.o: /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp
 CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.o: CMakeFiles/h.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.o"
-	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.o -MF CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.o.d -o CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.o -c /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.o -MF CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.o.d -o CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.o -c /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp
 
 CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.i"
-	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp > CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp > CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.i
 
 CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.s"
-	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp -o CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp -o CMakeFiles/h.dir/nowcoder/norank/香港城市大学（东莞）2024新生排位赛/h.cpp.s
 
 # Object files for target h
 h_OBJECTS = \

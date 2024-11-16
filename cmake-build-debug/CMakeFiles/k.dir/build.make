@@ -73,15 +73,15 @@ CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.o: CMakeFiles/k.dir/fl
 CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.o: /Users/yex/CPP/OI/nowcoder/norank/中国地质大学/k.cpp
 CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.o: CMakeFiles/k.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/yex/CPP/OI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.o"
-	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.o -MF CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.o.d -o CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.o -c /Users/yex/CPP/OI/nowcoder/norank/中国地质大学/k.cpp
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.o -MF CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.o.d -o CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.o -c /Users/yex/CPP/OI/nowcoder/norank/中国地质大学/k.cpp
 
 CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.i"
-	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/norank/中国地质大学/k.cpp > CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/yex/CPP/OI/nowcoder/norank/中国地质大学/k.cpp > CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.i
 
 CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.s"
-	/usr/local/Cellar/gcc/14.2.0/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/norank/中国地质大学/k.cpp -o CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/yex/CPP/OI/nowcoder/norank/中国地质大学/k.cpp -o CMakeFiles/k.dir/nowcoder/norank/中国地质大学/k.cpp.s
 
 # Object files for target k
 k_OBJECTS = \
