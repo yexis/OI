@@ -1,10 +1,14 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
-        "unordered_set": "cpp"
+        "unordered_set": "cpp",
+        "numeric": "cpp",
+        "complex": "cpp",
+        "iostream": "cpp",
+        "set": "cpp"
     },
     "cph.language.cpp.Args": "-std=c++20",
     "editor.scrollBeyondLastLine": false,
     "cmake.ctest.allowParallelJobs": true,
-    "editor.fontSize": 14
+    "editor.fontSize": 14.5
 }
