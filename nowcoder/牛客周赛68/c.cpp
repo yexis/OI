@@ -93,7 +93,11 @@ void solve() {
             }
         }
         ans += (c + 1) / 2;
-    } else if (cnt1.size() > cnt2.size()) {
+    } else {
+        if (cnt1.size() < cnt2.size()) {
+            cnt1.swap(cnt2);
+        }
+        
         int need = cnt1.size() - cnt2.size();
         for (auto it = cnt1.begin(); it != cnt1.end() && need > 0; ) {
             auto e = *it;
@@ -108,29 +112,6 @@ void solve() {
             cnt1.erase(cnt1.begin());
             need--;
         }
-        int c = 0;
-        for (auto& e : cnt1) {
-            if (cnt2.count(e)) {
-                c++;
-            }
-        }
-        ans += (c + 1) / 2;
-    } else {
-        int need = cnt2.size() - cnt1.size();
-        for (auto it = cnt2.begin(); it != cnt2.end() && need > 0; ) {
-            auto e = *it;
-            if (cnt1.count(e)) {
-                it = cnt2.erase(it);
-                need--;
-            } else {
-                it++;
-            }
-        }
-        while (need > 0) {
-            cnt2.erase(cnt2.begin());
-            need--;
-        }
-
         int c = 0;
         for (auto& e : cnt1) {
             if (cnt2.count(e)) {

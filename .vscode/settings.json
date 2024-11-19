@@ -5,7 +5,8 @@
         "numeric": "cpp",
         "complex": "cpp",
         "iostream": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "vector": "cpp"
     },
     "cph.language.cpp.Args": "-std=c++20",
     "editor.scrollBeyondLastLine": false,
