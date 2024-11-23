@@ -67,6 +67,7 @@ ll power(ll x, ll b) {
 
 /*
  * 树状数组
+ * cc: 对于一个数组数组，当要反向计算区间[pos,n]的元素和时，使用bit.ask(n) - bit.ask(pos)
 */
 
 struct BIT {
