@@ -68,13 +68,47 @@ ll power(ll x, ll b) {
 /*
  * 
 */
+const int maxn = 1e7 + 10;
+ll fac[maxn];
+ll inv[maxn];
+void init() {
+    fac[0] = inv[0] = 1;
+    for (int i = 1; i < maxn; i++) {
+        fac[i] = fac[i - 1] * i % mod;
+        inv[i] = power(fac[i], mod - 2);
+    }
+}
+ll C(ll n, ll m) {
+    if (n < 0 || m < 0 || n < m) {
+        return 0;
+    }
+    return fac[n] * inv[m] % mod * inv[n - m] % mod;
+}
 
 void solve() {
+    int n, k;
+    cin >> n >> k;
+    if (n & 1) {
+        cout << 0 << "\n";
+        return;
+    }
+    if (k == 0) {
+        cout << 0 << "\n";
+        return;
+    }
+    if (k > n / 2) {
+        cout << C(n, k) << "\n";
+        return;
+    }
 
+    cout << C(n, k) * fac[k] % mod << "\n";
 }
 
 int main() {
-    ios;
-    
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
     return 0;
 }

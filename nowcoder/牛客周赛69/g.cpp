@@ -66,15 +66,63 @@ ll power(ll x, ll b) {
 }
 
 /*
- * 
+ * 双数组选数，要么选a[i]，要么选b[i]
 */
 
-void solve() {
+// 从a中选k个数，从b中选n-k个数，求最大和
+int select(vector<int>& a, vector<int>& b, int k) {
+    int n = a.size();
+    // 先全部选b
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += b[i];
+    }
+    vector<int> diff;
+    for (int i = 0; i < n; i++) {
+        diff.emplace_back(a[i] - b[i]);
+    }
+    sort(diff.begin(), diff.end(), greater());
+    for (int i = 0; i < k; i++) {
+        sum += diff[i];
+    }
+    return sum;
+}
 
+
+// 从a中选k个数，从b中选n-k个数，求最大和
+int select2(vector<int>& a, vector<int>& b, int k) {
+    int n = a.size();
+    int sum = 0;
+    vector<pair<int, int> > diff;
+    for (int i = 0; i < n; i++) {
+        diff.emplace_back(a[i] - b[i], i);
+    }
+    // 按照delta_i从大到小排序，前k个选a，后n-k个选b
+    sort(diff.begin(), diff.end(), greater());
+    for (int i = 0; i < n; i++) {
+        auto [df, ii] = diff[i];
+        if (i < k) {
+            sum += b[ii] + df;
+        } else {
+            sum += b[ii];
+        }
+    }
+    return sum;
+}
+
+
+void solve() {
+    vector<int> a = {8, 4, 2, 3, 1, 6};
+    vector<int> b = {7, 2, 3, 4, 5, 6};
+    int k = 2;
+    cout << select(a, b, k) << " " << select2(a, b, k) << "\n";
 }
 
 int main() {
-    ios;
-    
+    solve();
     return 0;
 }
+
+
+
+

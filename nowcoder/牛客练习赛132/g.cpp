@@ -74,7 +74,10 @@ void solve() {
 }
 
 int main() {
-    ios;
-    
+
     return 0;
 }
+
+
+
+
