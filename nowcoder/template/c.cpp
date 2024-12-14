@@ -75,6 +75,7 @@ void solve() {
 
 int main() {
     ios;
+    cout << fixed << setprecision(20);
     
     return 0;
 }

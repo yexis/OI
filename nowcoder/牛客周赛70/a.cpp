@@ -70,11 +70,22 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    if (a == b && a == c && a == d) {
+        cout << "NO" << "\n";
+    } else {
+        cout << "YES" << "\n";
+    }
 }
 
 int main() {
     ios;
 
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
     return 0;
 }

@@ -70,11 +70,40 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
 
+    int odd = 0, even = 0;
+    for (int i = 0; i < n; i++) {
+        int d = s[i] - '0';
+        if (d == 0) continue;
+
+        int ex = 0;
+        if (i & 1) ex = odd;
+        else ex = even;
+        if (ex > 0) continue;
+        
+        int len = (n - i);
+        if (len & 1) {
+            cout << i + 1 << " " << n << "\n";
+        } else {
+            cout << i + 1 << " " << n - 1 << "\n";
+        }
+    
+        if (i & 1) odd++;
+        else even++;
+    }
 }
 
 int main() {
     ios;
     
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
     return 0;
 }

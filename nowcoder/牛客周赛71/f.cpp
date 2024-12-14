@@ -47,6 +47,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -74,6 +75,17 @@ void solve() {
 }
 
 int main() {
+    ios;
+    cout << 0x3f3f3f3f3f3f3f3f << "\n";
+    cout << 1000000000000000000 << "\n";
+    ll f[3][3];
+    memset(f, 0x3f3f, sizeof(f));
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << f[i][j] << " ";
+        }
+        cout << "\n";
+    }
 
     return 0;
 }

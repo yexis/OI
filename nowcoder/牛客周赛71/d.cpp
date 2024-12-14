@@ -47,6 +47,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -70,12 +71,58 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
 
+    auto cal = [&](vector<int>& tar) -> ll {
+        ll ans = LLINF;
+        ll f[n + 1][3];
+        // memset是按照字节进行赋值即 0x3f 8个bit
+        memset(f, LLINF, sizeof(f));
+        f[0][0] = f[0][1] = f[0][2] = 0;
+        for (int i = 1; i <= n; i++) {
+            int co = s[i - 1] - '0';
+            for (int j = 0; j < 3; j++) {
+                int cost = (tar[j] == co ? 0 : a[i - 1]);
+                f[i][j] = f[i - 1][j] + cost;
+                if (j >= 1) {
+                    f[i][j] = min(f[i][j], f[i - 1][j - 1] + cost);
+                }
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            ans = min(ans, f[n][i]);
+        }
+        return ans;
+    };
+
+    ll ans = LLINF;
+    vector<vector<int>> tar = {
+        {0, 1, 2},
+        {0, 2, 1},
+        {1, 0, 2},
+        {1, 2, 0},
+        {2, 0, 1},
+        {2, 1, 0}
+    };
+    for (int i = 0; i < tar.size(); i++) {
+        ans = min(ans, cal(tar[i]));
+    }
+    cout << ans << "\n";
 }
 
 int main() {
     ios;
-    cout << fixed << setprecision(20);
-    
+    solve();
     return 0;
 }
+
+
+
+

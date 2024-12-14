@@ -68,14 +68,18 @@ ll power(ll x, ll b) {
 /*
  * 
 */
-const int maxn = 1e7 + 10;
+bool fg = false;
+const int maxn = 10000007;
 ll fac[maxn];
 ll inv[maxn];
+ll p[maxn];
 void init() {
+    p[0] = 1;
     fac[0] = inv[0] = 1;
     for (int i = 1; i < maxn; i++) {
         fac[i] = fac[i - 1] * i % mod;
         inv[i] = power(fac[i], mod - 2);
+        p[i] = p[i - 1] * 2 % mod;
     }
 }
 ll C(ll n, ll m) {
@@ -88,27 +92,34 @@ ll C(ll n, ll m) {
 void solve() {
     int n, k;
     cin >> n >> k;
+    // n为奇数，一定不存在
     if (n & 1) {
         cout << 0 << "\n";
         return;
     }
-    if (k == 0) {
+    // k小于2，一定不存在
+    if (k < 2) {
         cout << 0 << "\n";
         return;
     }
+    // k大于n / 2，全部都是
     if (k > n / 2) {
         cout << C(n, k) << "\n";
         return;
     }
-
-    cout << C(n, k) * fac[k] % mod << "\n";
+    
+    cout << (C(n, k) - C(n / 2, k) * power(2, k) % mod + mod) % mod << "\n";
 }
 
 int main() {
+    ios;
+
+    init();       
     int T;
     cin >> T;
     while (T--) {
         solve();
     }
+    
     return 0;
 }

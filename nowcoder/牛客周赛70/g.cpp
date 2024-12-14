@@ -70,12 +70,12 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-
+    
 }
 
 int main() {
     ios;
-    
+    solve();
     return 0;
 }
 

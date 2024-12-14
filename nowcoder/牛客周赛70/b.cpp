@@ -70,11 +70,27 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-
+    int x, y;
+    cin >> x >> y;
+    int k, t;
+    cin >> k >> t;
+    char ch;
+    cin >> ch;
+    if (ch == 'G') {
+        // Green
+        if (t <= k) {
+            cout << t << "\n";
+            return;
+        }
+        // t > k
+        cout << k + x + t << "\n";
+    } else if (ch == 'R') {
+        cout << k + t << "\n";
+    }
 }
 
 int main() {
     ios;
-    
+    solve();
     return 0;
 }

@@ -47,6 +47,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -74,6 +75,8 @@ void solve() {
 }
 
 int main() {
+    ios;
+    cout << fixed << setprecision(20);
 
     return 0;
 }

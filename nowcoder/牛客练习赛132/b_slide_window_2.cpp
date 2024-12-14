@@ -70,12 +70,44 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
+    int n, m, k;
+    cin >> n >> m >> k;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    sort(a.begin(), a.end());
+    a.erase(unique(a.begin(), a.end()), a.end());
+    n = a.size();
 
+    vector<int> b(n);
+    for (int i = 0; i < n - 1; i++) {
+        b[i] = a[i + 1] - a[i] - 1;
+    }
+    b[n - 1] = m - a[n - 1];
+
+    int l = 0, r = -1;
+    int cur = 0;
+    while (l < n) {
+        while (r < n && cur <= k) {
+            r++;
+            if (r == n) break;
+            // 在里面判断
+            int out = min(k - cur, a[l] - 1 + m - a[r]);
+            ans = max(ans, out + cur + r - l + 1);
+            cur += b[r];
+        }
+        cur -= b[l];
+        l++;
+    }
+    cout << ans << "\n";
 }
 
 int main() {
-    ios;
-    cout << fixed << setprecision(20);
-    
+    solve();
     return 0;
 }
+
+
+
+

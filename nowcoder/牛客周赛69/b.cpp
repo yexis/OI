@@ -70,10 +70,28 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
+    string s;
+    cin >> s;
+    int n = s.size();
+    int start = 0;
+    vector<string> ss;
+    for (int i = 0; i <= n; i++) {
+        if (i == n || s[i] == ',') {
+            string t = s.substr(start, i - start);
+            if (t != "...") {
+                ss.push_back(t);
+            }
+            start = i + 1;
+        } else {
 
+        }
+    }    
+    ll b2 = stol(ss[ss.size() - 1]);
+    ll b1 = stol(ss[ss.size() - 2]);
+    cout << b2 - b1 - 1 << "\n";
 }
 
 int main() {
-
+    solve();
     return 0;
 }

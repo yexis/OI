@@ -70,12 +70,53 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    if (s.size() == 2) {
+        if (s[0] != s[1]) {
+            cout << -1 << "\n";
+            return;
+        }
+    }
 
+    for (int i = 0; i < n; i++) {
+        if (s[i] == s[(i + 1) % n]) {
+            cout << 0 << "\n";
+            return;
+        }
+    }
+    
+    
+    int ans = n;
+    vector<int> first(26, -1);
+    vector<int> last(26, -1);
+    for (int i = 0; i < s.size(); i++) {
+        int c = s[i] - 'a';
+        if (first[c] == -1) {
+            first[c] = i;
+        } else {
+            ans = min(ans, n - i - 1 + first[c]);
+        }
+        if (last[c] != -1) {
+            ans = min(ans, i - last[c] - 1);
+        }
+        last[c] = i;
+    }
+    if (ans == n) {
+        cout << -1 << "\n";
+        return;
+    }
+    cout << ans << "\n";
 }
 
 int main() {
     ios;
-    cout << fixed << setprecision(20);
-    
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
     return 0;
 }

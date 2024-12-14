@@ -70,76 +70,74 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-    int n, m, q;
-    cin >> n >> m >> q;
-    char g[n][m]
+    int n;
+    cin >> n;
+    map<double, int> cnt;
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            cin >> g[i][j];
-        }
+        int l, a;
+        cin >> l >> a;
+        cnt[l] += a;
     }
-
-    char qq[q][n][m];
-    for (int k = 0; k < q; k++) {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                cin >> qq[k][i][j];
+    
+    bool find = false;
+    double s = -1;
+    for (auto& [k, v] : cnt) {
+        if (v < 2) {
+            continue;
+        }
+        // v >= 2
+        v -= 2;
+        double b = (double)k * sqrt(2);
+        auto it = cnt.lower_bound(b);
+        bool ok1 = false;
+        while (it != cnt.end()) {
+            if (it->second > 0 && it->first < 2 * k) {
+                ok1 = true;
+                break;
+            }
+            it = next(it);
+        }
+        if (ok1) {
+            double rb = it->first;
+            double rb2 = rb / 2;
+            double h = sqrt(k * k - rb2 * rb2);
+            s = max(s, 0.5 * h * rb);
+            find = true;
+        }
+        
+        bool ok2 = false;
+        while (it != cnt.begin()) {
+            it = prev(it);
+            if (it->second > 0 && it->first < 2 * k) {
+                ok2 = true;
+                break;
             }
         }
+        if (ok2) {
+            double rb = it->first;
+            double rb2 = rb / 2;
+            double h = sqrt(k * k - rb2 * rb2);
+            s = max(s, 0.5 * h * rb);
+            find = true;
+        }
+        v += 2;
     }
-
-    int ans = INF;
-    vector<int> res;
-    for (int mask = 0; mask < (1 << q); mask++) {
-        bool ok = false;
-        int cnt = __builtin_popcount(mask);
-
-        bool h[n][m];
-        memset(h, 0, sizeof(h));
-        for (int d = 0; d < q; d++) {
-            if (mask >> d & 1) {
-                for (int i = 0; i < n; i++) {
-                    for (int j = 0; j < m; j++) {
-                        if (qq[d][i][j] == '1') {
-                            h[i][j] = true;
-                        }
-                    }
-                }
-            }
-        }
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (g[i][j] == '1' && h[i][j] == false) {
-                    ok = false;
-                }
-                if (g[i][j] == '0' && h[i][j] == true) {
-                    ok = false;
-                }
-            }
-        }
-
-        if (ok && cnt < ans) {
-            ans = cnt;
-            res.clear();
-            for (int d = 0; d < q; d++) {
-                res.push_back(d + 1);
-            }
-        }
-    }
-    if (ans == INF) {
+    if (!find) {
         cout << -1 << "\n";
         return;
     }
-    
-    cout << ans << "\n";
-    for (auto& e : res) {
-        cout << e << " ";
-    }
-    cout << "\n";
+    cout << s << "\n";
 }
 
 int main() {
-    solve();
+    ios;
+    cout << fixed << setprecision(20);
+
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
     return 0;
 }
 

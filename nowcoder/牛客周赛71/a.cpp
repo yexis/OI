@@ -61,7 +61,7 @@ ll power(ll x, ll b) {
         x *= x;
         x %= mod;
         b >>= 1;
-    }
+    }hyper.json
     return ans;
 }
 
@@ -70,12 +70,13 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
+    int a = 0;
 
+    
 }
 
 int main() {
     ios;
-    cout << fixed << setprecision(20);
-    
+
     return 0;
 }

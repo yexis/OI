@@ -70,46 +70,72 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-    int n, k;
-    cin >> n >> k;
+    int n, m, k;
+    cin >> n >> m >> k;
     vector<int> a(n);
     for (int i = 0; i < n; i++) {
         cin >> a[i];
     }
-    if (n <= 2) {
-        cout << a[0] + a[1] << "\n";
-        return;
+    a.push_back(0);
+    a.push_back(m + 1);
+    // 排除相同元素的影响
+    sort(a.begin(), a.end());
+    a.erase(unique(a.begin(), a.end()), a.end());
+    n = a.size();
+    // n - 2
+    
+    vector<int> b(n);
+    for (int i = 0; i + 1 < n; i++) {
+        b[i] = a[i + 1] - a[i] - 1;
     }
-    // n >= 3
-    int mx = 0;
-    vector<int> R(n);
-    for (int i = n - 1; i >= 0; i--) {
-        mx = max(mx, a[i]);
-        R[i] = mx;
-    }
+    b[n - 1] = 0;
 
-    int ans = 0;
-    for (int i = 0; i < n; i++) {
-        if (i >= k) continue;
-        if (i + 2 >= n) continue;
-        // k > i
-        int rst = min(k - i, n - (i + 2));
-        ans = max(ans, a[i] + a[n - rst]);
-    }
+    auto check = [&]() {
+        int ans = 1;
+        int l = 0, r = -1;
+        int cur = 0;
+        while (l < n) {
+            while (r < n && cur <= k) {
+                r++;
+                if (r == n) break;
+                cur += b[r];
+            }
+            
+            if (r == n) {
+                // cur < b[r]
+                int now = cur + r - l;
+                if (l == 0) now--;
+                if (r == n) now--;
+                ans = max(ans, now);
+                break;
+            } else {
+                // r < n
+                int lst = cur - b[r];
+                int rst = k - lst;
+                rst = max(rst, 0);
+                int now = lst + (r - l + 1) + rst;
+                if (l == 0) now--;
+                if (r == n) now--;
+                ans = max(ans, now);
+            }
+            cur -= b[l];
+            l++;
+        }
+        return ans;
+    };
+
+    int ans = check();
+    // 从大到小
+    reverse(a.begin(), a.end());
+    for (int i = 0; i + 1 < n; i++) {
+        b[i] = a[i] - a[i + 1] - 1;
+    } 
+    b[n - 1] = 0;
+    ans = max(ans, check());
     cout << ans << "\n";
 }
 
 int main() {
-    ios;
-
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
+    solve();
     return 0;
 }
-
-
-
-

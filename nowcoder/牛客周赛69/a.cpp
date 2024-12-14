@@ -70,10 +70,15 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-
+    int a, b;
+    cin >> a >> b;
+    if (a > b) {
+        swap(a, b);
+    }
+    cout << b + (b - a) << "\n";
 }
 
 int main() {
-
+    solve();
     return 0;
 }
