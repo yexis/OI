@@ -47,6 +47,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -70,18 +71,20 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-    string s;
-    cin >> s;
-    int n = s.size();
-    set<char> st;
-    for (int i = 0; i < n; i++) {
-        st.insert(s[i]);
+    int l, r, x;
+    cin >> l >> r >> x;
+    for (int i = l; i <= r; i++) {
+        if (i % x == 0) {
+            cout << i << "\n";
+            return;
+        }
     }
-    cout << st.size() << "\n";
+    cout << -1 << "\n";
 }
 
 int main() {
     ios;
+    cout << fixed << setprecision(20);
     solve();
     return 0;
 }

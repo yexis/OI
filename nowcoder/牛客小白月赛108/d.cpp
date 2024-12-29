@@ -66,22 +66,60 @@ ll power(ll x, ll b) {
 }
 
 /*
- * 
+ *
 */
 
-void solve() {
-    string s;
-    cin >> s;
-    int n = s.size();
-    set<char> st;
-    for (int i = 0; i < n; i++) {
-        st.insert(s[i]);
+// 1817120
+bool fg = false;
+const int maxn = 2000000;
+ll p[maxn + 1];
+ll idx = 0;
+void init() {
+    ll sum = 0;
+    ll pre = 0;
+    for (int i = 1; i <= maxn; i++) {
+        sum += pre;
+        sum += i;
+        pre += i;
+        p[i] = sum;
+        if (sum > 1e18) {
+            idx = i;
+            break;
+        }
     }
-    cout << st.size() << "\n";
+}
+
+void solve() {
+    ll m;
+    cin >> m;
+    auto check = [&](ll mid) -> bool {
+        return p[mid] <= m;
+    };
+
+    ll l = 1, r = min((ll)sqrt(m), (ll)idx);
+    ll ans = 0;
+    while (l <= r) {
+        ll mid = (l + r) >> 1;
+        if (check(mid)) {
+            ans = mid;
+            l = mid + 1;
+        } else {
+            r = mid - 1;
+        }
+    }
+    cout << ans + 1 << "\n";
 }
 
 int main() {
-    ios;
-    solve();
+    if (!fg) {
+        init();
+        fg = true;
+    }
+
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
     return 0;
 }

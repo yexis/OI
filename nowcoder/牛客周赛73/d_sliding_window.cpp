@@ -47,6 +47,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -66,22 +67,51 @@ ll power(ll x, ll b) {
 }
 
 /*
- * 
+ * 滑动窗口计算子序列
 */
 
 void solve() {
+    ll n, k;
+    cin >> n >> k;
     string s;
     cin >> s;
-    int n = s.size();
-    set<char> st;
-    for (int i = 0; i < n; i++) {
-        st.insert(s[i]);
+    
+    ll cur = 0;
+    int zero = 0, one = 0;
+    int l = 0, r = -1;
+    while (l < n) {
+        while (r < n && cur < k) {
+            r++;
+            if (r == n) {
+                break;
+            }
+            if (s[r] == '1') {
+                one++;
+                cur += (ll)zero;
+            } else {
+                zero++;
+            }
+        }
+        if (cur == k) {
+            cout << l + 1 << " " << r + 1 << "\n";
+            return;
+        }
+        if (s[l] == '1') {
+            one--;
+        } else {
+            cur -= one;
+            zero--;
+        }
+        l++;
     }
-    cout << st.size() << "\n";
+
+    cout << -1 << "\n";
+    return;
 }
 
 int main() {
     ios;
+    cout << fixed << setprecision(20);
     solve();
     return 0;
 }
