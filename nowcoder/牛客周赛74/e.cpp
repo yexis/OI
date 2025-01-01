@@ -110,9 +110,11 @@ void solve() {
                 v[i] = v[i - 1] + 1;
             }
         }
+//         for (auto& e : v) cout << e << " "; cout << "\n";
+        
         set<int> st2{a.begin(), a.end()};
         for (int i = 0; i < n; i++) {
-            st.erase(a[i]);
+            st2.erase(a[i]);
             if (i - m >= 0) {
                 st2.insert(a[i - m]);
             }
@@ -120,7 +122,7 @@ void solve() {
             if (v[i] < m) {
                 continue;
             }
-
+//             cout << "i:" << i << " " << st2.size() << "\n";
             int be = a[i - m + 1], en = a[i];
             auto it = st2.lower_bound(en);
             if ( (it == st2.end() || en < *it) && 
@@ -131,16 +133,16 @@ void solve() {
         return false;
     };
 
-    if (cal(a)) {
+    if (cal()) {
         cout << "YES" << "\n";
         return;
     }
 
-    // reverse(a.begin(), a.end());
-    // if (cal(a)) {
-    //     cout << "YES" << "\n";
-    //     return;
-    // }
+    reverse(a.begin(), a.end());
+    if (cal()) {
+        cout << "YES" << "\n";
+        return;
+    }
     cout << "NO" << "\n";
 }
 
