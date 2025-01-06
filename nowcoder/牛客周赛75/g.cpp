@@ -71,77 +71,12 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-    int n, m;
-    cin >> n >> m;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-    }
 
-    unordered_set<int> st;
-    for (int i = 0; i < n; i++) {
-        if (st.count(a[i])) {
-            cout << "NO" << "\n";
-            return;
-        }
-        st.insert(a[i]);
-    }
-
-
-
-    auto cal = [&]() -> bool {
-        vector<int> v(n);
-        v[0] = 1;
-        for (int i = 1; i < n; i++) {
-            if (a[i] < a[i - 1]) {
-                v[i] = 1;
-            } else if (a[i] > a[i - 1]) {
-                v[i] = v[i - 1] + 1;
-            }
-        }
-        
-        set<int> st2{a.begin(), a.end()};
-        for (int i = 0; i < n; i++) {
-            st2.erase(a[i]);
-            if (i - m >= 0) {
-                st2.insert(a[i - m]);
-            }
-            
-            if (v[i] < m) {
-                continue;
-            }
-
-            int be = a[i - m + 1], en = a[i];
-            auto it = st2.lower_bound(en);
-            if ( (it == st2.end() || en < *it) && 
-                (it == st2.begin() || *prev(it) < be) ) {
-                return true;
-            }
-        }
-        return false;
-    };
-
-    if (cal()) {
-        cout << "YES" << "\n";
-        return;
-    }
-
-    reverse(a.begin(), a.end());
-    if (cal()) {
-        cout << "YES" << "\n";
-        return;
-    }
-    cout << "NO" << "\n";
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
 
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
     return 0;
 }

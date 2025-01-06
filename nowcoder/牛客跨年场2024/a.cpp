@@ -71,12 +71,19 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-
+    int n;
+    cin >> n;
+    if (n & 1) {
+        cout << "Bob" << "\n";
+    } else {
+        cout << "Alice" << "\n";
+    }
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
 
+    solve();
     return 0;
 }
