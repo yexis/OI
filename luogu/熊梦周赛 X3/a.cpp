@@ -71,38 +71,46 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-    int n;
-    cin >> n;
-    ll ans = 1;
-    ll odd = 0, even = 0;
-    if (n & 1) {
-        // 1 2 3 4 5 
-        odd = (n + 1) / 2;
-        even = n / 2;
-        for (int i = 1; i <= n; i++) {
-            if (i & 1) {
-                ans *= odd--;
-                ans %= mod;
-            } else {
-                ans *= even--;
-                ans %= mod;
+    int n, k;
+    cin >> n >> k;
+    string s;
+    cin >> s;
+    auto check = [&](ll mid) {
+        ll mx = 0;
+        ll kk = k;
+        for (int i = 0; i < n; i++) {
+            if (kk == 0) return false;
+            ll one = 0, zero = 0;
+            ll t = 0;
+            int j = i;
+            while (j < n && one * zero <= mid) {
+                if (s[j] == '1') {
+                    one++;
+                } else {
+                    zero++;
+                }
+                if (one * zero > mid) break;
+                t = one * zero;
+                j++;
             }
+            kk--;
+            mx = max(mx, t);
+            i = j - 1;
         }
-    } else {
-        // 1 2 3 4 5 6
-        odd = n / 2;
-        even = n / 2;
-        for (int i = 1; i <= n; i++) {
-            if (i & 1) {
-                ans *= odd--;
-                ans %= mod;
-            } else {
-                ans *= even--;
-                ans %= mod;
-            }
+        return mx <= mid;
+    };
+
+    ll ans = -1;
+    ll l = 0, r = 1e18;
+    while (l <= r) {
+        ll mid = (l + r) >> 1;
+        bool fg = check(mid);
+        if (fg) {
+            ans = mid;
+            r = mid - 1;
+        } else {
+            l = mid + 1;
         }
-        ans *= 2;
-        ans %= mod;
     }
     cout << ans << "\n";
 }
@@ -110,7 +118,6 @@ void solve() {
 int main() {
     ios;
     cout << fixed << setprecision(20);
-
     solve();
     return 0;
 }

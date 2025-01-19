@@ -71,12 +71,44 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
+    string s;
+    cin >> s;
+    int n = s.size();
+    
+    int R[n][26];
+    memset(R, 0, sizeof(R));
+    for (int i = n - 1; i >= 0; i--) {
+        if (i + 1 < n) {
+            for (int d = 0; d < 26; d++) {
+                R[i][d] = R[i + 1][d];
+            }
+        }
+        R[i][s[i] - 'a']++;
+    }
 
+    int ans = n;
+    int cnt[26];
+    memset(cnt, 0, sizeof(cnt));
+    for (int i = 0; i < n / 2; i++) {
+        cnt[s[i] - 'a']++;
+    }
+    int cnt2[26];
+    memset(cnt2, 0, sizeof(cnt2));
+    for (int i = n / 2; i < n; i++) {
+        cnt2[s[i] - 'a']++;
+    }
+    for (int d = 0; d < 26; d++) {
+        for (int dd = 0; dd < 26; dd++) {
+            ans = min(ans, n - cnt[d] - cnt2[dd]);
+        }
+    }
+    cout << ans << "\n";
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
 
+    solve();
     return 0;
 }

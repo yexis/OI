@@ -73,44 +73,52 @@ ll power(ll x, ll b) {
 void solve() {
     int n;
     cin >> n;
-    ll ans = 1;
-    ll odd = 0, even = 0;
-    if (n & 1) {
-        // 1 2 3 4 5 
-        odd = (n + 1) / 2;
-        even = n / 2;
-        for (int i = 1; i <= n; i++) {
-            if (i & 1) {
-                ans *= odd--;
-                ans %= mod;
-            } else {
-                ans *= even--;
-                ans %= mod;
-            }
-        }
-    } else {
-        // 1 2 3 4 5 6
-        odd = n / 2;
-        even = n / 2;
-        for (int i = 1; i <= n; i++) {
-            if (i & 1) {
-                ans *= odd--;
-                ans %= mod;
-            } else {
-                ans *= even--;
-                ans %= mod;
-            }
-        }
-        ans *= 2;
-        ans %= mod;
+    vector<int> A(n);
+    for (int i = 0; i < n; i++) {
+        cin >> A[i];
     }
-    cout << ans << "\n";
+    vector<vector<int>> g(n);
+    for (int i = 0; i < n - 1; i++) {
+        int u, v;
+        cin >> u >> v;
+        u--, v--;
+        g[u].push_back(v);
+        g[v].push_back(u);
+    }
+
+    auto dfs = [&](auto&& dfs, int u, int o) -> pii {
+        // a: 子树 不需要变化
+        // b: 子树 需要变化1次
+        int a = 0, b = 0;
+        if (A[u] == 0) {
+            a = 0, b = 1;
+        } else {
+            a = 1, b = 0;
+        }
+
+        unordered_map<int, pii> mp;
+        for (auto& v : g[u]) {
+            if (v == o) continue;
+            auto [aa, bb] = dfs(dfs, v, u);
+            mp[v] = pii(aa, bb);
+        }
+
+        for (auto& [v, vv] : mp) {
+            auto& [aa, bb] = vv;
+            a += min(aa, bb + 1);
+            b += min(aa, bb);
+        };
+        return pii(a, b);
+    };
+
+    auto [res_aa, res_bb] = dfs(dfs, 0, -1);
+    cout << min(res_aa, res_bb + 1) << "\n";
+    return;
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-
     solve();
     return 0;
 }

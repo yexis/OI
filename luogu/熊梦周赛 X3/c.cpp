@@ -71,46 +71,12 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-    int n;
-    cin >> n;
-    ll ans = 1;
-    ll odd = 0, even = 0;
-    if (n & 1) {
-        // 1 2 3 4 5 
-        odd = (n + 1) / 2;
-        even = n / 2;
-        for (int i = 1; i <= n; i++) {
-            if (i & 1) {
-                ans *= odd--;
-                ans %= mod;
-            } else {
-                ans *= even--;
-                ans %= mod;
-            }
-        }
-    } else {
-        // 1 2 3 4 5 6
-        odd = n / 2;
-        even = n / 2;
-        for (int i = 1; i <= n; i++) {
-            if (i & 1) {
-                ans *= odd--;
-                ans %= mod;
-            } else {
-                ans *= even--;
-                ans %= mod;
-            }
-        }
-        ans *= 2;
-        ans %= mod;
-    }
-    cout << ans << "\n";
+
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
 
-    solve();
     return 0;
 }

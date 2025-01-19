@@ -87,9 +87,8 @@ void solve() {
     int n = s.size();
     if (n & 1) {
         n++;
-        n /= 2;
         string ans;
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n / 2; i++) {
             if (i & 1) {
                 ans += '1';
                 ans += '1';
@@ -117,31 +116,56 @@ void solve() {
             return;
         }
 
+        
         // 自身不是
+        vector<int> vv;
         string ans;
         for (int i = 0; i < n; i += 2) {
             if (s[i] == s[i + 1] && 
                     (i - 1 < 0 || s[i - 1] != s[i])) {
-                ans += s[i];
-                ans += s[i + 1];
+                string t;
+                t += s[i];
+                t += s[i + 1];
+                vv.push_back(stoi(t));
                 continue;
             }
             string t = s.substr(i, 2);
-            int tt = stoi(t);
-            for (int d = 11; d <= 99; d++) {
-                if (d > t) {
-                    ans += to_string(tt);
-                    break;
+            vv.push_back(stoi(t));
+            while (v[vv.back()] == -1) {
+                vv.pop_back();
+            }
+            if (vv.size() == 0) {
+                // 进位
+                n += 2;
+                for (int i = 1; i <= n / 2; i++) {
+                    if (i & 1) {
+                        ans += '1';
+                        ans += '1';
+                    } else {
+                        ans += '0';
+                        ans += '0';
+                    }
+                }
+                cout << ans << "\n";
+            } else {
+                // 不进位
+                int nxt = v[vv.back()];
+                vv.push_back(nxt);
+                int c = 1;
+                while (vv.size() < n / 2) {
+                    if (c & 1) {
+                        vv.push_back(0);
+                    } else {
+                        vv.push_back(11);
+                    }
                 }
             }
-            int c = 1;
-            for (int j = i + 2; j < n; j++) {
-                if (c & 1) {
-                    ans += '0';
-                    ans += '0';
+
+            for (auto& e : vv) {
+                if (e == 0) {
+                    ans += "00";
                 } else {
-                    ans += '1';
-                    ans += '1';
+                    ans += to_string(e);
                 }
             }
             cout << ans << "\n";

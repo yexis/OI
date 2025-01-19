@@ -73,38 +73,44 @@ ll power(ll x, ll b) {
 void solve() {
     int n;
     cin >> n;
-    ll ans = 1;
-    ll odd = 0, even = 0;
-    if (n & 1) {
-        // 1 2 3 4 5 
-        odd = (n + 1) / 2;
-        even = n / 2;
-        for (int i = 1; i <= n; i++) {
-            if (i & 1) {
-                ans *= odd--;
-                ans %= mod;
-            } else {
-                ans *= even--;
-                ans %= mod;
-            }
-        }
-    } else {
-        // 1 2 3 4 5 6
-        odd = n / 2;
-        even = n / 2;
-        for (int i = 1; i <= n; i++) {
-            if (i & 1) {
-                ans *= odd--;
-                ans %= mod;
-            } else {
-                ans *= even--;
-                ans %= mod;
-            }
-        }
-        ans *= 2;
-        ans %= mod;
+    vector<vector<int>> g(n);
+    for (int i = 0; i < n - 1; i++) {
+        int u, v;
+        cin >> u >> v;
+        u--, v--;
+        g[u].push_back(v);
+        g[v].push_back(u);
     }
-    cout << ans << "\n";
+    int k;
+    cin >> k;
+    set<int> se;
+    for (int i = 0; i < k; i++) {
+        int x;
+        cin >> x;
+        x--;
+        se.insert(x);
+    }
+
+    vector<ll> cnt(n);
+    auto dfs = [&](auto&& dfs, int u, int o) -> ll {
+        ll c = se.count(u) ? 1 : 0;
+        for (auto& v : g[u]) {
+            if (v == o) continue;
+            ll cc = dfs(dfs, v, u);
+            cnt[u] += c * cc * 2;
+            c += cc;
+        }
+        if (se.count(u)) {
+            cnt[u]++;
+        }
+        return c;
+    };
+    dfs(dfs, 0, -1);
+    for (auto& e : cnt) {
+        cout << e << " ";
+    }
+    cout << "\n";
+
 }
 
 int main() {
