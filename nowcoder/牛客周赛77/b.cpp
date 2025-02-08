@@ -71,12 +71,30 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    int cnt[10];
+    memset(cnt, 0, sizeof(cnt));
+    for (int e : a) cnt[e]++;
+    int mi = INF, mx = 0;
+    for (int i = 1; i <= 9; i++) {
+        mi = min(mi, cnt[i]);
+        mx = max(mx, cnt[i]);
+    }
+    if (mx - mi <= 1) {
+        cout << "YES" << "\n";
+    } else {
+        cout << "NO" << "\n";
+    }
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-
+    solve();
     return 0;
 }

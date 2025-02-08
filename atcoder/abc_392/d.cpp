@@ -70,69 +70,53 @@ ll power(ll x, ll b) {
  * 
 */
 
-struct DJ {
-    int n;
-    vector<int> fa;
-    vector<int> count;
-    DJ(int nn) {
-        n = nn;
-        fa.resize(n);
-        iota(fa.begin(), fa.end(), 0);
-        count.resize(n, 1);
-    }
-    int find(int x) {
-        if (x != fa[x]) {
-            fa[x] = find(fa[x]);
-        }
-        return fa[x];
-    }
-    void merge(int x, int y) {
-        int rx = find(x);
-        int ry = find(y);
-        if (rx == ry) return;
-        fa[ry] = rx;
-        count[rx] += count[ry];
-    }
-};
-
 void solve() {
-    int n;
-    cin >> n;
-    vector<ll> w(n);
-    for (int i = 0; i < n; i++) {
-        cin >> w[i];
-    }
-
-    DJ dj(n);
-    for (int d = 0; d < 63; d++) {
-        int lst = -1;
-        for (int i = 0; i < n; i++) {
-            if (w[i] >> (ll)d & 1) {
-                if (lst == -1) {
-                    
-                } else {
-                    dj.merge(lst, i);
-                }
-                lst = i;
-            }
+    int N;
+    cin >> N;
+    vector<vector<int> > a(N);
+    for (int i = 0; i < N; i++) {
+        int cnt;
+        cin >> cnt;
+        a[i].resize(cnt);
+        for (int j = 0; j < cnt; j++) {
+            cin >> a[i][j];
         }
     }
 
-    int ans = 0;
-    for (int i = 0; i < n; i++) {
-        ans = max(ans, dj.count[dj.find(i)]);
+    vector<unordered_map<int, double> > mp(N + 1);
+    for (int i = 0; i < N; i++) {
+        auto& vec = a[i];
+        int sz = vec.size();
+        unordered_map<int, int> cnt;
+        for (auto& e : vec) {
+            cnt[e]++;
+        }
+        for (auto& [k, v] : cnt) {
+            mp[i][k] = (double)v / sz;
+        }
+    }
+
+    double ans = 0;
+    for (int i = 0; i < N; i++) {
+        for (int j = i + 1; j < N; j++) {
+            double t = 0;
+            auto& mp1 = mp[i];
+            auto& mp2 = mp[j];
+            for (auto& [k, v] : mp1) {
+                if (mp2.count(k)) {
+                    t += v * mp2[k];
+                }
+            }
+            ans = max(ans, t);
+        }
     }
     cout << ans << "\n";
 }
 
 int main() {
     ios;
-    cout << fixed << setprecision(20);
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
-    
+    cout << fixed << setprecision(15);
+
+    solve();
     return 0;
 }

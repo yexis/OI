@@ -71,12 +71,24 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-
+    ll x, y, a, b, c, d;
+    cin >> x >> y >> a >> b >> c >> d;
+    ll g1 = gcd(a, b);
+    ll g2 = gcd(c, d);
+    if (x % g2 == 0 && y % g1 == 0) {
+        cout << "YES" << "\n";
+    } else {
+        cout << "NO" << "\n";
+    }
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
     return 0;
 }

@@ -71,12 +71,16 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-
+    vector<string> ss = {"20250121","20250123","20250126", "20250206", "20250208", "20250211"};
+    int n;
+    cin >> n;
+    cout << ss[n - 1] << "\n";
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
 
+    solve();
     return 0;
 }

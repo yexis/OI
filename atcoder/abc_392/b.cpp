@@ -70,69 +70,33 @@ ll power(ll x, ll b) {
  * 
 */
 
-struct DJ {
-    int n;
-    vector<int> fa;
-    vector<int> count;
-    DJ(int nn) {
-        n = nn;
-        fa.resize(n);
-        iota(fa.begin(), fa.end(), 0);
-        count.resize(n, 1);
-    }
-    int find(int x) {
-        if (x != fa[x]) {
-            fa[x] = find(fa[x]);
-        }
-        return fa[x];
-    }
-    void merge(int x, int y) {
-        int rx = find(x);
-        int ry = find(y);
-        if (rx == ry) return;
-        fa[ry] = rx;
-        count[rx] += count[ry];
-    }
-};
-
 void solve() {
-    int n;
-    cin >> n;
-    vector<ll> w(n);
-    for (int i = 0; i < n; i++) {
-        cin >> w[i];
+    int n, m;
+    cin >> n >> m;
+
+    vector<int> seen(1001);
+    for (int i = 0; i < m; i++) {
+        int x;
+        cin >> x;
+        seen[x] = 1;
     }
 
-    DJ dj(n);
-    for (int d = 0; d < 63; d++) {
-        int lst = -1;
-        for (int i = 0; i < n; i++) {
-            if (w[i] >> (ll)d & 1) {
-                if (lst == -1) {
-                    
-                } else {
-                    dj.merge(lst, i);
-                }
-                lst = i;
-            }
-        }
+    int cnt = 0;
+    vector<int> res;
+    for (int i = 1; i <= n; i++) {
+        if (seen[i]) continue;
+        cnt++;
+        res.push_back(i);
     }
-
-    int ans = 0;
-    for (int i = 0; i < n; i++) {
-        ans = max(ans, dj.count[dj.find(i)]);
-    }
-    cout << ans << "\n";
+    cout << cnt << "\n";
+    for (auto& e : res) cout << e << " ";
+    cout << "\n";
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
-    
+
+    solve();
     return 0;
 }
