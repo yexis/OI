@@ -70,8 +70,143 @@ ll power(ll x, ll b) {
  * 
 */
 
+struct Node {
+    int tag[2];
+    ll v[2];
+    ll len;
+    Node() : len(0) {
+        v[0] = v[1] = 0;
+        tag[0] = tag[1] = 0;
+    }
+    Node(int l) {
+        len = l;
+        v[0] = l;
+        v[1] = l - v[0];
+        tag[0] = tag[1] = 0;
+    }
+    Node(int v0, int v1, int l) {
+        v[0] = v0;
+        v[1] = v1;
+        len = l;
+        tag[0] = tag[1] = 0;
+    }
+    Node operator+(const Node& b) {
+        Node c;
+        c.v[0] = v[0] + ((len & 1) ? b.v[1] : b.v[0]);
+        c.v[1] = v[1] + ((len & 1) ? b.v[0] : b.v[1]);
+        c.len = len + b.len;
+        return c;
+    }
+    void op1(int x) {
+        v[x] = len / 2;
+        v[x ^ 1] = len - v[x];
+    }
+    void op2() {
+        swap(v[0], v[1]);
+    }
+};
+
+const int N = 1e6;
+struct SegTree {
+    int cnt;
+    Node tr[N];
+    int ls[N];
+    int rs[N];
+    SegTree() {
+        cnt = 0;
+    }
+
+    void push_down(int o) {
+        if (tr[o].tag[0]) {
+            tr[ls[o]].op1(1);
+            tr[rs[o]].op1(1);
+            tr[o].tag[0] = 0;
+        }
+        if (tr[o].tag[1]) {
+            tr[ls[o]].op2();
+            tr[rs[o]].op2();
+            tr[o].tag[1] = 0;
+        }
+    }
+
+    void push_up(int o) {
+        tr[o] = tr[ls[o]] + tr[rs[o]];
+    }
+
+    void add1(int& o, int l, int r, int L, int R, int u) {
+        if (L <= l && R >= r) {
+            tr[o].op1(u);
+            return;
+        }
+        int m = (l + r) >> 1;
+        if (!ls[o]) {
+            tr[ls[o]] = Node(r - l + 1);
+        }
+        if (!rs[o]) {
+            tr[rs[o]] = Node(r - l + 1);
+        }
+        push_down(o);
+        if (L <= m) {
+            add1(ls[o], l, m, L, R, u);
+        }
+        if (R > m) {
+            add1(rs[o], m + 1, r, L, R, u);
+        }
+        push_up(o);
+    }
+
+    void add2(int& o, int l, int r, int L, int R) {
+        if (L <= l && R >= r) {
+            tr[o].op2();
+            return;
+        }
+        int m = (l + r) >> 1;
+        if (!ls[o]) {
+            tr[ls[o]] = Node(r - l + 1);
+        }
+        if (!rs[o]) {
+            tr[rs[o]] = Node(r - l + 1);
+        }
+        push_down(o);
+        if (L <= m) {
+            add2(ls[o], l, m, L, R);
+        }
+        if (R > m) {
+            add2(rs[o], m + 1, r, L, R);
+        }
+        push_up(o);
+    }
+
+    Node ask(int o, int l, int r, int L, int R) {
+        // if (!o) {
+        //     // 未出现过，说明为全0
+        //     return Node();
+        // }
+        if (L <= l && R >= r) {
+            return tr[o];
+        }
+        int m = (l + r) >> 1;
+        if (!ls[o]) {
+            tr[ls[o]] = Node(r - l + 1);
+        }
+        if (!rs[o]) {
+            tr[rs[o]] = Node(r - l + 1);
+        }
+        push_down(o);
+
+        Node ans;
+        if (L <= m) {
+            ans = ans + ask(ls[o], l, m, L, R);
+        }
+        if (R > m) {
+            ans = ans + ask(rs[o], m + 1, r, L, R);
+        }
+        return ans;
+    }
+};
+
 void solve() {
-    cout << 1e9 / 32 << "\n";
+    
 }
 
 int main() {

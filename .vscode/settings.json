@@ -8,7 +8,8 @@
         "set": "cpp",
         "vector": "cpp",
         "iomanip": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "ios": "cpp"
     },
     "cph.language.cpp.Args": "-std=c++20",
     "editor.scrollBeyondLastLine": false,
