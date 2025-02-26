@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/f3_dynamic_luogu.dir/nowcoder/牛客周赛62/f3_dynamic_luogu.cpp.o -o f3_dynamic_luogu
