@@ -1,15 +1,70 @@
 #include <iostream>
 #include <vector>
+#include <string.h>
 #include <algorithm>
-#include <functional>
-#include <climits>
+#include <numeric>
+#include <set>
+#include <array>
+#include <cassert>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
 #include <iomanip>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <list>
+#include <set>
+#include <map>
+#include <unordered_set>
+#include <unordered_map>
+#include <algorithm>
+#include <complex>
+#include <cmath>
+#include <numeric>
+#include <bitset>
+#include <functional>
+#include <random>
+#include <ctime>
+#include <limits>
+#include <climits>
 
 using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 
-const int INF = 0x3f3f3f3f;
 
+using ll = long long;
+using ull = unsigned long long;
+using pii = pair<int, int>;
+using pli = pair<ll, int>;
+using pil = pair<int, ll>;
+using pll = pair<ll, ll>;
+using puu = pair<ull, ull>;
+const int dir[4][2] = {{-1, 0},
+                       {1,  0},
+                       {0,  -1},
+                       {0,  1}};
+const int INF = 0x3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const int mod = 1e9 + 7;
+const string YES = "YES";
+const string NO = "NO";
+
+ll power(ll x, ll b) {
+    ll ans = 1;
+    while (b) {
+        if (b & 1) {
+            ans *= x;
+            ans %= mod;
+        }
+        x *= x;
+        x %= mod;
+        b >>= 1;
+    }
+    return ans;
+}
 void solve() {
     int n;
     cin >> n;
@@ -44,7 +99,9 @@ void solve() {
     
 
     // 递归深度优先搜索函数
+    int vis[101][101];
     auto dfs = [&](auto&& dfs, int x, int y, int len) {
+        if (vis[x][y]) return;
         if (g[x][y] != '-') {
             res[xx][yy] = min(res[xx][yy], len + 1);
             return;
@@ -56,6 +113,7 @@ void solve() {
         if (len >= res[xx][yy]) {
             return;
         }
+        vis[x][y] = true;
 
         auto& vv1 = v1[x];
         auto& vv2 = v2[y];
@@ -78,7 +136,14 @@ void solve() {
                 res[i][j] = 0;
                 continue;
             }
+
+            if (g[i][j] != '-') {
+                res[i][j] = 1;
+                continue;
+            }
+
             xx = i, yy = j;
+            memset(vis, 0, sizeof(vis));
             dfs(dfs, i, j, 0);
             if (res[i][j] == INF) {
                 res[i][j] = -1;
