@@ -80,7 +80,7 @@ struct Node {
     }
     Node(int l) {
         len = l;
-        v[0] = l;
+        v[0] = l / 2;
         v[1] = l - v[0];
         tag[0] = tag[1] = 0;
     }
@@ -97,11 +97,18 @@ struct Node {
         c.len = len + b.len;
         return c;
     }
-    void op1(int x) {
-        v[x] = len / 2;
-        v[x ^ 1] = len - v[x];
+    // 将所有元素修改为 1
+    void op1() {
+        v[1] = len / 2;
+        v[0] = len - v[1];
+        tag[0] = 1;
+        tag[1] = 0;
+
     }
+    // 区间取反
     void op2() {
+        tag[0] = 0;
+        tag[1] ^= 1;
         swap(v[0], v[1]);
     }
 };
@@ -118,8 +125,8 @@ struct SegTree {
 
     void push_down(int o) {
         if (tr[o].tag[0]) {
-            tr[ls[o]].op1(1);
-            tr[rs[o]].op1(1);
+            tr[ls[o]].op1();
+            tr[rs[o]].op1();
             tr[o].tag[0] = 0;
         }
         if (tr[o].tag[1]) {
@@ -206,7 +213,25 @@ struct SegTree {
 };
 
 void solve() {
-    
+    int n, q;
+    cin >> n >> q;
+
+    int root = 0;
+    SegTree seg;
+    for (int i = 0; i < q; i++) {
+        int op;
+        cin >> op;
+        int l, r;
+        cin >> l >> r;
+        if (op == 1) {
+            seg.add1(root, 1, n, l, r, 1);
+        } else if (op == 2) {
+            seg.add2(root, 1, n, l, r);
+        } else {
+            node res = seg.ask(root, l, r);
+            cout << min(res.v[0], res.v[1]) << "\n";
+        }
+    }
 }
 
 int main() {
