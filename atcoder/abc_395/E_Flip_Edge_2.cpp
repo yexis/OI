@@ -67,17 +67,53 @@ ll power(ll x, ll b) {
 }
 
 /*
- * 
+ * dijkstra
+ * 加点法，将反图中的点u抽象成新的点u+n，将反图中的点v抽象成新的新v+n
+ * 如果 u->v = 1， 那么 (v+n)->(u+n) = 1
+ * 另外对于任意点u，u->(u+n) = x, (u+n)->u = x
 */
 
 void solve() {
+    int n, m, x;
+    cin >> n >> m >> x;
+    
+    vector<pii> g[n << 1];
+    for (int i = 0; i < m; i++) {
+        int u, v;
+        cin >> u >> v;
+        u--, v--;
+        g[u].push_back({v, 1});
+        g[v + n].push_back({u + n, 1});
+    }
+    for (int u = 0; u < n; u++) {
+        g[u].push_back({u + n, x});
+        g[u + n].push_back({u, x});
+    }
 
+    vector<ll> dist(2 * n, LLINF);
+    priority_queue<pll, vector<pll>, greater<> > pq;
+    dist[0] = 0;
+    pq.emplace(0, 0);
+    while (pq.size()) {
+        auto [d, u] = pq.top();
+        pq.pop();
+        if (dist[u] < d) {
+            continue;
+        }
+        for (auto& [v, w] : g[u]) {
+            if (d + w < dist[v]) {
+                dist[v] = d + w;
+                pq.emplace(dist[v], v);
+            }
+        }
+    }
+    cout << min(dist[n - 1], dist[n + n - 1]) << "\n";
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-
+    solve();
     return 0;
 }
 
