@@ -33,8 +33,7 @@
 
 using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
-#define next_per next_permutation
-#define call(x) (x).begin(), (x).end()
+
 
 using ll = long long;
 using ull = unsigned long long;
@@ -72,16 +71,53 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
+    int n, m;
+    cin >> n >> m;
+    vector<int> b(n);
+    vector<int> w(m);
+    for (int i = 0; i < n; i++) {
+        cin >> b[i];
+    }
+    for (int i = 0; i < m; i++) {
+        cin >> w[i];
+    }
+
+    sort(b.rbegin(), b.rend());
+    sort(w.rbegin(), w.rend());
+
+    vector<ll> sum(n + 1);
+    for (int i = 0; i < n; i++) {
+        sum[i + 1] = sum[i] + b[i];
+    }
+
+    vector<ll> R(n);
+    for (int i = n - 1; i >= 0; i--) {
+        if (i == n - 1) R[i] = sum[i + 1];
+        else R[i] = max(sum[i + 1], (ll)R[i + 1]);
+    }
+
+    ll pre = 0;
+    ll ans = max(R[0], 0ll);
+    for (int i = 0; i < m; i++) {
+        if (i + 1 > n) break;
+        pre += w[i];
+        ans = max(ans, pre + R[i]);
+    }
+    cout << ans << "\n";
 
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-
+    solve();
     return 0;
 }
 
+/*
+5 -2 -5 10
+8 4 1
+*/
 
 
 

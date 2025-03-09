@@ -33,8 +33,7 @@
 
 using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
-#define next_per next_permutation
-#define call(x) (x).begin(), (x).end()
+
 
 using ll = long long;
 using ull = unsigned long long;
@@ -72,13 +71,31 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
+    int n;
+    cin >> n;
+    stack<int> stk;
+    for (int i = 0; i < 100; i++) {
+        stk.push(0);
+    }
 
+    for (int i = 0; i < n; i++) {
+        int op;
+        cin >> op;
+        if (op == 1) {
+            int x; 
+            cin >> x;
+            stk.push(x);
+        } else {
+            cout << stk.top() << "\n";
+            stk.pop();
+        }
+    }
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-
+    solve();
     return 0;
 }
 

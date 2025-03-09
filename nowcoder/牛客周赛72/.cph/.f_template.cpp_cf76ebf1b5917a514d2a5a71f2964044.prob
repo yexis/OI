@@ -1,0 +1,1 @@
+{"name":"Local: f_template","url":"/Users/yex/CPP/OI/nowcoder/牛客周赛72/f_template.cpp","tests":[{"id":1741517382242,"input":"1000000000 2\n1 2 999999999\n3 1 10","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/Users/yex/CPP/OI/nowcoder/牛客周赛72/f_template.cpp","group":"local","local":true}

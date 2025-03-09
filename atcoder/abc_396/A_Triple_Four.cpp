@@ -33,8 +33,7 @@
 
 using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
-#define next_per next_permutation
-#define call(x) (x).begin(), (x).end()
+
 
 using ll = long long;
 using ull = unsigned long long;
@@ -72,13 +71,31 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
+    int n;
+    cin >> n;   
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
 
+    for (int i = 0; i < n; i++) {
+        int j = i;
+        while (j < n && a[j] == a[i]) {
+            j++;
+        }
+        if (j - i >= 3) {
+            cout << "Yes" << "\n";
+            return;
+        }
+        
+    }
+    cout << "No" << "\n";
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-
+    solve();
     return 0;
 }
 
