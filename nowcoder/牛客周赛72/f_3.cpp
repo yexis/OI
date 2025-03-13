@@ -261,7 +261,9 @@ void solve() {
         cin >> op >> l >> r;
     }
 
+    // 存奇数节点
     vector<int> sep_odd;
+    // 存偶数节点
     vector<int> sep_even;
     for (auto& [_, l, r] : qs) {
         sep_odd.push_back(l & 1 ? l : l + 1);
@@ -290,7 +292,9 @@ void solve() {
         return pr;
     };
 
+    // 存奇数区间缩点
     auto pii_odd = topii(sep_odd);
+    // 存偶数区间缩点
     auto pii_even = topii(sep_even);
     int n_odd = pii_odd.size();
     int n_even = pii_even.size();
