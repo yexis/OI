@@ -264,12 +264,12 @@ void solve() {
     vector<int> sep_odd;
     vector<int> sep_even;
     for (auto& [_, l, r] : qs) {
-        sep_odd.push_back((l & 1) ? l : l + 1);
-        sep_even.push_back((l & 1) ? l + 1 : l);
+        sep_odd.push_back(l & 1 ? l : l + 1);
+        sep_even.push_back(l & 1 ? l + 1 : l);
         // 这里为什么是 r + 2，是因为要将区间右边界右移一位
         // 比如 右边界是11，那么存的右边界应该是13
-        sep_odd.push_back((r & 1) ? r + 2 : r + 1);
-        sep_even.push_back((r & 1) ? r + 1 : r + 2);
+        sep_odd.push_back(r & 1 ? r + 2 : r + 1);
+        sep_even.push_back(r & 1 ? r + 1 : r + 2);
     }
 
     // 区间离散化
@@ -298,10 +298,10 @@ void solve() {
     SegTree seg_even(pii_even);
 
     for (auto& [op, l, r] : qs) {
-        int l_odd = get(sep_odd, (l & 1) ? l : l + 1);
-        int l_even = get(sep_even, (l & 1) ? l + 1 : l);
-        int r_odd = get(sep_odd, (r & 1) ? r + 2 : r + 1) - 1;
-        int r_even = get(sep_even, (r & 1) ? r + 1 : r + 2) - 1;
+        int l_odd = get(sep_odd, l & 1 ? l : l + 1);
+        int l_even = get(sep_even, l & 1 ? l + 1 : l);
+        int r_odd = get(sep_odd, r & 1 ? r + 2 : r + 1) - 1;
+        int r_even = get(sep_even, r & 1 ? r + 1 : r + 2) - 1;
 
         if (op == 1) {
             seg_odd.add1(1, 1, n_odd, l_odd, r_odd, 1);
