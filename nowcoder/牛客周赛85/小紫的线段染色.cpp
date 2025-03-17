@@ -113,25 +113,23 @@ void solve() {
         pr2.push_back({l, r, i});
     }
     sort(pr2.begin(), pr2.end(), [&](auto& aa, auto& bb) {
-        if (aa[1] == bb[1]) {
-            return aa[0] < bb[0];
+        if (aa[0] == bb[0]) {
+            return aa[1] < bb[1];
         }
-        return aa[1] < bb[1];
+        return aa[0] < bb[0];
     });
 
     // 一定有解
+    // 为什么一定要按照左边界排序呢？
     vector<int> res1;
     vector<int> res2;
     int mx1 = 0, mx2 = 0;
     for (int i = 0; i < n; i++) {
         auto& [l, r, idx] = pr2[i];
-        if (l <= mx1 && l <= mx2) {
-            cout << -1 << "\n";
-            return;
-        } else if (l <= mx2) {
+        if (l > mx1) {
             res1.push_back(idx);
             mx1 = max(mx1, r);
-        } else if (l <= mx1) {
+        } else if (l > mx2) {
             res2.push_back(idx);
             mx2 = max(mx2, r);    
         } else {
@@ -139,6 +137,8 @@ void solve() {
             mx2 = max(mx2, r);
         }
     }
+    
+    
     if (res1.size() < res2.size()) {
         res1.swap(res2);
     }
