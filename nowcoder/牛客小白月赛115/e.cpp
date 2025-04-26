@@ -78,6 +78,7 @@ ll power(ll x, ll b) {
 
 /*
  * https://ac.nowcoder.com/acm/contest/107879/E
+ * 贪心 + 模拟
  * 对于每个魔法师，只需要考虑其吟唱的时间点time的左右两个节点
  * ... time - 1, time, time + 1 ...
 */
