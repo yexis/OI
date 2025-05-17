@@ -78,8 +78,52 @@ ll power(ll x, ll b) {
 }
 
 /*
- * 
+ * 数位DP
 */
+using ll = long long;
+const int mod = 1e9 + 7;
+int m;
+string s;
+vector<vector<ll> > f;
+void init(int n) {
+    s = to_string(n);
+    m = s.size();
+    f.assign(m, vector<ll>(1 << 10, -1));
+}
+
+// i : 表示当前遍历的位数
+// mask: 表示当前已经遍历的状态，即高位出现的数字集合
+// is_limit: 当前位i是否被限制。若is_limit = true, 则当前位最大取值为s[i]; 若is_limit=false, 则当前位最大取值为9
+// is_num: 当前位i前面(高位)是否填了数字（能否跳过）
+ll dfs(int i, int mask, int is_limit, int is_num) {
+    if (i == m) return is_num;
+    if (!is_limit && is_num && f[i][mask] >= 0) {
+        return f[i][mask];
+    }
+    
+    ll res = 0;
+    // 若前面全部为 0, 可以跳过当前位（即 将当前位置为0）
+    if (!is_num) {
+        res = dfs(i + 1, mask, false, false);
+    }
+    // 设置当前位上限
+    int up = is_limit ? s[i] - '0' : 9;
+    int d = is_num ? 0 : 1;
+    for (; d <= up; d++) {
+        if ((mask >> d & 1) == 0) {
+            res += dfs(i + 1, mask | (1 << d), is_limit && d == up, true);
+            res %= mod;
+        }
+    }
+
+    // is_limit时，不会进入记忆化
+    // !is_num时，不会进入记忆化
+    if (!is_limit && is_num) {
+        f[i][mask] = res;
+    }
+    return res;
+}
+
 
 void solve() {
 
