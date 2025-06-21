@@ -35,7 +35,9 @@ using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 #define next_per next_permutation
 #define call(x) (x).begin(), (x).end()
-#define debug(x) cerr << (#x) << " = " << (x) << endl;
+#define debug(x) cout << (#x) << " = " << (x) << endl;
+#define debugout(x) cout << (#x) << " = " << (x) << endl;
+#define debugerr(x) cerr << (#x) << " = " << (x) << endl;
 
 using ll = long long;
 using ull = unsigned long long;
