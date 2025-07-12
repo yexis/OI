@@ -81,58 +81,93 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
+    int n, k;
+    cin >> n >> k;
     string s;
     cin >> s;
-    int n = s.size();
+    if (k == 0) {
+        vector<char> res(n, '.');
+        for (char c : res) cout << c << ""; cout << "\n";
+        return;
+    }
 
-    auto cal = [&](int l, int r) {
-        string t = s;
+    int o = 0;
+    for (int i = 0; i < n; i++) {
+        if (s[i] == 'o') o++;
+    }
+    
+    // 剩余0个位置
+    int rest = k - o;
+    if (rest == 0) {
+        vector<char> res(n);
         for (int i = 0; i < n; i++) {
-            if (t[i] == '?') {
-                if (i >= l && i <= r) {
-                    t[i] = 'v';
-                } else {
-                    t[i] = 'o';
-                }
-            } 
-        }
-        int o = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') o++;
-        }
-
-        int left = 0;
-        ll ans = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') {
-                left++;
+            if (s[i] == '?') {
+                res[i] = '.';
             } else {
-                ans += left * (o - left);
+                res[i] = s[i];
             }
         }
-        return ans;
-    };
+        for (char c : res) cout << c << ""; cout << "\n";
+        return;
+    }
 
-    ll ans = 0;
-    for (int l = 0; l < n; l++) {
-        for (int r = l - 1; r < n; r++) {
-            if (r < 0) continue;
-            ans = max(ans, cal(l, r));
+    // 有剩余位置， rest > 0
+    vector<int> index;
+    vector<char> res(n, '?');
+    for (int i = 0; i < n; i++) {
+        if (s[i] == 'o') {
+            index.push_back(i);
+        }
+        if (s[i] != '?') {
+            res[i] = s[i];
         }
     }
-    cout << ans << "\n";
+    for (int idx : index) {
+        if (idx - 1 >= 0 && s[idx - 1] == '?') {
+            res[idx - 1] = '.';
+        }
+        if (idx + 1 < n && s[idx + 1] == '?') {
+            res[idx + 1] = '.';
+        }
+    }
+    int can = 0;
+    for (int i = 0; i < n; i++) {
+        if (res[i] != '?') continue;
+        int j = i;
+        while (j < n && res[j] == '?') {
+            j++;
+        }
+        int len = j - i;
+        can += (len + 1) / 2;
+        i = j - 1;
+    }
+
+    if (can == rest) {
+        for (int i = 0; i < n; i++) {
+            if (res[i] != '?') continue;
+            int j = i;
+            while (j < n && res[j] == '?') {
+                j++;
+            }
+            int len = j - i;
+            if (len & 1) {
+                bool fg = 1;
+                for (int i1 = i; i1 < j; i1++) {
+                    if (fg) res[i1] = 'o';
+                    else res[i1] = '.';
+                    fg ^= 1;
+                }
+            }
+            i = j - 1;
+        }
+    }
+    for (char c : res) cout << c << ""; cout << "\n";
 }
-
-
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
+    solve();
     return 0;
 }
 

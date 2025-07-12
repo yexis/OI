@@ -35,6 +35,7 @@ using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 #define next_per next_permutation
 #define call(x) (x).begin(), (x).end()
+#define debug(x) cerr << (#x) << " = " << (x) << endl;
 
 using ll = long long;
 using ull = unsigned long long;
@@ -80,59 +81,41 @@ ll power(ll x, ll b) {
  * 
 */
 
+
+double dp[1 << 8][5005];
 void solve() {
-    string s;
-    cin >> s;
-    int n = s.size();
+    int n, x;
+    cin >> n >> x;
+    vector<arr> pr;
+    for (int i = 0; i < n; i++) {
+        int s, c, p;
+        cin >> s >> c >> p;
+        pr.push_back({s, c, p});
+    }
 
-    auto cal = [&](int l, int r) {
-        string t = s;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == '?') {
-                if (i >= l && i <= r) {
-                    t[i] = 'v';
-                } else {
-                    t[i] = 'o';
+    // dp[s][x]表示通过集合为s且花费为x的最大期望
+    double ans = 0;    
+    for (int i = 1; i <= x; i++) {
+        for (int mask = 0; mask < (1 << n); mask++) {
+            for (int d = 0; d < n; d++) {
+                auto& [s, c, p] = pr[d];
+                if ((mask >> d & 1) && c <= i) {
+                    dp[mask][i] = max(dp[mask][i], 
+                        (dp[mask ^ (1 << d)][i - c] + s) * p / 100.0 + 
+                        (dp[mask][i - c] + 0) * (100 - p) / 100.0);
+                    ans = max(ans, dp[mask][i]);
                 }
-            } 
-        }
-        int o = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') o++;
-        }
-
-        int left = 0;
-        ll ans = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') {
-                left++;
-            } else {
-                ans += left * (o - left);
-            }
-        }
-        return ans;
-    };
-
-    ll ans = 0;
-    for (int l = 0; l < n; l++) {
-        for (int r = l - 1; r < n; r++) {
-            if (r < 0) continue;
-            ans = max(ans, cal(l, r));
+            }  
         }
     }
+
     cout << ans << "\n";
 }
-
-
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
+    solve();
     return 0;
 }
 

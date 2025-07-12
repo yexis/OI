@@ -81,58 +81,41 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-    string s;
-    cin >> s;
-    int n = s.size();
-
-    auto cal = [&](int l, int r) {
-        string t = s;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == '?') {
-                if (i >= l && i <= r) {
-                    t[i] = 'v';
-                } else {
-                    t[i] = 'o';
-                }
-            } 
-        }
-        int o = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') o++;
-        }
-
-        int left = 0;
-        ll ans = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') {
-                left++;
-            } else {
-                ans += left * (o - left);
+    int N = 1500;
+    vector<int> a;
+    for (int i = 1; i <= N; i++) {
+        a.push_back(i);
+    }
+    for (auto& e : a) cout << e << ",";
+    
+    set<int> st;
+    for (int i = 0; i < N; i++) {
+        for (int j = i; j < N; j++) {
+            for (int k = j; k < N; k++) {
+                st.insert(a[i] ^ a[j] ^ a[k]);
             }
         }
-        return ans;
-    };
-
-    ll ans = 0;
-    for (int l = 0; l < n; l++) {
-        for (int r = l - 1; r < n; r++) {
-            if (r < 0) continue;
-            ans = max(ans, cal(l, r));
-        }
+        cout << st.size() << "\n";
     }
-    cout << ans << "\n";
+    cout << st.size() << "\n";
 }
 
 
-
+void solve2() {
+    ll fac[30];
+    memset(fac, 0, sizeof(fac));
+    fac[0] = 1;
+    for (int i = 1; i <= 21; i++) {
+        fac[i] = fac[i - 1] * i;
+    }
+    for (int i = 0; i <= 21; i++) {
+        cout << i << "! = " << fac[i] << "\n";
+    }
+}
 int main() {
     ios;
     cout << fixed << setprecision(20);
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
+    solve2();
     return 0;
 }
 

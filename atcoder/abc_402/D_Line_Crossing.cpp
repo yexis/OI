@@ -81,58 +81,51 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-    string s;
-    cin >> s;
-    int n = s.size();
+    int n, m;
+    cin >> n >> m;
+    vector<pii> pr;
+    for (int i = 0; i < m; i++) {
+        int x, y;
+        cin >> x >> y;
+        x--, y--;
+        pr.push_back(pii(x, y));
+    }
+    // if (n & 1) {
+    //     cout << m << "\n";
+    //     return;
+    // }
+    
+    ll tot = (ll)m * (m - 1) / 2;
 
-    auto cal = [&](int l, int r) {
-        string t = s;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == '?') {
-                if (i >= l && i <= r) {
-                    t[i] = 'v';
-                } else {
-                    t[i] = 'o';
-                }
-            } 
+    vector<int> v(n << 1);
+    for (int i = 0; i < pr.size(); i++) {
+        auto [x, y] = pr[i];
+        // cout << x << " " << y << "\n";
+        if (x > y) swap(x, y);
+        if (x == 0) {
+            v[y]++;
+            continue;
         }
-        int o = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') o++;
-        }
-
-        int left = 0;
-        ll ans = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') {
-                left++;
-            } else {
-                ans += left * (o - left);
-            }
-        }
-        return ans;
-    };
-
-    ll ans = 0;
-    for (int l = 0; l < n; l++) {
-        for (int r = l - 1; r < n; r++) {
-            if (r < 0) continue;
-            ans = max(ans, cal(l, r));
+        if (x < n - y) {
+            // 小的近
+            v[y + x]++;
+        } else {
+            // 大的近
+            v[x - (n - y)]++;
         }
     }
-    cout << ans << "\n";
+
+    for (int i = 0; i < 2 * n; i++) {
+        // cout << "v:" << i << " " << v[i] << "\n";
+        tot -= (ll)v[i] * (v[i] - 1) / 2;
+    }
+    cout << tot << "\n";
 }
-
-
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
+    solve();
     return 0;
 }
 

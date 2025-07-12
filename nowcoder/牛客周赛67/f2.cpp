@@ -54,6 +54,7 @@ const string NO = "NO";
 /*
  * pass
  * 树上前缀和 + dfs + 二分 + RMQ
+ * https://ac.nowcoder.com/acm/contest/95016/F
 */
 
 static constexpr int maxn = 100010;

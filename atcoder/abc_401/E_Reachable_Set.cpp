@@ -81,58 +81,61 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-    string s;
-    cin >> s;
-    int n = s.size();
+    int n, m;
+    cin >> n >> m;
+    vector<int> g[n];
+    for (int i = 0; i < m; i++) {
+        int u, v;
+        cin >> u >> v;
+        u--, v--;
+        g[u].push_back(v);
+        g[v].push_back(u);
+    }
 
-    auto cal = [&](int l, int r) {
-        string t = s;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == '?') {
-                if (i >= l && i <= r) {
-                    t[i] = 'v';
-                } else {
-                    t[i] = 'o';
-                }
-            } 
-        }
-        int o = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') o++;
-        }
-
-        int left = 0;
-        ll ans = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') {
-                left++;
+    vector<int> res(n);
+    set<int> st1, st2{0};
+    function<void(int, int)> dfs = [&](int u, int k) -> void {
+        for (auto& v : g[u]) {
+            if (st1.count(v)) {
+                continue;
+            }
+            if (v > k) {
+                st2.insert(v);
             } else {
-                ans += left * (o - left);
+                // v <= k
+                st1.insert(v);
+                if (st2.count(v)) {
+                    st2.erase(v);
+                }
+                dfs(v, k);
             }
         }
-        return ans;
     };
 
-    ll ans = 0;
-    for (int l = 0; l < n; l++) {
-        for (int r = l - 1; r < n; r++) {
-            if (r < 0) continue;
-            ans = max(ans, cal(l, r));
+    for (int i = 0; i < n; i++) {
+        if (!st2.count(i)) {
+            res[i] = -1;
+            continue;
         }
+        st2.erase(i);
+        st1.insert(i);
+        dfs(i, i);
+        if (st1.size() != i + 1) {
+            res[i] = -1;
+            continue;
+        }
+        res[i] = st2.size();
     }
-    cout << ans << "\n";
+    for (auto& e : res) {
+        cout << e << "\n";
+    }
+    
 }
-
-
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
+    solve();
     return 0;
 }
 

@@ -80,59 +80,74 @@ ll power(ll x, ll b) {
  * 
 */
 
+// struct DJSet {
+//     int n;
+//     int count;
+//     vector<int> fa;
+//     DJSet(int nn) {
+//         count = nn;
+//         n = nn;
+//         fa.resize(n);
+//         iota(fa.begin(), fa.end(), 0);
+//     }
+//     int find(int x) {
+//         if (x != fa[x]) {
+//             fa[x] = find(fa[x]);
+//         }
+//         return fa[x];
+//     }
+//     void merge(int x, int y) {
+//         int rx = find(x);
+//         int ry = find(y);
+//         if (rx == ry) {
+//             return;
+//         }
+//         fa[ry] = rx;
+//     }
+//     int get() {
+//         return count;
+//     }
+// };
+
 void solve() {
-    string s;
-    cin >> s;
-    int n = s.size();
-
-    auto cal = [&](int l, int r) {
-        string t = s;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == '?') {
-                if (i >= l && i <= r) {
-                    t[i] = 'v';
-                } else {
-                    t[i] = 'o';
-                }
-            } 
-        }
-        int o = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') o++;
-        }
-
-        int left = 0;
-        ll ans = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') {
-                left++;
-            } else {
-                ans += left * (o - left);
-            }
-        }
-        return ans;
-    };
-
-    ll ans = 0;
-    for (int l = 0; l < n; l++) {
-        for (int r = l - 1; r < n; r++) {
-            if (r < 0) continue;
-            ans = max(ans, cal(l, r));
+    int n, m;
+    cin >> n >> m;
+    vector<set<int> > st(n);
+    for (int i = 0; i < m; i++) {
+        int k;
+        cin >> k;
+        for (int j = 0; j < k; j++) {
+            int A;
+            cin >> A;
+            A--;
+            st[A].insert(i);
         }
     }
-    cout << ans << "\n";
+    vector<int> b(n);
+    for (int i = 0; i < n; i++) {
+        cin >> b[i];
+        b[i]--;
+    }
+
+    set<int> dis;
+    vector<int> ans(n);
+    for (int i = n - 1; i >= 0; i--) {
+        ans[i] = m - dis.size();
+        int x = b[i];
+        for (auto& e : st[x]) {
+            dis.insert(e);
+        }
+    }
+
+    for (auto& e : ans) {
+        cout << e << "\n";
+    }
 }
-
-
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
+    solve();
     return 0;
 }
 

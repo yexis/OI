@@ -58,7 +58,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
 const ll LLINF = 0x3f3f3f3f3f3f3f3f;
-const int mod = 1e9 + 7;
+const int mod = 1e9;
 const string YES = "YES";
 const string NO = "NO";
 
@@ -81,58 +81,30 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-    string s;
-    cin >> s;
-    int n = s.size();
-
-    auto cal = [&](int l, int r) {
-        string t = s;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == '?') {
-                if (i >= l && i <= r) {
-                    t[i] = 'v';
-                } else {
-                    t[i] = 'o';
-                }
-            } 
-        }
-        int o = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') o++;
-        }
-
-        int left = 0;
-        ll ans = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') {
-                left++;
-            } else {
-                ans += left * (o - left);
-            }
-        }
-        return ans;
-    };
-
-    ll ans = 0;
-    for (int l = 0; l < n; l++) {
-        for (int r = l - 1; r < n; r++) {
-            if (r < 0) continue;
-            ans = max(ans, cal(l, r));
-        }
+    int n, k;
+    cin >> n >> k;
+    vector<ll> a(1e6 + 5);
+    ll v = 0;
+    for (int i = 0; i < k; i++) {
+        a[i] = 1;
+        v += a[i];
+        v %= mod;
     }
-    cout << ans << "\n";
+    
+    for (int i = k; i <= n; i++) {
+        a[i] = v;
+        v += a[i];
+        v %= mod;
+        v += mod - a[i - k];
+        v %= mod;
+    }
+    cout << a[n] << "\n";
 }
-
-
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
+    solve();
     return 0;
 }
 

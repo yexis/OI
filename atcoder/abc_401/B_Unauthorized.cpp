@@ -81,58 +81,29 @@ ll power(ll x, ll b) {
 */
 
 void solve() {
-    string s;
-    cin >> s;
-    int n = s.size();
+    int n;
+    cin >> n;
+    int fg = 0, cnt = 0;
+    while (n--) {
+        string s;
+        cin >> s;
+        if (s == "login") {
+            fg = 1;
+        } else if (s == "logout") {
+            fg = 0;
+        } else if (s == "private") {
+            if (!fg) cnt++;
+        } else {
 
-    auto cal = [&](int l, int r) {
-        string t = s;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == '?') {
-                if (i >= l && i <= r) {
-                    t[i] = 'v';
-                } else {
-                    t[i] = 'o';
-                }
-            } 
-        }
-        int o = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') o++;
-        }
-
-        int left = 0;
-        ll ans = 0;
-        for (int i = 0; i < n; i++) {
-            if (t[i] == 'o') {
-                left++;
-            } else {
-                ans += left * (o - left);
-            }
-        }
-        return ans;
-    };
-
-    ll ans = 0;
-    for (int l = 0; l < n; l++) {
-        for (int r = l - 1; r < n; r++) {
-            if (r < 0) continue;
-            ans = max(ans, cal(l, r));
         }
     }
-    cout << ans << "\n";
+    cout << cnt << "\n";
 }
-
-
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-    int T;
-    cin >> T;
-    while (T--) {
-        solve();
-    }
+    solve();
     return 0;
 }
 
