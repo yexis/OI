@@ -1,0 +1,223 @@
+#include <iostream>
+#include <vector>
+#include <string.h>
+#include <algorithm>
+#include <numeric>
+#include <set>
+#include <array>
+#include <cassert>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <list>
+#include <set>
+#include <map>
+#include <unordered_set>
+#include <unordered_map>
+#include <algorithm>
+#include <complex>
+#include <cmath>
+#include <numeric>
+#include <bitset>
+#include <functional>
+#include <random>
+#include <ctime>
+#include <limits>
+#include <climits>
+
+using namespace std;
+#define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
+#define next_per next_permutation
+#define call(x) (x).begin(), (x).end()
+
+using ll = long long;
+using ull = unsigned long long;
+using pii = pair<int, int>;
+using pli = pair<ll, int>;
+using pil = pair<int, ll>;
+using pll = pair<ll, ll>;
+using pbi = pair<bool, int>;
+using pib = pair<int, bool>;
+using pis = pair<int, string>;
+using psi = pair<string, int>;
+using puu = pair<ull, ull>;
+using arr = array<int, 3>;
+using arr3 = array<int, 3>;
+using arr4 = array<int, 4>;
+using arr5 = array<int, 5>;
+
+const int dir[4][2] = {{-1, 0},
+                       {1,  0},
+                       {0,  -1},
+                       {0,  1}};
+const int INF = 0x3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const int mod = 1e9 + 7;
+const string YES = "YES";
+const string NO = "NO";
+
+ll power(ll x, ll b) {
+    ll ans = 1;
+    while (b) {
+        if (b & 1) {
+            ans *= x;
+            ans %= mod;
+        }
+        x *= x;
+        x %= mod;
+        b >>= 1;
+    }
+    return ans;
+}
+
+/*
+ * 
+*/
+
+void solve2() {
+    int n, k;
+    // cin >> n >> k;
+    
+    for (int d = 6; d <= 20; d++) {
+        set<string> st;
+        string s = string(d, '1');
+        st.insert(s);
+        
+        while (true) {
+            int ori = st.size();
+            set<string> st2 = st;
+            // cout << "ori:" << ori << "\n";
+            for (string e : st2) {
+                // for (int i = 0; i < d; i++) {
+                //     for (int j = i + 1; j < d; j++) {
+                //         if (e[i] == '1') e[i] = '0';
+                //         else e[i] = '1';
+                //         if (e[j] == '1') e[j] = '0';
+                //         else e[j] = '1';
+                //         st.insert(e);
+                //     }
+                // }
+                for (int i = 0; i < d; i++) {
+                    for (int j = i + 1; j < d; j++) {
+                        for (int k = j + 1; k < d; k++) {
+                            for (int l = k + 1; l < d; l++) {
+                                for (int r = l + 1; r < d; r++) {
+                                    for (int o = r + 1; o < d; o++) {
+                                        if (e[i] == '1') e[i] = '0';
+                                        else e[i] = '1';
+                                        if (e[j] == '1') e[j] = '0';
+                                        else e[j] = '1';
+                                        if (e[k] == '1') e[k] = '0';
+                                        else e[k] = '1';
+                                        if (e[l] == '1') e[l] = '0';
+                                        else e[l] = '1';
+                                        if (e[r] == '1') e[r] = '0';
+                                        else e[r] = '1';
+                                        if (e[o] == '1') e[o] = '0';
+                                        else e[o] = '1';
+                                        st.insert(e);
+
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (st.size() == ori) {
+                cout << "d:" << d << " " << st.size() << "\n";
+                break;
+            }
+        }
+        
+    }
+}
+
+void solve() {
+    int n, k;
+    cin >> n >> k;
+    if (n == k) {
+        cout << 2 << "\n";
+        return;
+    }
+
+    // n > k;
+    if (k & 1) {
+        cout << power(2, n) << "\n";
+    } else {
+        cout << power(2, n - 1) << "\n";
+    }
+}
+int main() {
+    ios;
+    cout << fixed << setprecision(20);
+    solve();
+    return 0;
+}
+
+
+
+
+
+/*
+2
+d:2 2
+d:3 4
+d:4 8
+d:5 16
+d:6 32
+d:7 64
+d:8 128
+d:9 256
+d:10 512
+d:11 1024
+d:12 2048
+
+3 
+d:3 2
+d:4 16
+d:5 32
+d:6 64
+d:7 128
+d:8 256
+d:9 512
+d:10 1024
+d:11 2048
+
+4:
+d:4 2
+d:5 16
+d:6 32
+d:7 64
+d:8 128
+d:9 256
+d:10 512
+d:11 1024
+
+5:
+d:5 2
+d:6 64
+d:7 128
+d:8 256
+d:9 512
+d:10 1024
+d:11 2048
+
+6:
+d:6 2
+d:7 64
+d:8 128
+d:9 256
+d:10 512
+d:11 1024
+*/
+
+
+
