@@ -68,35 +68,17 @@ ll power(ll x, ll b) {
 
 /*
  * 
+ * 给定图中一些点和边，每条边都存在权值，代表需要满足val[u] ^ val[v] = w;
+ * 问，如何设置每个点的权值，能使得每条边的
+ *
+ * 
+ *
+ * 
+ *
+ * 
+ *
 */
 
-
-struct DJSet {
-    vector<int> fa;
-    int n;
-    DJSet(int _n) {
-        n = _n;
-        fa.resize(n);
-        iota(fa.begin(), fa.end(), 0);
-    }
-    int find(int x) {
-        if (x != fa[x]) {
-            fa[x] = find(fa[x]);
-        }
-        return fa[x];
-    }
-    void merge(int x, int y) {
-        int rx = find(x);
-        int ry = find(y);
-        if (rx == ry) {
-            return;
-        }
-        fa[ry] = rx;
-    }
-    bool conn(int x, int y) {
-        return find(x) == find(y);
-    }
-};
 
 void solve() {
     int n, m;
@@ -106,84 +88,73 @@ void solve() {
         cin >> X[i] >> Y[i] >> Z[i];
         X[i]--, Y[i]--;
     }
-
-    unordered_map<int, unordered_map<int, int> > mp;
-    using ar = array<int, 3>;
-    vector<ar> pr;
-    vector<pii> g[n];
+    vector<vector<pii> > g(n);
     for (int i = 0; i < m; i++) {
-        if (mp.count(X[i]) && mp[X[i]].count(Y[i]) && mp[X[i]][Y[i]] !=  Z[i]) {
-            cout << -1 << "\n";
-            return;
-        }
-        if (X[i] == Y[i] && Z[i] != 0) {
-            cout << -1 << "\n";
-            return;
-        } 
-        if (X[i] == Y[i]) continue;
-        g[X[i]].emplace_back(Y[i], Z[i]);
-        g[Y[i]].emplace_back(X[i], Z[i]);
-        mp[X[i]][Y[i]] = mp[Y[i]][X[i]] = Z[i];
-        pr.push_back({Z[i], X[i], Y[i]});
+        int x = X[i], y = Y[i], w = Z[i];
+        g[x].push_back(pii(y, w));
+        g[y].push_back(pii(x, w));
     }
 
-    vector<int> tmp(n);
-    vector<bool> vis(n);
-    auto dfs = [&](auto&& self, int u) -> bool {
+    // 第一步：判断是否有解
+    int vis[n], val[n];
+    memset(vis, 0, sizeof(vis));
+    memset(val, 0, sizeof(val));
+    unordered_map<int, vector<int> > un;
+    function<bool(int, int)> dfs = [&](int rt, int u) -> bool {
+        un[rt].push_back(u);
         for (auto& [v, w] : g[u]) {
             if (vis[v]) {
-                if (tmp[v] != (tmp[u] ^ w)) {
+                // 检查
+                if ((val[u] ^ w) != val[v]) {
                     return false;
                 }
                 continue;
-            } 
+            }
             vis[v] = true;
-            tmp[v] = tmp[u] ^ w;
-            if (!self(self, v)) {
+            val[v] = val[u] ^ w;
+            if (!dfs(rt, v)) {
                 return false;
             }
         }
         return true;
     };
+    
     for (int i = 0; i < n; i++) {
         if (vis[i]) continue;
         vis[i] = true;
-        tmp[i] = 0;
-        if (!dfs(dfs, i)) {
+        bool ok = dfs(i, i);
+        if (!ok) {
             cout << -1 << "\n";
             return;
         }
     }
 
-
-    vector<int> deg(n);
-    vector<vector<pii>> g2(n);
-    sort(pr.begin(), pr.end());
-    DJSet dj(n);
-    for (int i = 0; i < (int)pr.size(); i++) {
-        auto [v, x, y] = pr[i];
-        if (dj.conn(x, y)) continue;
-        g2[x].emplace_back(y, v);
-        g2[y].emplace_back(x, v);
-        deg[x]++;
-        deg[y]++;
-        dj.merge(x, y);
-    }
-
-    vector<int> res(n, -1);
-    auto go = [&](auto&& self, int u) -> void {
-        for (auto& [v, w] : g2[u]) {
-            if (res[v] != -1) continue;
-            res[v] = res[u] ^ w;
-            self(self, v);
-        }
-    };
+    // 第二步: 寻找最优解
+    vector<int> res(n);
     for (int i = 0; i < n; i++) {
-        if (res[i] != -1) continue;
-        if (deg[i] > 1) continue;
-        res[i] = 0;
-        go(go, i);
+        if (!un.count(i)) continue;
+        auto& ps = un[i]; 
+        int rt = 0;
+        // 1的个数
+        for (int d = 30; d >= 0; d--) {
+            int cnt0 = 0, cnt1 = 0;
+            for (auto& e : ps) {
+                if (val[e] >> d & 1) {
+                    cnt0++;
+                } else {
+                    cnt1++;
+                }
+            }
+            if (cnt1 < cnt0) {
+                rt |= 1 << d;
+            }
+        }
+        
+        for (auto& e : ps) {
+            res[e] = val[e] ^ rt;
+        }
     }
+
     for (auto& e : res) {
         cout << e << " ";
     }
