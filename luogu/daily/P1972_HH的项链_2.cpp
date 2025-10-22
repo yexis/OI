@@ -81,6 +81,7 @@ ll power(ll x, ll b, ll m = mod) {
 
 /*
  * 回滚莫队
+ * 区间为左闭右闭[l,r]版本
  * 对于1e6的数据量，时间复杂度O(n*sqrt(q))会超时
 */
 
@@ -150,7 +151,6 @@ void solve() {
             add(a[r], 1);
         }
 
-        int tmp_now = now;
         for (int j = q.l; j < r_start; j++) {
             add(a[j], 1);
         }
@@ -159,7 +159,6 @@ void solve() {
         for (int j = q.l; j < r_start; j++) {
             add(a[j], -1);
         }
-        now = tmp_now;
     }
 
     for (auto& e : res) cout << e << "\n";
