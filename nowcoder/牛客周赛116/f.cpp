@@ -80,11 +80,147 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
+ * https://ac.nowcoder.com/acm/contest/120553/F
  * 
+ * - 该区间的两个端点不能与任意其他区间的端点重合
+ * - 找出覆盖当前点的区间的左端点的最大值
 */
 
-void solve() {
+struct Node {
+    int len;
+    int sum;
+    int z;
+    Node() {
+        len = 0, sum = 0, z = -1;
+    }
+    Node(int u, int l) {
+        sum = u * l, len = l, z = u;
+    }
+    Node operator+(const Node& b) const {
+        Node res;
+        res.len = len + b.len;
+        res.sum = sum + b.sum;
+        res.z = -1;
+        return res;
+    }
+};
+struct Seg {
+    Node tr[800100];
+    Seg() {
 
+    }
+    void push_up(int o) {
+        tr[o] = tr[o * 2] + tr[o * 2 + 1];
+    }
+    void push_down(int o) {
+        if (tr[o].z != -1) {
+            tr[o * 2].sum = tr[o].z * tr[o * 2].len;
+            tr[o * 2].z = tr[o].z;
+            tr[o * 2 + 1].sum = tr[o].z * tr[o * 2 + 1].len;
+            tr[o * 2 + 1].z = tr[o].z;
+            tr[o].z = 0;
+        }
+    }
+    void build(int o, int l, int r) {
+        if (l == r) {
+            tr[o] = Node();
+            tr[o].len = 1;
+            tr[o].z = 0;
+            return;
+        }
+        int m = (l + r) >> 1;
+        build(o * 2, l, m);
+        build(o * 2 + 1, m + 1, r);
+        push_up(o);
+    }
+    void add(int o, int l, int r, int L, int R, int u) {
+        if (l >= L && r <= R) {
+            int len = r - l + 1;
+            tr[o] = Node(len * u, len);
+            return;
+        }
+        push_down(o);
+        int m = (l + r) >> 1;
+        if (L <= m) {
+            add(o * 2, l, m, L, R, u);
+        }
+        if (R > m) {
+            add(o * 2 + 1, m + 1, r, L, R, u);
+        }
+        push_up(o);
+    }
+    Node ask(int o, int l, int r, int L, int R) {
+        if (l > r) return Node();
+        if (l >= L && r <= R) {
+            return tr[o];
+        }
+        push_down(o);
+        Node ans;
+        int m = (l + r) >> 1;
+        if (L <= m) {
+            ans = ans + ask(o * 2, l, m, L, R);
+        }
+        if (R > m) {
+            ans = ans + ask(o * 2 + 1, m + 1, r, L, R);
+        }
+        return ans;
+    }
+};
+void solve() {
+    int n, m; cin >> n >> m;
+    vector<pii> v(n);
+    for (auto& e : v) cin >> e.first >> e.second;
+    
+    // 按照左端点排序，以左端点<=i判断是否将区间[l,r]加入队列
+    sort(v.begin(), v.end());
+
+    // 记录点i是否为某个区间左端点
+    int is_left[m + 1]; 
+    memset(is_left, 0, sizeof(is_left));
+    for (auto [l, r] : v) {
+        is_left[l] = 1;
+    }
+
+    // 记录所有右端点在点i的区间
+    vector<vector<pii >> L(m + 1); 
+    for (int i = 0; i < n; i++) {
+        auto [l, r] = v[i];
+        L[r].push_back(pii(l, i));
+    }
+
+    Seg seg; seg.build(1, 1, m);
+
+    ll ans = 0;
+    // 包含当前点的区间
+    // (0, -1) 表示表示覆盖[0, m]的虚拟区间
+    // 这样点i不被任何点覆盖时，方便计算答案
+    multiset<pii> ms; ms.insert(pii(0, -1));
+
+    for (int i = 1, j = 0; i <= m; i++) {
+        seg.add(1, 1, m, i, i, 1);
+        while (j < v.size() && v[j].first <= i) {
+            ms.insert(pii(v[j].first, j));
+            j++;
+        }
+        
+        if (L[i].size()) {
+            for (auto [l, j] : L[i]) {
+                seg.add(1, 1, m, l, i, 0);
+                ms.erase(ms.find(pii(l, j)));
+            }
+        }
+        
+        // 不是任意一个端点
+        if (L[i].empty() && !is_left[i]) {
+            auto [lst, _] = *ms.rbegin();
+            if (lst + 1 <= i) {
+                Node tr_ans = seg.ask(1, 1, m, lst + 1, i);
+                ans += tr_ans.sum;                
+            } 
+        }
+    }
+
+    cout << ans << "\n";
 }
 
 int main() {
