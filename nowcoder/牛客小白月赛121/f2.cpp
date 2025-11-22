@@ -86,63 +86,11 @@ ll power(ll x, ll b, ll m = mod) {
 // ands: 记录子数组的的按位与结果 以及拥有相同值子数组右端点的最小值
 // ands的长度最大为32，可直接进行遍历
 vector<pair<int, int> > ands;
-
-ll cal_and(vector<int>& nums) {
-    ands.clear();
-    int n = nums.size();
-
-    ll ans = 0;
-    for (int i = n - 1; i >= 0; i--) {
-        int num = nums[i];
-        ands.emplace_back(num, i);
-
-        int k = 0;
-        for (int j = 0; j < ands.size(); j++) {
-            ands[j].first &= num;
-            if (ands[k].first == ands[j].first) {
-                ands[k].second = ands[j].second;
-            } else {
-                ands[++k] = ands[j];
-            }
-        }
-        ands.resize(k + 1);
-        // 根据题目条件设置
-        cout << "i:" << i << " || ";
-        for (auto a : ands) cout << a.second << " "; cout << "\n";
-
-    }
-    return ans;
-}
-
 // ors: 记录子数组的的按位或结果 以及拥有相同值子数组右端点的最小值
 vector<pair<int, int> > ors;
-void cal_or(vector<int>& arr) {
-  	ors.clear();
-    int n = arr.size();
-    int ans = 0;
-    for (int i = n - 1; i >= 0; i--) {
-        int num = arr[i];
-        ors.emplace_back(0, i);
-        ors[0].first |= num;
+// xors: 记录 ands ^ xors
+vector<pair<int, int> > xors;
 
-        int k = 0;
-        for (int j = 1; j < ors.size(); j++) {
-            ors[j].first |= num;
-            if (ors[k].first == ors[j].first) {
-                ors[k].second = ors[j].second;
-            } else {
-                ors[++k] = ors[j];
-            }
-        }
-        // ors存储以i开始的所有子数组的按位或的结果、以及子数组的右端点的最小值
-        ors.resize(k + 1);
-      	// 根据实际需求计算
-        cout << "i:" << i << " " << " || ";
-        for (auto o : ors) cout << o.second << " "; cout << "\n";
-    
-    }
-    return;
-}
 
 void test_1(vector<int>& a) {
     int n = a.size();
@@ -259,18 +207,53 @@ void solve() {
         }
         ors.resize(k2 + 1);
 
-        set<int> st;
-        for (pii e : ands) st.insert(e.second);
-        for (pii e : ors) st.insert(e.second);
-        for (auto& j : st) {
-            int x = rmq_and.ask(i, j);
-            int y = rmq_or.ask(i, j);
-            dp[i] = max(dp[i], (x ^ y) + dp[j + 1]);
+        // 合并
+        // xors就是将ands 和 ors 进行合并
+        // ands = [5,3,0]
+        // ors = [4,2,1,0]
+        // xors = [5,4,3,2,1,0]
+        int k3 = 0;
+        vector<pii> xors; 
+        xors.emplace_back(
+            pii(ands[0].first ^ ors[0].first, max(ands[0].second, ors[0].second)));
+        auto upd = [&](int x, int j) -> void {
+            xors.emplace_back(pii(x, j));
+        };
+        int j1 = 0, j2 = 0;
+        for (;j1 < ands.size() && j2 < ors.size();) {
+            auto [v1, i1] = ands[j1];
+            auto [v2, i2] = ors[j2];
+            upd(v1 ^ v2, max(i1, i2));
+            if (i1 > i2) {
+                j1++;
+            } else if (i1 < i2) {
+                j2++;
+            } else {
+                j1++, j2++;
+            }
+        }
+//         cout << "i:" << i << "\n";
+//         for (auto& e : ands) cout << e.first << " " << e.second << " -- "; cout << endl;
+//         for (auto& e : ors) cout << e.first << " " << e.second << " -- "; cout << endl;
+//         for (auto& e : xors) cout << e.first << " " << e.second << " -- "; cout << endl;
+//         cout << "----------------------------------------------------------------" << endl;
+         
+        // 去重
+        for (int j = 0; j < xors.size(); j++) {
+            if (xors[k3].first == xors[j].first) {
+                xors[k3].second = xors[j].second;
+            } else {
+                xors[++k3] = xors[j];
+            }
+        }
+        xors.resize(k3);
+
+        for (int j = 0; j < xors.size(); j++) {
+            auto [v1, i1] = xors[j];
+            dp[i] = max(dp[i], v1 + dp[i1 + 1]);
         }
     }
-    
     cout << dp[0] << "\n";
-
 }
 
 int main() {
