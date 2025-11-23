@@ -107,8 +107,6 @@ void solve() {
         pb.push_back(pii(b[i], j - i));
         i = j - 1;
     }
-//     for (auto e : pa) cout << e.first << " " << e.second << "\n";
-//     for (auto e : pb) cout << e.first << " " << e.second << "\n";
 
     if (pa.size() != pb.size()) {
         cout << -1 << "\n";
@@ -125,6 +123,7 @@ void solve() {
     for (int i = 0; i < pa.size(); i++) {
         auto [k1, v1] = pa[i];
         auto [k2, v2] = pb[i];
+        // 对a中每个数每次都复制一倍，直到不小于b中的数量
         int t = 0;
         while (v1 < v2) {
             v1 <<= 1, t++;
