@@ -80,6 +80,7 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
+ * https://ac.nowcoder.com/acm/contest/120553/E
  * 懒加载线段树
  * 线段树二分 统计区间最小值 和 最小值的数量
  * 

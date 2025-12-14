@@ -80,7 +80,7 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
- * 经典贪心
+ * 经典贪心 https://ac.nowcoder.com/acm/contest/120553/E
  * 从左往右，如果 a[i] > a[i - 1]，则i为起点
  * 从右往左，如果 a[j - 1] > a[j]，则j-1为终点 
  * (i,j)两两成对，则组成最少需要的次数方案
