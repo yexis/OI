@@ -80,13 +80,15 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
+ * 懒加载线段树
+ * 线段树二分 统计区间最小值 和 最小值的数量
  * 
 */
 
 struct Node {
-    int mi;
-    int c;
-    int z;
+    int mi; // 维护区间中最小的数
+    int c;  // 维护区间中最小的数的个数
+    int z;  // lazy标记
     Node() {
         mi = 0;
         c = 0;
