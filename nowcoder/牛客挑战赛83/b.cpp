@@ -80,10 +80,55 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
+ * https://ac.nowcoder.com/acm/contest/121395/B
+ * 题意：给定一个入栈序列a，构造一个出栈序列b，对于每个 (i % K = 1) 的位置，累加 a[i]，使得最终的累加和最大
+ * 贪心思路：答案为序列a中最大的 cl = (n + K - 1) / K 个元素
+ * 关键是 如何构造这 cl 个元素呢 ？
+ * 结论：对于已知的最大的 cl 个元素，一定存在一种出栈序列使得每个元素都位于 (i % K == 1) 的位置
+ * 构造方法：
+ *  - 维护 状态S[i] 表示元素i是否被选择，S[i] = 1被选择，S[i] = 0不被选择
+ *  - 维护一个栈，如果当前栈顶元素的状态 为当前需要的状态，出栈；否则从a中选取元素压栈
  * 
 */
 
 void solve() {
+    int n, K; cin >> n >> K;
+    vector<int> a(n + 1); for (int i = 1; i <= n; i++) cin >> a[i];
+
+    vector<int> I(n + 1); for (int i = 1; i <= n; i++) I[i] = i; 
+    sort(I.begin() + 1, I.end(), [&](const auto& aa, const auto& bb) {
+        return a[aa] > a[bb];
+    });
+
+    int cl = (n + K - 1) / K;
+    ll sum = 0;
+    vector<int> S(n + 1);  // 表示被选择
+    for (int i = 1; i <= cl; i++) {
+        sum += a[I[i]];
+        S[I[i]] = 1;
+    }
+    cout << sum << "\n";
+    
+    int cur = 1; vector<int> stk;
+    for (int k = 1; k <= n; k++) {
+        // nd = 0: 不被选择元素
+        // nd = 1: 被选择元素
+        int nd = 0; if (k % K == 1) nd = 1;
+        if (stk.size() && S[stk.back()] == nd) {
+            cout << a[stk.back()] << " ";
+            stk.pop_back();
+            continue;
+        }
+        while (cur <= n) {
+            if (S[cur] == nd) {
+                cout << a[cur] << " ";
+                cur++;
+                break;
+            }
+            stk.push_back(cur);
+            cur++;
+        }
+    }
 
 }
 
