@@ -110,6 +110,7 @@ void solve() {
     cout << sum << "\n";
     
     int cur = 1; vector<int> stk;
+    // k: 枚举当前位置(出栈序列)需要什么状态的数
     for (int k = 1; k <= n; k++) {
         // nd = 0: 不被选择元素
         // nd = 1: 被选择元素
