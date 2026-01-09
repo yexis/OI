@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,42 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
-    
+    int n; cin >> n;
+    int a, b; cin >> a >> b; a--, b--;
+    vector<int> g[n];
+    vector<int> deg(n);
+    for (int i = 0; i < n - 1; i++) {
+        int u, v; cin >> u >> v; u--, v--;
+        g[u].push_back(v);
+        g[v].push_back(u);
+        deg[u]++, deg[v]++;
+    }
+
+    auto bfs = [&](int s) -> vector<int> {
+        vector<int> dist(n, INF); dist[s] = 0;
+        queue<pii> q; q.push(pii(s, 0)); 
+        while (q.size()) {
+            auto [u, d] = q.front(); q.pop();
+            for (auto& v : g[u]) {
+                if (dist[v] < INF) continue;
+                dist[v] = dist[u] + 1;
+                q.push(pii(v, dist[v]));
+            }
+        }
+        return dist;
+    };
+
+    vector<int> dist1 = bfs(a);
+    vector<int> dist2 = bfs(b);
+    for (int i = 0; i < n; i++) {
+        cout << dist1[i] << " " << dist2[i] << "\n";
+        if (deg[i] > 1) continue;
+        if (dist1[i] * 2 < dist2[i]) {
+            cout << "red" << "\n";
+            return;
+        }
+    }
+    cout << "purple" << "\n";
 }
 
 int main() {
@@ -92,7 +127,7 @@ int main() {
     cout << fixed << setprecision(20);
 
     int T = 1; 
-    // cin >> T;
+    cin >> T;
     while (T--) {
     	solve();
     }

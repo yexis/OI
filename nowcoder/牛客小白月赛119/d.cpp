@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,47 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
+    int n; cin >> n;
+    vector<int> deg(n);
+    vector<int> g[n];
+    for (int i = 0; i < n - 1; i++) {
+        int u, v; cin >> u >> v;
+        u--, v--;
+        g[u].push_back(v);
+        g[v].push_back(u);
+        deg[u]++, deg[v]++;
+    }
+
     
+    vector<int> dist(n, -1); 
+    queue<int> q;
+    for (int i = 0; i < n; i++) if (deg[i] == 1) {
+        dist[i] = 0; q.push(i);
+    }
+    while (q.size()) {
+        auto u = q.front();
+        q.pop();
+        for (auto& v : g[u]) {
+            if (dist[v] != -1) continue;
+            dist[v] = dist[u] + 1;
+            q.push(v);
+        }
+    }
+
+    int mx = -1;
+    for (int i = 0; i < n; i++) if (deg[i] > 1 && dist[i] > mx) mx = dist[i];
+    
+    int cnt = 0; vector<int> miku;
+    for (int i = 0; i < n; i++) {
+        if (dist[i] == mx) {
+            cnt++;
+            miku.push_back(i);
+        }
+    }
+    cout << cnt << "\n";
+    for (auto e : miku) cout << e + 1 << " "; cout << "\n";
+
+
 }
 
 int main() {
@@ -92,7 +132,7 @@ int main() {
     cout << fixed << setprecision(20);
 
     int T = 1; 
-    // cin >> T;
+    cin >> T;
     while (T--) {
     	solve();
     }

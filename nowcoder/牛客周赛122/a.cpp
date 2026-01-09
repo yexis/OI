@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,12 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
-    
+    vector<char> A = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'};
+    int n; cin >> n;
+    for (int i = 0; i < n; i++) {
+        cout << A[i] << " ";
+    }
+    cout << "\n";
 }
 
 int main() {

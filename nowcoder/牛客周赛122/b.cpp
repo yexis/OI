@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,15 +84,35 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
+    int n, m; cin >> n >> m;
+    if (n < m) swap(n, m);
     
-}
+    if (m <= 2) {
+        cout << 1 << "\n";
+        return;
+    }
+
+    // m >= 3
+    int x1 = (m - 1) / 4 + 1;
+    int x2 = (m - 3) / 4 + 1;
+
+    ll ans = 0;
+    int fg = (n - 1) / 2;
+    if (fg & 1) {
+        ans += 1ll * x1 * fg + x2 * fg;
+    } else {
+        ans += 1ll * x1 * (fg + 1) + x2 * fg;
+    }
+    cout << ans << "\n";
+    
+}   
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
 
     int T = 1; 
-    // cin >> T;
+    cin >> T;
     while (T--) {
     	solve();
     }

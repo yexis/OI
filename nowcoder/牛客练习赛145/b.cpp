@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -83,8 +83,37 @@ ll power(ll x, ll b, ll m = mod) {
  * 
 */
 
+// abahab abdbdb jjjdnm
+// aahab abbdb jjdnm
 void solve() {
-    
+    int n; cin >> n;
+    vector<string> vs(n);
+    for (int i = 0; i < n; i++) cin >> vs[i];
+
+    auto cal = [&](string s) -> string {
+        string t;
+        int n = s.size();
+        int pos = n - 1;
+        for (int i = 0; i < n; i++) {
+            if (i + 1 < n && s[i] > s[i + 1]) {
+                pos = i;
+                break;
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (i == pos) continue;
+            t += s[i];
+        }
+        return t;
+    };
+    for (auto& s : vs) {
+        s = cal(s);
+        s += s;
+    }
+
+    sort(vs.begin(), vs.end(), );
+    for (auto& s : vs) ans += s.substr(0, s.size());
+    cout << ans << "\n";
 }
 
 int main() {

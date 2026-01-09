@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,29 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
-    
+    int n; cin >> n;
+    vector<pii> ps(n);
+    for (int i = 0; i < n; i++) {
+        cin >> ps[i].first >> ps[i].second;
+    }
+
+    ll ans = 0; 
+    int ans_x1, ans_y1, ans_x2, ans_y2;
+    for (int i = 0; i < n; i++) {
+        int x1 = ps[i].first, y1 = ps[i].second;
+        for (int j = i + 1; j < n; j++) {
+            int x2 = ps[j].first, y2 = ps[j].second;
+            ll dist = 1ll * (x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
+            if (dist > ans) {
+                ans = dist;
+                ans_x1 = x1;
+                ans_y1 = y1;
+                ans_x2 = x2;
+                ans_y2 = y2;
+            }
+        }
+    }
+    cout << ans_x1 << " " << ans_y1 << " " << ans_x2 << " " << ans_y2 << "\n";
 }
 
 int main() {

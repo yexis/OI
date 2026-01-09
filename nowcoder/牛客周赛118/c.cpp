@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,16 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
-    
+    int x1, y1, x2, y2;
+    cin >> x1 >> y1 >> x2 >> y2;
+
+    if (x1 == x2) {
+        cout << x1 + 1 << " " << y1 << " " << x2 + 1 << " " << y2 << "\n";
+    } else if (y1 == y2) {
+        cout << x1 << " " << y1 + 1 << " " << x2 << " " << y2 + 1 << "\n";
+    } else {
+        cout << x1 << " " << y2 << " " << x2 << " " << y1 << "\n";
+    }
 }
 
 int main() {

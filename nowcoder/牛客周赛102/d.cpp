@@ -35,7 +35,7 @@ using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 #define next_per next_permutation
 #define call(x) (x).begin(), (x).end()
-#define debug(x) cout << (#x) << " = " << (x) << endl;
+#define debug(x) cerr << (#x) << " = " << (x) << endl;
 #define debugout(x) cout << (#x) << " = " << (x) << endl;
 #define debugerr(x) cerr << (#x) << " = " << (x) << endl;
 
@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,50 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
-    
+    int n; cin >> n;
+    string s; cin >> s;
+
+    vector<int> sum(n + 1);
+    for (int i = 0; i < n; i++) {
+        sum[i + 1] = sum[i] + (s[i] == '1');
+    }
+
+    // 1010
+    auto cal1 = [&](string t) -> int {
+        int ans = INF;
+        for (int i = 0; i + 3 < n; i++) {
+            int v1 = i + 1 - sum[i + 1];
+            for (int j = i + 1; j + 2 < n; j++) {
+                int v2 = sum[j + 1] - sum[i + 1];
+                for (int k = j + 1; k + 1 < n; k++) {
+                    int v3 = k - j - (sum[k + 1] - sum[j + 1]);
+                    int l = k + 1;
+                    int v4 = sum[n] - sum[k + 1];
+                    ans = min(ans, v1 + v2 + v3 + v4);
+                }
+            }
+        }
+        return ans;
+    };
+
+    // 0101
+    auto cal2 = [&](string t) -> int {
+        int ans = INF;
+        for (int i = 0; i + 3 < n; i++) {
+            int v1 = sum[i + 1];
+            for (int j = i + 1; j + 2 < n; j++) {
+                int v2 = (j - i) - (sum[j + 1] - sum[i + 1]);
+                for (int k = j + 1; k + 1 < n; k++) {
+                    int v3 = sum[k + 1] - sum[j + 1];
+                    int l = k + 1;
+                    int v4 = (n - 1 - k) - (sum[n] - sum[k + 1]);
+                    ans = min(ans, v1 + v2 + v3 + v4);
+                }
+            }
+        }
+        return ans;
+    };
+    cout << min(cal1(s), cal2(s)) << "\n";
 }
 
 int main() {

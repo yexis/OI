@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,19 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
-    
+    vector<int> a(5); for (int i = 0; i < 5; i++) cin >> a[i]; sort(a.begin(), a.end());
+    vector<int> b(5); for (int i = 0; i < 5; i++) cin >> b[i]; sort(b.begin(), b.end());
+
+    a[4] *= 2;
+    b[0] *= 2;
+    ll sum_a = accumulate(a.begin(), a.end(), 0);
+    ll sum_b = accumulate(b.begin(), b.end(), 0);
+    if (sum_a > sum_b) {
+        cout << "YES" << "\n";
+    } else {
+        cout << "NO" << "\n";
+    }
+     
 }
 
 int main() {

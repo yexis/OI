@@ -151,7 +151,6 @@ void solve() {
         auto& q = pr[i];
         while (curr_l < q.l) del(a[curr_l++]);
         while (curr_l > q.l) add(a[--curr_l]);
-
         while (curr_r < q.r) add(a[++curr_r]);
         while (curr_r > q.r) del(a[curr_r--]);
         res[q.qid] = sum;

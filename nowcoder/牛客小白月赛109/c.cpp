@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,6 +84,29 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
+    int n, q; cin >> n >> q;
+
+    vector<int> times(n + 1);
+    set<int> pig;
+    for (int i = 1; i <= n; i++) {
+        pig.insert(i);
+    }
+
+    int cnt = 0;
+    for (int i = 0; i < q; i++) {
+        int op; cin >> op;
+        if (op == 1) {
+            int l, r; cin >> l >> r;
+            auto start = pig.lower_bound(l);
+            for (auto& it = start; it != pig.end() && *it <= r;) {
+                times[*it] = ++cnt;
+                it = pig.erase(it);
+            }
+        } else if (op == 2) {
+            int x; cin >> x;
+            cout << times[x] << "\n";
+        }
+    }
     
 }
 

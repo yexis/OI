@@ -35,9 +35,7 @@ using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 #define next_per next_permutation
 #define call(x) (x).begin(), (x).end()
-#define debug(x) cout << (#x) << " = " << (x) << endl;
-#define debugout(x) cout << (#x) << " = " << (x) << endl;
-#define debugerr(x) cerr << (#x) << " = " << (x) << endl;
+#define debug(x) cerr << (#x) << " = " << (x) << endl;
 
 using ll = long long;
 using ull = unsigned long long;
@@ -60,20 +58,20 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
 
-ll power(ll x, ll b, ll m = mod) {
+ll power(ll x, ll b) {
     ll ans = 1;
     while (b) {
         if (b & 1) {
             ans *= x;
-            ans %= m;
+            ans %= mod;
         }
         x *= x;
-        x %= m;
+        x %= mod;
         b >>= 1;
     }
     return ans;
@@ -84,18 +82,65 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
-    
+    int h, w;
+    cin >> h >> w;
+    char g[h][w];
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            cin >> g[i][j];
+        }
+    }
+
+    vector<vector<char>> res(h, vector<char>(w, '?'));
+
+    queue<pii> q;
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            if (g[i][j] == 'E') {
+                q.push(pii(i, j));
+                res[i][j] = 'E';
+            } else if (g[i][j] == '#') {
+                res[i][j] = '#'; 
+            }
+        }
+    }
+    auto valid = [&](int r, int c) {
+        return r >= 0 && r < h && c >= 0 && c < w;
+    };
+    while (q.size()) {
+        auto [i, j] = q.front();
+        q.pop();
+        for (int d = 0; d < 4; d++) {
+            int ni = i + dir[d][0];
+            int nj = j + dir[d][1];
+            if (!valid(ni, nj)) continue;
+            if (g[ni][nj] == '#' || g[ni][nj] == 'E') continue;
+            if (res[ni][nj] != '?') continue;
+            if (d == 0) {
+                res[ni][nj] = 'v';
+            } else if (d == 1) {
+                res[ni][nj] = '^';
+            } else if (d == 2) {
+                res[ni][nj] = '>';
+            } else if (d == 3) {
+                res[ni][nj] = '<';
+            }
+            q.push(pii(ni, nj));
+        }
+    }
+
+    for (int i = 0; i < h; i++) {
+        for (int j = 0; j < w; j++) {
+            cout << res[i][j];
+        }
+        cout << "\n";
+    }
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-
-    int T = 1; 
-    // cin >> T;
-    while (T--) {
-    	solve();
-    }
+    solve();
     return 0;
 }
 

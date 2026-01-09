@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,10 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
-    
+    int n; cin >> n;
+    int y = n - 5201314 - 14174017;
+    // y <= x <= n
+    cout << n - max(1, y) + 1 << "\n";
 }
 
 int main() {

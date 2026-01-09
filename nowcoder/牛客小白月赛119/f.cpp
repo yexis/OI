@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,41 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
+    int n, K; cin >> n >> K;
+    string s; cin >> s;
     
+    int o = 0; for (int i = 0; i < n; i++) if (s[i] == 'o') o++;
+    if (o <= K)  {
+        cout << 0 << "\n";
+        return;
+    }
+
+    vector<int> v;
+    for (int i = 0; i < n; i++) {
+        if (s[i] == 'x') continue;
+        int j = i; while (j < n && s[j] == 'o') {
+            j++;
+        }
+        v.push_back(j - i);
+        i = j - 1;
+    }
+
+    priority_queue<int> pq; for (auto e : v) pq.push(e);
+    while(pq.size() && K) {
+        auto u = pq.top(); pq.pop();
+        if (u <= 0) continue;
+        pq.push(u / 2);
+        if (u & 1) pq.push(u / 2);
+        else pq.push(u / 2 - 1);
+        K--;
+    }
+    ll ans = 0;
+    while (pq.size()) {
+        auto u = pq.top(); pq.pop();
+        ans += 1ll * (1 + u) * u / 2;
+    }
+    cout << ans << "\n";
+
 }
 
 int main() {
@@ -92,7 +126,7 @@ int main() {
     cout << fixed << setprecision(20);
 
     int T = 1; 
-    // cin >> T;
+    cin >> T;
     while (T--) {
     	solve();
     }

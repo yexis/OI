@@ -35,7 +35,7 @@ using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 #define next_per next_permutation
 #define call(x) (x).begin(), (x).end()
-#define debug(x) cout << (#x) << " = " << (x) << endl;
+#define debug(x) cerr << (#x) << " = " << (x) << endl;
 #define debugout(x) cout << (#x) << " = " << (x) << endl;
 #define debugerr(x) cerr << (#x) << " = " << (x) << endl;
 
@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -83,16 +83,50 @@ ll power(ll x, ll b, ll m = mod) {
  * 
 */
 
+
+bool fg = false;
+static constexpr int N = 200010;
+vector<pll> V;
+vector<int> I;
+ll dp[N + 1]; 
+void init() {
+    int a = 1;
+    for (int i = 2; a <= N ;i++) {
+        I.push_back(i - 1);
+        V.push_back(pll(a, i - 1));
+        a += i;
+    }
+//     for (auto& e : V) cout << e.first << " " << e.second << "\n";
+//     for (auto& i : I) cout << i << " "; cout << "\n";
+//     cout << V.size() << "\n";
+        
+    // dp
+    memset(dp, INF, sizeof(dp));
+    dp[0] = 0;
+    for (auto& [e, cnt] : V) {
+        for (int i = e; i <= N; i++) {
+            dp[i] = min(dp[i], (i - e > 0 ? dp[i - e] + cnt + 1 : dp[i - e] + cnt));
+        }
+    }
+}
+
+
 void solve() {
-    
+    int K; cin >> K;
+    cout << dp[K] << "\n";
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
 
+    if (!fg) {
+        init();
+        fg = true;
+    }
+    
     int T = 1; 
-    // cin >> T;
+    cin >> T;
     while (T--) {
     	solve();
     }

@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -83,8 +83,47 @@ ll power(ll x, ll b, ll m = mod) {
  * 
 */
 
+ll inv(ll x) {
+    return power(x, mod - 2);
+}
+
 void solve() {
-    
+    int n; cin >> n;
+    vector<int> a(n); for (auto& e : a) cin >> e;
+
+    ll ans = 0;
+    ll f0 = 0, f1 = 0;
+    for (int i = 0; i < n; i++) {
+        while (a[i] % 25 == 0) {
+            a[i] /= 25;
+        }
+        bool inc5 = (a[i] % 5 == 0);
+        
+        ll g0 = f0, g1 = f1;
+        if (inc5) {
+            ans += (1ll * f1 % mod * (a[i] / 5) % mod); ans %= mod;
+            ans += 1ll * f0 * a[i]; ans %= mod;
+            ans += a[i]; 
+            ans %= mod;
+
+            f0 = g1 * a[i] / 5;
+            f0 %= mod;
+            f1 = (g0 * a[i] + a[i]); 
+            f1 /= 5;
+            f1 %= mod;
+        } else {
+            ans += (1ll * a[i] * (f0 + (f1 * 5)));
+            ans %= mod;
+            ans += a[i];
+            ans %= mod;
+            
+            f0 = (g0 * a[i] + a[i]);
+            f0 %= mod;
+            f1 = (g1 * a[i]);
+            f1 %= mod;
+        }
+    }
+    cout << ans << "\n";
 }
 
 int main() {

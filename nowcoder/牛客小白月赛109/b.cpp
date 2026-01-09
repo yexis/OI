@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,25 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
-    
+    int n, k1, k2; cin >> n >> k1 >> k2;
+    vector<int> a(n); for (auto& e : a) cin >> e;
+    vector<int> L(n), R(n);
+    for (int i = 0; i < n; i++) {
+        L[i] = a[i];
+        if (i - 1 >= 0) L[i] = max(L[i], L[i - 1]);
+    }
+    for (int i = n - 1; i >= 0; i--) {
+        R[i] = a[i];
+        if (i + 1 < n) R[i] = max(R[i], R[i + 1]);
+    }
+    for (int i = 0; i < n - 1; i++) {
+        if (L[i] > R[i + 1]) {
+            cout << "Yes" << "\n";
+            return;
+        }
+    }
+    cout << "No" << "\n";
+
 }
 
 int main() {

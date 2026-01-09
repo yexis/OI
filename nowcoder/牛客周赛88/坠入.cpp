@@ -35,9 +35,6 @@ using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 #define next_per next_permutation
 #define call(x) (x).begin(), (x).end()
-#define debug(x) cout << (#x) << " = " << (x) << endl;
-#define debugout(x) cout << (#x) << " = " << (x) << endl;
-#define debugerr(x) cerr << (#x) << " = " << (x) << endl;
 
 using ll = long long;
 using ull = unsigned long long;
@@ -60,20 +57,20 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
 
-ll power(ll x, ll b, ll m = mod) {
+ll power(ll x, ll b) {
     ll ans = 1;
     while (b) {
         if (b & 1) {
             ans *= x;
-            ans %= m;
+            ans %= mod;
         }
         x *= x;
-        x %= m;
+        x %= mod;
         b >>= 1;
     }
     return ans;
@@ -83,18 +80,34 @@ ll power(ll x, ll b, ll m = mod) {
  * 
 */
 
+bool check(int x1, int y1, int x2, int y2, int x3, int y3) {
+    if (x1 + x2 == 2 * x3 || y1 + y2 == 2 * y3) {
+        return true;
+    }
+    return false;
+}
 void solve() {
-    
+    int x1, y1;
+    int x2, y2;
+    int x3, y3;
+    cin >> x1 >> y1;
+    cin >> x2 >> y2;
+    cin >> x3 >> y3;
+    if (check(x1, y1, x2, y2, x3, y3) || check(x1, y1, x3, y3, x2, y2) || 
+        check(x2, y2, x3, y3, x1, y1) ) {
+            cout << "YES" << "\n";
+    } else {
+        cout << "NO" << "\n";
+    }
 }
 
 int main() {
     ios;
     cout << fixed << setprecision(20);
-
-    int T = 1; 
-    // cin >> T;
+    int T;
+    cin >> T;
     while (T--) {
-    	solve();
+        solve();
     }
     return 0;
 }

@@ -80,11 +80,12 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
- * 
+ * 2 * 7
+ * 2 * 2 * 2 * 11  
 */
 
 void solve() {
-
+    cout << (ll)111111 * 111111 << "\n";
 }
 
 int main() {

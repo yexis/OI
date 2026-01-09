@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,32 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
-    
+    int n; cin >> n;
+    vector<int> a(n); for (auto& e : a) cin >> e;
+
+
+    priority_queue<int> pq;
+    for (auto& e : a) pq.push(e);
+
+    ll ans = 0;
+    int red = 1;
+    int del = 0;
+    while (pq.size()) {
+        int x = pq.top(); 
+        if (x <= del) {
+            pq.pop();
+            continue;
+        }
+        if (red) {
+            pq.pop();
+            ans += x - del;
+            red ^= 1;
+        } else {
+            del++;
+            red ^= 1;
+        }
+    }
+    cout << ans << "\n";
 }
 
 int main() {

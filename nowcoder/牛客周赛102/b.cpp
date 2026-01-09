@@ -35,7 +35,7 @@ using namespace std;
 #define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
 #define next_per next_permutation
 #define call(x) (x).begin(), (x).end()
-#define debug(x) cout << (#x) << " = " << (x) << endl;
+#define debug(x) cerr << (#x) << " = " << (x) << endl;
 #define debugout(x) cout << (#x) << " = " << (x) << endl;
 #define debugerr(x) cerr << (#x) << " = " << (x) << endl;
 
@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,20 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
-    
+    string s; cin >> s;
+    int n = s.size();
+    vector<int> I(n);
+    for (int i = 0; i < n; i++) {
+        if (s[i] == '1') {
+            I.push_back(i);
+        }
+    }
+    if (I[1] - I[0] == I[2] - I[1]) {
+        cout << "Yes" << "\n";
+    } else {
+        cout << "No" << "\n";
+    }
+
 }
 
 int main() {
@@ -92,7 +105,7 @@ int main() {
     cout << fixed << setprecision(20);
 
     int T = 1; 
-    // cin >> T;
+    cin >> T;
     while (T--) {
     	solve();
     }

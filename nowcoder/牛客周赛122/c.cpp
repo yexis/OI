@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,13 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
+    int n; cin >> n;
+    vector<int> a(n); for (int i = 0; i < n; i++) cin >> a[i];
+
+    ll sum = 0; for (int i = 0; i < n; i++) sum += a[i];
+    int mi = INF, mx = 0; for (int i = 0; i < n; i++) mi = min(mi, a[i]), mx = max(mx, a[i]);
     
+    cout << min(sum, 0ll + mx + 1ll * mi * n) << "\n";
 }
 
 int main() {
@@ -92,7 +98,7 @@ int main() {
     cout << fixed << setprecision(20);
 
     int T = 1; 
-    // cin >> T;
+    cin >> T;
     while (T--) {
     	solve();
     }

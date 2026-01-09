@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -83,8 +83,39 @@ ll power(ll x, ll b, ll m = mod) {
  * 
 */
 
+class Solution {
+public:
+    using ll = long long;
+    void cal(int n) {
+        vector<int> v; for (int i = 1; i <= n; i++) v.push_back(i);
+        int t = 0;
+        while (v.size() > 1) {
+            vector<int> cv;
+            for (int i = 0; i < (int)v.size(); i += 2) {
+                cv.push_back(v[i]);
+            }
+            v = cv; cv.clear();
+            t++;
+            for (int i = (int)v.size() - 1; i >= 0; i -= 2) {
+                cv.push_back(v[i]);
+            }
+            reverse(cv.begin(), cv.end());
+            v = cv; cv.clear();
+            t++;
+        }
+        cout << n << " " << v[0] << " " << t << "\n";
+    }
+    long long lastInteger(long long n) {
+        for (int i = 1; i <= 1000; i++) {
+            cal(i);
+        }
+        return 0;
+    }
+};
+
 void solve() {
-    
+    Solution so;
+    so.lastInteger(10000);
 }
 
 int main() {

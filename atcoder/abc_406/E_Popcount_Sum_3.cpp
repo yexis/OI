@@ -78,7 +78,8 @@ ll power(ll x, ll b) {
 }
 
 /*
- * 
+ * https://atcoder.jp/contests/abc406/tasks/abc406_e
+ * 数位DP求元素和
 */
 
 int K;

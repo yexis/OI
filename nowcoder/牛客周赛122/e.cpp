@@ -60,7 +60,7 @@ const int dir[4][2] = {{-1, 0},
                        {0,  -1},
                        {0,  1}};
 const int INF = 0x3f3f3f3f;
-c onst ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
 const int mod = 1e9 + 7;
 const string YES = "YES";
 const string NO = "NO";
@@ -84,7 +84,33 @@ ll power(ll x, ll b, ll m = mod) {
 */
 
 void solve() {
+    int n; cin >> n;
+    vector<int> a(n); for (int i = 0; i < n; i++) cin >> a[i];
+
+    ll ans = 0;
+    vector<int> L(n), R(n);
+    for (int i = 0; i < n; i++) {
+        int j = i;
+        while (j < n && a[j] == a[i]) {
+            j++;
+        }
+        int t = 0, t2 = 0;
+        for (int k = j - 1; k >= i; k--) R[k] = ++t;
+        for (int k = i; k <= j - 1; k++) L[k] = ++t2;
+        i = j - 1;
+    }
     
+    vector<int> dp(n + 1, 0);
+    for (int i = n - 1; i >= 0; i--) {
+        int x = a[i];
+        if (R[i] >= x) {
+            dp[i] = R[i] / x;
+            if (R[i] % x == 0) dp[i] += dp[i + R[i]];
+        }
+        ans += dp[i];
+    }
+     
+    cout << ans << "\n";
 }
 
 int main() {
@@ -92,7 +118,7 @@ int main() {
     cout << fixed << setprecision(20);
 
     int T = 1; 
-    // cin >> T;
+    cin >> T;
     while (T--) {
     	solve();
     }
