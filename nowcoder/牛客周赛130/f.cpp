@@ -79,7 +79,7 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
- * 
+ * 置换环
 */
 
 void solve() {
