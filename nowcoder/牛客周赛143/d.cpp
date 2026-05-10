@@ -91,7 +91,9 @@ void solve() {
         ob.push_back(fi); ob.push_back(fi + K);
         ob.push_back(se); ob.push_back(se + K);
         
-        V.push_back(fi); V.push_back(se);
+        // 按照贪心的思想，为了重合尽可能多的区间
+        // 选择的区间一定是给定n个区间中某个区间的右端点
+        V.push_back(se);
     }
     sort(V.begin(), V.end()); V.erase(unique(V.begin(), V.end()), V.end());
     sort(ob.begin(), ob.end()); ob.erase(unique(ob.begin(), ob.end()), ob.end());
