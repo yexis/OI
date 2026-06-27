@@ -79,7 +79,9 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
- * 
+ * https://ac.nowcoder.com/acm/contest/136720/F
+ * 很难的换根DP
+ * 第一次见 在边上统计答案
 */
 
 void solve() {
