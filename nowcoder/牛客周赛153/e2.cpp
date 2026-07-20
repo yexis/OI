@@ -80,7 +80,7 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
- * 
+ * https://ac.nowcoder.com/acm/contest/137561/E
 */
 
 // 由两点 (x1,y1)、(x2,y2) 求一般式 Ax + By + C = 0

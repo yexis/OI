@@ -127,15 +127,6 @@ __int128 judge(array<ll, 4> kb, __int128 x, __int128 y) {
 };
 
 
-// 由两点 (x1,y1)、(x2,y2) 求一般式 Ax + By + C = 0
-void cal(int x1, int y1, int x2, int y2) -> array<ll, 3> {
-    ll A = y2 - y1;
-    ll B = x1 - x2;
-    ll C = x2 * y1 - x1 * y2;
-
-    // Ax + By + C = 0
-}
-
 void solve() {
     int n; cin >> n;
     vector<pii> ps(n); for (int i = 0; i < n; i++) cin >> ps[i].first >> ps[i].second;
