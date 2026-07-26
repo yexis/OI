@@ -79,7 +79,9 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
- * 
+ * ligoyh think important
+ * 有意思的动态规划 
+ * 后方 需要反馈 前方
 */
 
 void solve() {
