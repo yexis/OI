@@ -224,7 +224,6 @@ void solve() {
     vector<ll> A(n + 1); for (int i = 0; i < n; i++) A[L[i]] = M[i];
     SegTree seg(A); seg.build(1, 1, n);
 
-
     while (q--) {
         char op; cin>> op;
         if (op == 'F') {
