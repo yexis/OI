@@ -89,10 +89,12 @@ void solve() {
     vector<int> del(n);
     for (int i = 0; i < n; i++) {
         int l = L[i], r = R[i];
-        if (r - l > T) del[i] = 1; 
+        if (r - l == T) del[i] = 1; 
+        else if (r - l > T) del[i] = 2;
     }
     
     vector<int> ob;
+    // 长度大于T的弦不可能，直接删除即可
     for (int i = 0; i < n; i++) {
         if (del[i]) continue;
         int l = L[i], r = R[i];
@@ -106,6 +108,7 @@ void solve() {
         return lower_bound(ob.begin(), ob.end(), x) - ob.begin();
     };
 
+    
     vector<int> VL[m], VR[m];
     for (int i = 0; i < n; i++) {
         if (del[i]) continue;
@@ -119,31 +122,54 @@ void solve() {
     }
 
     ll ans = 0;
+    // 长度小于T的弦，可以两两配对，最后除以2
     for (int i = 0; i < n; i++) {
         if (del[i]) continue;
-        if (R[i] - L[i] == T) {
-            continue;
-        }
         int l = get(L[i]), r = get(R[i]);
+        
         // right
         int p = get(L[i] + T); 
-        // VR[p]
         auto& vec = VR[p];
         int k1 = lower_bound(vec.begin(), vec.end(), l) - vec.begin();
         int k2 = upper_bound(vec.begin(), vec.end(), r) - vec.begin();
         ans += max(k2 - k1, 0);
-        
+
+        // left
         p = get(R[i] - T);
-        // VL[p]
         auto& vec2 = VL[p];
         int k3 = lower_bound(vec2.begin(), vec2.end(), l) - vec2.begin();
         int k4 = lower_bound(vec2.begin(), vec2.end(), r) - vec2.begin();
         ans += max(k4 - k3, 0);
     }
 
+    ans /= 2;
 
+    // 长度等于T的弦，比较特殊；位于该弦区间内的所有弦都能与之配对，所以采用滑动窗口
+    vector<arr> pr; for (int i = 0; i < n; i++) pr.push_back(arr{L[i], R[i], i});
+    sort(pr.begin(), pr.end(), [&](auto& aa, auto& bb) {
+        // 对于相同右端点
+        // 为了保证在处理长度为T的弦时，长度小于T的弦都已经被处理
+        if (aa[1] == bb[1]) {
+            return aa[0] > bb[0];
+        }
+        return aa[1] < bb[1];
+    });
 
-    cout << ans / 2 << "\n";
+    multiset<int> st;
+    for (int i = 0; i < n; i++) {
+        int l = pr[i][0], r = pr[i][1], idx = pr[i][2];
+        if (del[idx] > 1) continue;
+        if (del[idx] == 1) {
+            // ==
+            while (st.size() && *st.begin() < l) {
+                st.erase(st.begin());
+            }
+            ans += (int)st.size();
+        }
+        st.insert(l);
+    }
+
+    cout << ans << "\n";
 }
 
 int main() {
