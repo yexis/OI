@@ -79,7 +79,10 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
- * 
+ * 格雷码
+ * 位运算
+ * 逆变换
+ * 区间交
 */
 
 void solve() {
@@ -93,12 +96,15 @@ void solve() {
     // a0 b1 b2 b3 b4 ... b10   b_i = a_i ^ a_{i-1}
     // 取反 得 c_x
     // b10 ... b4 b3 b2 b1 a0
-    // mod (2^h) 得到 z，由于之前取反，所以z刚好是cnt的前h位翻转
-    // b_h b_{h-1} ... a0
+    
+    // mod (2^h) 得到 z，由于之前取反，所以z刚好是mid的前h位翻转，即 b_h b_{h-1} ... a0
     // z从低到高读，第一个bit给出了cnt的最高位，之后每一位表示相邻两位是否相同
-    // 所以cnt只要前h为固定，剩余的k-h位可以随意选择
+    
+    // 所以cnt只要前h位固定，剩余的k-h位可以随意选择
     // 那么cnt在区间 [pref * 2^{k-h}, (pref + 1) * 2^{k-h} - 1]
-    // 而 x = cnt - 1，则x区间为 [pref * 2^{k-h} + 1, (pref + 1) * 2^{k-h}]
+    // 目标是 pref = a0 a1 a2,...,a{h-1}，最后求出pref即可
+
+    // 而 x = cnt + 1，则x区间为 [pref * 2^{k-h} + 1, (pref + 1) * 2^{k-h}]
     // 最后，x区间和询问区间[l,r]求交即可
     while (Q--) {
         ll l, r, h, z; cin >> l >> r >> h >> z;
