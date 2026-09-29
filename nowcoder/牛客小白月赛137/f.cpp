@@ -81,6 +81,10 @@ ll power(ll x, ll b, ll m = mod) {
 /*
  * P8436
  * https://www.luogu.com.cn/problem/P8436
+ * 
+ * 病毒图
+ * 桥 割边 边双
+ * 
 */
 
 struct EDCC {
