@@ -113,8 +113,7 @@ void solve() {
     ans = max(ans, sumB[kk]);
     
     // 枚举购买i个A类时，还能购买多少B类
-    ll sum_a = 0;
-    ll cost_a = 0, cnt_a = 0;
+    ll sum_a = 0, cost_a = 0, cnt_a = 0;
     for (int i = 0; i < A.size(); i++) {
         if (cost_a + A[i].second > s) break;
         if (cnt_a + K > m) break;
