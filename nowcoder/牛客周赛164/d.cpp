@@ -79,30 +79,52 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
+ * 枚举
  * 
+ * 令 c_i = K * x + b_i * y
+ * 售价a_i，成本c_i
+ * 在总成本是s，一共m个桃子，求最大收益
 */
 
 void solve() {
-    int x, y, s, m, K; cin >> x >> y >> s >> m >> K;
+    ll x, y, s, m, K; cin >> x >> y >> s >> m >> K;
     int n; cin >> n;
     vector<int> a(n); for (int i = 0; i < n; i++) cin >> a[i];
     vector<int> b(n); for (int i = 0; i < n; i++) cin >> b[i];
 
-    vector<pii> pr; for (int i = 0; i < n; i++) pr.push_back(pii(a[i], b[i]));
-    sort(pr.begin(), pr.end(), [&](const auto& aa, const auto& bb) {
-        if (aa.first == bb.first) return aa.second < bb.second;
+    vector<pll> A, B; 
+    for (int i = 0; i < n; i++) {
+        if (b[i] == 0) A.push_back(pll(a[i], K * x + b[i] * y));
+        else B.push_back(pll(a[i], K * x + b[i] * y));
+    }
+    sort(A.begin(), A.end(), [&](const auto& aa, const auto& bb) {
+        return aa.first > bb.first;
+    });
+    sort(B.begin(), B.end(), [&](const auto& aa, const auto& bb) {
         return aa.first > bb.first;
     });
 
-    ll base = 0;
-    ll ans = 0, t = 0;
-    for (int i = 0; i < n; i++) {
-        auto [aa, bb] = pr[i];
-        t += K; if (t > m) break;
-        ll cost = K * x + bb * y;
-        base += cost; if (base > s) continue;
-        ans += aa;
+    vector<ll> sumB(B.size() + 1); for (int i = 0; i < B.size(); i++) sumB[i + 1] = sumB[i] + B[i].first;
+
+    ll ans = 0;
+    
+    // 全购买B类
+    ll kk = s / (K * x + y); kk = min(kk, (ll)B.size());
+    ans = max(ans, sumB[kk]);
+    
+    // 枚举购买i个A类时，还能购买多少B类
+    ll sum_a = 0;
+    ll cost_a = 0, cnt_a = 0;
+    for (int i = 0; i < A.size(); i++) {
+        if (cost_a + A[i].second > s) break;
+        if (cnt_a + K > m) break;
+        sum_a += A[i].first;
+        cost_a += A[i].second;
+        cnt_a += K;
+        kk = (s - cost_a) / (K * x + y); kk = min(kk, (ll)B.size());
+        ans = max(ans, sum_a + sumB[kk]);
     }
+    
     cout << ans << "\n";
 }
 
