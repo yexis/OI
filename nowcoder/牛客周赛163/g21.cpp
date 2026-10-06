@@ -122,31 +122,24 @@ void solve() {
     unordered_set<int> st;
     // 位于区间[l, r]内的组数
     // 枚举左端点，寻找右端点
-    int r = 1, cnt = 0;
+    int r = 1, cnt = 0, pt = 1;
     for (int l = 1; l <= n; l++) {
         // [l, r) r不在窗口中，r是下一次将要尝试的下标
         // cnt的数据需要与窗口[l, r)状态保持一致
         while (r <= n && cnt < T) {
-            // 删除r-1还是删除r?
-            // 移除最后一个导致cnt < T 的 r，即 r - 1 
-            if (r - 1 >= 1) mp[W[r - 1]]--;
-
             if (Right[r]) st.insert(r); 
             if (st.count(Left[r])) cnt++;
-
             r++;
         }
-        
-        // K = 0 (r < l) 的情况
-        while (r < l) {
-            mp[W[r]]--;
-            r++;
+
+        while (pt < max(l, r - 1)) {
+            mp[W[pt]]--;
+            pt++;
         }
 
         // [l, r - 1]为满足条件的区间 或者 r 超出范围
         if (cnt >= T) ans += mp[K - W[l - 1]];
 
-        // cnt减
         if (st.count(l)) {
             cnt--;
             st.erase(l);
