@@ -79,7 +79,19 @@ ll power(ll x, ll b, ll m = mod) {
 }
 
 /*
+ * 二分 + 递推求范围
  * 
+ * 从左到右：
+ * x_0的范围 [L0, R0]
+ * x_1的范围 [max(L0 + 1, l_1), min(R0 + D, r_1)] => [L1, R1]
+ * x_2的范围 [max(L1 + 1, l_2), min(R1 + D, r_2)] => [L2, R2]
+ * ...
+ * x_m的范围 [max(L{m-1} + 1, l_m), min(R{m-1}  + D, r_m)] => [Lm, Rm]
+ * 
+ * 反方向，从右到左
+ * ...
+ * 如果对于某个位置i，从左到右计算的[L_i, R_i] 和 从右到左计算的 [L_i, R_i]存在交集的话
+ * 说明有解，即步幅 mid 是合法的
 */
 
 void solve() {
@@ -87,7 +99,6 @@ void solve() {
     vector<pii> limits(n);
     for (int i = 0; i < n; i++)  cin >> limits[i].first >> limits[i].second;
     
-    // mx_up >= mi_down
     ll ans = LLINF;
     auto check = [&](ll mid) -> bool {
         vector<ll> preL(n, LLINF), preR(n, -LLINF);
