@@ -1,0 +1,280 @@
+#include <iostream>
+#include <vector>
+#include <string.h>
+#include <algorithm>
+#include <numeric>
+#include <set>
+#include <array>
+#include <cassert>
+#include <cstdio>
+#include <cstring>
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <queue>
+#include <stack>
+#include <list>
+#include <set>
+#include <map>
+#include <unordered_set>
+#include <unordered_map>
+#include <algorithm>
+#include <complex>
+#include <cmath>
+#include <numeric>
+#include <bitset>
+#include <functional>
+#include <random>
+#include <ctime>
+#include <limits>
+#include <climits>
+using namespace std;
+
+#define ios ios::sync_with_stdio(0),cin.tie(0),cout.tie(0)
+#define next_per next_permutation
+#define call(x) (x).begin(), (x).end()
+#define debug(x) cout << (#x) << " = " << (x) << endl;
+#define debugE(x) cerr << (#x) << " = " << (x) << endl;
+
+template<typename... Args> void debug_print(const char* names, Args&&... args) { cout << names << " = "; ((cout << args << " "), ...); cout << endl; }
+template<typename... Args> void debug_err_print(const char* names, Args&&... args) { cerr << names << " = "; ((cerr << args << " "), ...); cerr << endl; }
+#define debugs(...) debug_print(#__VA_ARGS__, __VA_ARGS__)
+#define debugsE(...) debug_err_print(#__VA_ARGS__, __VA_ARGS__)
+
+using ll = long long;
+using ull = unsigned long long;
+using pii = pair<int, int>;
+using pli = pair<ll, int>;
+using pil = pair<int, ll>;
+using pll = pair<ll, ll>;
+using pbi = pair<bool, int>;
+using pib = pair<int, bool>;
+using pis = pair<int, string>;
+using psi = pair<string, int>;
+using puu = pair<ull, ull>;
+using arr = array<int, 3>;
+using arr3 = array<int, 3>;
+using arr4 = array<int, 4>;
+using arr5 = array<int, 5>;
+
+const int dir[4][2] = {{-1, 0}, {1,  0}, {0,  -1}, {0,  1}};
+const int INF = 0x3f3f3f3f;
+const ll LLINF = 0x3f3f3f3f3f3f3f3f;
+const int mod = 1000000007;
+const string YES = "YES";
+const string NO = "NO";
+
+ll mod_add(ll& x, ll y) { x += (mod + y); x %= mod; return x; }
+
+ll power(ll x, ll b, ll m = mod) {
+    ll ans = 1;
+    while (b) {
+        if (b & 1) {
+            ans *= x;
+            ans %= m;
+        }
+        x *= x;
+        x %= m;
+        b >>= 1;
+    }
+    return ans;
+}
+
+
+/*
+ *  点线封装
+*/
+using ld = long double;
+const ld PI = acos(-1);
+const ld EPS = 1e-7;
+#define cc(x) cout << fixed << setprecision(x);
+
+ld fgcd(ld x, ld y) { // 实数域gcd
+    return abs(y) < EPS ? abs(x) : fgcd(y, fmod(x, y));
+}
+template<class T, class S> bool equal(T x, S y) {
+    return -EPS < x - y && x - y < EPS;
+}
+template<class T> int sign(T x) {
+    if (-EPS < x && x < EPS) return 0;
+    return x < 0 ? -1 : 1;
+}
+template<class T> struct Point { // 在C++17下使用 emplace_back 绑定可能会导致CE！
+    T x, y;
+    Point(T x_ = 0, T y_ = 0) : x(x_), y(y_) {} // 初始化
+    template<class U> operator Point<U>() { // 自动类型匹配
+        return Point<U>(U(x), U(y));
+    }
+    Point &operator+=(Point p) & { return x += p.x, y += p.y, *this; }
+    Point &operator+=(T t) & { return x += t, y += t, *this; }
+    Point &operator-=(Point p) & { return x -= p.x, y -= p.y, *this; }
+    Point &operator-=(T t) & { return x -= t, y -= t, *this; }
+    Point &operator*=(T t) & { return x *= t, y *= t, *this; }
+    Point &operator/=(T t) & { return x /= t, y /= t, *this; }
+    Point operator-() const { return Point(-x, -y); }
+    friend Point operator+(Point a, Point b) { return a += b; }
+    friend Point operator+(Point a, T b) { return a += b; }
+    friend Point operator-(Point a, Point b) { return a -= b; }
+    friend Point operator-(Point a, T b) { return a -= b; }
+    friend Point operator*(Point a, T b) { return a *= b; }
+    friend Point operator*(T a, Point b) { return b *= a; }
+    friend Point operator/(Point a, T b) { return a /= b; }
+    friend bool operator<(Point a, Point b) {
+        return equal(a.x, b.x) ? a.y < b.y - EPS : a.x < b.x - EPS;
+    }
+    friend bool operator>(Point a, Point b) { return b < a; }
+    friend bool operator==(Point a, Point b) { return !(a < b) && !(b < a); }
+    friend bool operator!=(Point a, Point b) { return a < b || b < a; }
+    friend auto &operator>>(istream &is, Point &p) {
+        return is >> p.x >> p.y;
+    }
+    friend auto &operator<<(ostream &os, Point p) {
+        return os << "(" << p.x << ", " << p.y << ")";
+    }
+};
+template<class T> struct Line {
+    Point<T> a, b;
+    Line(Point<T> a_ = Point<T>(), Point<T> b_ = Point<T>()) : a(a_), b(b_) {}
+    template<class U> operator Line<U>() { // 自动类型匹配
+        return Line<U>(Point<U>(a), Point<U>(b));
+    }
+    friend auto &operator<<(ostream &os, Line l) {
+        return os << "<" << l.a << ", " << l.b << ">";
+    }
+    const Point<T> Vector() { return b - a; }
+};
+
+// 叉积 delta: a和b已经是向量
+template<class T> T cross(Point<T> a, Point<T> b) {
+    return a.x * b.y - a.y * b.x;
+}
+// 叉积 (p1 - p0) x (p2 - p0); p0, p1, p2是三个点
+template<class T> T cross(Point<T> p0, Point<T> p1, Point<T> p2) {
+    return cross(p1 - p0, p2 - p0);
+}
+
+// 点乘
+template<class T> T dot(Point<T> a, Point<T> b) { 
+    return a.x * b.x + a.y * b.y;
+}
+// 点乘 (p1 - p0) * (p2 - p0);
+template<class T> T dot(Point<T> p0, Point<T> p1, Point<T> p2) {
+    return dot(p1 - p0, p2 - p0);
+}
+
+// pointOnLine 点c是否在直线ab上
+template<class T> bool pointOnLine(Point<T> a, Point<T> b, Point<T> c) {
+    return sign(cross(b, a, c)) == 0;
+}
+// pointOnLine 点是否在直线上
+template<class T> bool pointOnLine(Line<T> l, Point<T> p) {
+    return pointOnLine(p, l.a, l.b);
+}
+// pointOnLineLeft 点是否在直线左侧
+template<class T> bool pointOnLineLeft(Line<T> l, Point<T> p) {
+    return cross(l.b, p, l.a) > 0;
+}
+// pointOnLineRight 点是否在直线右侧
+template<class T> bool pointOnLineRight(Line<T> l, Point<T> p) {
+    return cross(l.b, p, l.a) < 0;
+}
+
+// 两点是否在直线同侧
+template<class T> bool pointOnLineSide(Line<T> vec, Point<T> p1, Point<T> p2) {
+    T val = cross(p1, vec.a, vec.b) * cross(p2, vec.a, vec.b);
+    return sign(val) == 1;
+}
+// 两点是否在直线异侧
+template<class T> bool pointNotOnLineSide(Line<T> vec, Point<T> p1, Point<T> p2) {
+    T val = cross(p1, vec.a, vec.b) * cross(p2, vec.a, vec.b);
+    return sign(val) == -1;
+}
+
+// 两条直线是否严格相交
+template<class T> bool intersect(Line<T> l1, Line<T> l2) {
+    Point<T> a = l1.a, b = l1.b;
+    Point<T> c = l2.a, d = l2.b;
+    
+    T cr1 = cross(a, b, c);
+    T cr2 = cross(a, b, d);
+    T cr3 = cross(c, d, a);
+    T cr4 = cross(c, d, b);
+    
+    // 必须严格异号，排除端点落在线上的情况
+    if (cr1 == 0 || cr2 == 0 || cr3 == 0 || cr4 == 0) return false;
+
+    return (cr1 > 0) != (cr2 > 0) && (cr3 > 0) != (cr4 > 0);
+}
+
+// 极角排序，此时Point实际是从原点出发的向量
+// 上平面: [0 ~ 180)
+// 下平面: [180, 360)
+template<class T> bool polar_angle_cmp(const Point<T>& a, const Point<T>& b) {
+    int updown_a = (a.y > 0 || a.y == 0 && a.x > 0) ? 0 : 1 ;
+    int updown_b = (b.y > 0 || b.y == 0 && b.x > 0) ? 0 : 1;
+    if (updown_a != updown_b) return updown_a < updown_b;
+    return cross(a, b) > 0;
+}
+
+// 计算极角，返回弧度 
+// 范围 [0, 2 * PI]
+double angle(double x, double y) {
+    double pi = acos(-1.0);
+    double theta = atan2(x, y);
+    if (theta < 0) theta += 2 * pi;
+    return theta;
+}
+
+// 计算极角：返回度
+double angle2(double x, double y) {
+    return atan2(x, y) * 180.0 / acos(-1.0);
+}
+
+
+void solve() {
+    int n; cin >> n;
+    vector<Point<ll>> ps;
+    for (int i = 0; i < n; i++) {
+        int x, y; cin >> x >> y;
+        ps.push_back(Point<ll>(x, y));
+    }
+    sort(ps.begin(), ps.end(), polar_angle_cmp<ll>);
+
+    for (int i = 0; i < n; i++) {
+        ps.push_back(ps[i]);
+    }
+
+    int ans = 0, r = 0;
+    for (int l = 0; l < n; l++) {
+        r = max(r, l + 1);
+        // 以向量ps[l]为基准时，需要将与向量ps[l]极角差小于180度的向量加入窗口
+        while (r < l + n && cross(ps[l], ps[r]) > 0) {
+            r++;
+        }
+        ans = max(ans, r - l);
+    }
+    cout << ans << "\n";
+}
+
+int main() {
+    ios;
+    cout << fixed << setprecision(20);
+
+    int T = 1; 
+    cin >> T;
+    while (T--) {
+    	solve();
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
